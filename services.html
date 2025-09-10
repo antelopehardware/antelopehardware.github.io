@@ -63,7 +63,7 @@
         <!-- 主要內容區塊 -->
         <!-- ## 標示：此處為主要文字內容區塊，可在此修改文字 ## -->
         <h2 class="text-3xl md:text-4xl font-bold text-blue-600 mb-4" data-zh="關於林楊五金" data-en="About Antelope Hardware">關於林楊五金</h2>
-        <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-8" data-en="Established in 2022 in Qingshui District, Taichung City, Antelope Hardware Ltd. is a leading wholesaler and retailer of hardware tools, machinery parts, and marine accessories. With import and export qualifications, we actively cultivate domestic and international markets, striving to provide our customers with high-quality products and services.">
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-8" data-zh="林楊五金有限公司創立於 2022 年，座落於台中市清水區，是一家<b>專業的五金器具、機械零件及船舶配件批發零售商</b>。我們不僅具備<b>進出口資格</b>，更積極耕耘國內外市場，致力於為客戶提供高品質的產品與服務。" data-en="Established in 2022 in Qingshui District, Taichung City, Antelope Hardware Ltd. is a leading wholesaler and retailer of hardware tools, machinery parts, and marine accessories. With import and export qualifications, we actively cultivate domestic and international markets, striving to provide our customers with high-quality products and services.">
           林楊五金有限公司創立於 2022 年，座落於台中市清水區，是一家<b>專業的五金器具、機械零件及船舶配件批發零售商</b>。我們不僅具備<b>進出口資格</b>，更積極耕耘國內外市場，致力於為客戶提供高品質的產品與服務。
         </p>
         
@@ -71,21 +71,21 @@
           <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 w-full md:w-80 shadow-md">
             <div class="text-4xl text-blue-500 mb-4">💡</div>
             <div class="font-semibold text-xl mb-2 text-blue-700" data-zh="我們的理念" data-en="Our Philosophy">我們的理念</div>
-            <p class="text-gray-600" data-en="We uphold the philosophy of “Quality First, Service Foremost,” dedicated to providing a diverse range of products and professional technical support to meet our clients' various needs in engineering, manufacturing, and maintenance.">
+            <p class="text-gray-600" data-zh="我們秉持「<b>品質為本、服務至上</b>」的理念，致力於提供多元化產品與專業技術支援，滿足客戶在工程、製造與維修領域的各項需求。" data-en="We uphold the philosophy of “Quality First, Service Foremost,” dedicated to providing a diverse range of products and professional technical support to meet our clients' various needs in engineering, manufacturing, and maintenance.">
               我們秉持「<b>品質為本、服務至上</b>」的理念，致力於提供多元化產品與專業技術支援，滿足客戶在工程、製造與維修領域的各項需求。
             </p>
           </div>
           <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 w-full md:w-80 shadow-md">
             <div class="text-4xl text-blue-500 mb-4">🛠️</div>
             <div class="font-semibold text-xl mb-2 text-blue-700" data-zh="跨領域的專業" data-en="Cross-Disciplinary Expertise">跨領域的專業</div>
-            <p class="text-gray-600" data-en="In addition to traditional hardware, we also venture into energy technology and consulting services, leveraging our cross-disciplinary integration capabilities to create broader value for our clients.">
+            <p class="text-gray-600" data-zh="除傳統五金業務外，我們亦涉足<b>能源技術與顧問服務</b>，憑藉跨領域的整合能力，為客戶創造更廣泛的價值。" data-en="In addition to traditional hardware, we also venture into energy technology and consulting services, leveraging our cross-disciplinary integration capabilities to create broader value for our clients.">
               除傳統五金業務外，我們亦涉足<b>能源技術與顧問服務</b>，憑藉跨領域的整合能力，為客戶創造更廣泛的價值。
             </p>
           </div>
           <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 w-full md:w-80 shadow-md">
             <div class="text-4xl text-blue-500 mb-4">📈</div>
             <div class="font-semibold text-xl mb-2 text-blue-700" data-zh="展望未來" data-en="Future Outlook">展望未來</div>
-            <p class="text-gray-600" data-en="With a flexible operating model and a stable management team, we continuously optimize our supply chain efficiency and enhance customer satisfaction, aspiring to build a trustworthy hardware brand.">
+            <p class="text-gray-600" data-zh="藉由靈活的營運模式與穩健的管理團隊，我們持續優化供應鏈效率，提升客戶滿意度，矢志打造值得信賴的五金品牌。" data-en="With a flexible operating model and a stable management team, we continuously optimize our supply chain efficiency and enhance customer satisfaction, aspiring to build a trustworthy hardware brand.">
               藉由靈活的營運模式與穩健的管理團隊，我們持續優化供應鏈效率，提升客戶滿意度，矢志打造值得信賴的五金品牌。
             </p>
           </div>
@@ -114,6 +114,8 @@
       const langBtnDesktop = document.getElementById('lang-btn-desktop');
       const langBtnMobile = document.getElementById('lang-btn-mobile');
       const container = document.querySelector('[data-lang]');
+      
+      // 翻譯所有帶有 data 屬性的元素，包括粗體標籤
       const elements = document.querySelectorAll('[data-zh], [data-en], footer small');
 
       // 語系切換函式
@@ -133,7 +135,9 @@
 
         // 翻譯所有帶有 data 屬性的元素
         elements.forEach(el => {
-          el.textContent = el.getAttribute(`data-${newLang}`);
+            const newText = el.getAttribute(`data-${newLang}`);
+            // 使用 innerHTML 來確保 <b> 標籤被正確轉譯
+            el.innerHTML = newText;
         });
 
         // 調整 <title> 標籤的內容
