@@ -15,6 +15,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <!-- 導入 Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* 淡入動畫效果 */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+        animation: fadeIn 1s ease-out;
+    }
+  </style>
   <script>
     tailwind.config = {
       theme: {
@@ -26,131 +36,224 @@
       }
     }
   </script>
-
 </head>
 
 <body class="bg-gray-50 font-sans">
-  <!-- 使用 data-lang 屬性來追蹤目前語系 -->
-  <div data-lang="zh">
-    <!-- 頁首區塊：與首頁和關於我們頁面完全相同 -->
-    <header class="fixed top-0 left-0 right-0 bg-white p-4 lg:p-8 shadow-md z-50 flex flex-col items-center">
-      <div class="flex justify-between w-full lg:hidden">
-          <button id="hamburger" class="text-2xl" aria-label="切換選單">
-            &#9776;
-          </button>
-          <button id="lang-btn-mobile" class="bg-gray-100 text-gray-700 py-1 px-2 rounded-lg hover:bg-gray-200 transition duration-300 font-medium whitespace-nowrap">🌐 EN</button>
+  
+  <!-- 以下為已替換為與首頁一致的導覽列 -->
+  <!-- 導覽列 (使用 <nav> 標籤，符合語意化) -->
+  <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+          <!-- 公司 Logo 與名稱區塊 -->
+          <a href="index.html" class="flex items-center space-x-2">
+              <!-- 公司 Logo 圖片，使用 alt 屬性以利 SEO 和無障礙訪問 -->
+              <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/logo.jpg" alt="林楊五金有限公司 Logo" class="h-10 w-10 rounded-full object-cover shadow-md">
+              <div class="flex flex-col">
+                  <span class="font-bold text-lg text-gray-900">林楊五金有限公司</span>
+                  <span class="text-sm text-gray-500">Antelope Hardware Ltd.</span>
+              </div>
+          </a>
+          
+          <!-- 手機版選單按鈕與語言切換 -->
+          <div class="flex items-center md:hidden space-x-4">
+              <button id="language-toggle" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">English</button>
+              <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                  <!-- 漢堡選單圖示 (SVG) -->
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                  </svg>
+              </button>
+          </div>
+          
+          <!-- 導覽連結 (桌機版顯示，手機版預設隱藏) -->
+          <div id="nav-links" class="hidden md:flex md:space-x-6">
+              <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="home">首頁</a>
+              <a href="services.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="services">服務項目</a>
+              <a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="about">關於我們</a>
+              <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="contact">聯絡我們</a>
+              <!-- 桌面版語言切換按鈕，與手機版獨立 -->
+              <button id="language-toggle-desktop" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">English</button>
+          </div>
       </div>
-      <div class="flex items-center gap-2 mt-4 lg:mt-0">
-        <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/logo.jpg" alt="公司 Logo" class="w-8 h-8 rounded-full"/>
-        <div class="text-center">
-          <div class="text-lg font-bold" data-zh="林楊五金有限公司" data-en="Antelope Hardware Ltd.">林楊五金有限公司</div>
-          <small class="text-sm text-gray-500 font-normal" data-zh="林楊五金" data-en="Antelope Hardware Ltd.">Antelope Hardware Ltd.</small>
+      
+      <!-- 手機版下拉選單 (預設隱藏) -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-md w-full shadow-lg">
+          <a href="index.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="home">首頁</a>
+          <a href="services.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="services">服務項目</a>
+          <a href="about.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="about">關於我們</a>
+          <a href="contact.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="contact">聯絡我們</a>
+      </div>
+  </nav>
+  <!-- 以上為已替換為與首頁一致的導覽列 -->
+
+  <!-- 主要內容區塊 -->
+  <main>
+    <!-- 視覺橫幅區塊 -->
+    <div class="relative h-96 bg-cover bg-center" style="background-image: url('https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/background.jpg');">
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="text-center text-white">
+          <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 animate-fade-in-up" data-zh="您的專業五金夥伴" data-en="Your Professional Hardware Partner">您的專業五金夥伴</h1>
+          <p class="text-lg sm:text-xl font-medium" data-zh="從港口到辦公室，我們提供您所需的解決方案" data-en="From ports to offices, we provide the solutions you need.">從港口到辦公室，我們提供您所需的解決方案</p>
         </div>
       </div>
-      <div id="nav-wrapper" class="hidden lg:flex lg:flex-row items-center justify-center w-full mt-4">
-        <nav class="flex flex-col lg:flex-row gap-4 lg:gap-8 justify-center w-full lg:w-auto">
-          <a href="index.html" class="text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-4 rounded-lg text-center font-medium" data-zh="首頁" data-en="Home">首頁</a>
-          <a href="services.html" class="text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-4 rounded-lg text-center font-medium" data-zh="服務項目" data-en="Services">服務項目</a>
-          <a href="about.html" class="text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-4 rounded-lg text-center font-medium" data-zh="關於我們" data-en="About Us">關於我們</a>
-          <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-4 rounded-lg text-center font-medium" data-zh="聯絡我們" data-en="Contact Us">聯絡我們</a>
-        </nav>
-        <button id="lang-btn-desktop" class="bg-gray-100 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-200 transition duration-300 font-medium whitespace-nowrap lg:ml-8">🌐 EN</button>
-      </div>
-    </header>
-
-    <main class="pt-48 lg:pt-56">
-      <section class="py-12 px-4 text-center bg-white">
-        <!-- 主要內容區塊 -->
-        <!-- ## 標示：此處為主要文字內容區塊，可在此修改文字 ## -->
-        <h2 class="text-3xl md:text-4xl font-bold text-blue-600 mb-4" data-zh="關於林楊五金" data-en="About Antelope Hardware">關於林楊五金</h2>
-        <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-8" data-zh="林楊五金有限公司創立於 2022 年，座落於台中市清水區，是一家<b>專業的五金器具、機械零件及船舶配件批發零售商</b>。我們不僅具備<b>進出口資格</b>，更積極耕耘國內外市場，致力於為客戶提供高品質的產品與服務。" data-en="Established in 2022 in Qingshui District, Taichung City, Antelope Hardware Ltd. is a leading wholesaler and retailer of hardware tools, machinery parts, and marine accessories. With import and export qualifications, we actively cultivate domestic and international markets, striving to provide our customers with high-quality products and services.">
+    </div>
+    
+    <!-- 內容區塊重新排版：左邊為文字，右邊為圖片 -->
+    <section class="py-12 px-4 bg-cover bg-center bg-fixed relative" style="background-image: url('/pic/hero-shipping.png');">
+      <!-- 疊層，讓文字更清晰 -->
+      <div class="absolute inset-0 bg-black opacity-70"></div>
+      <!-- 文字區塊 -->
+      <div class="relative z-10 max-w-3xl mx-auto text-white p-6 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center md:text-left" data-zh="關於林楊五金" data-en="About Antelope Hardware">關於林楊五金</h2>
+        <p class="text-lg mb-6" data-zh="林楊五金有限公司創立於 2022 年，座落於台中市清水區，是一家<b>專業的五金器具、機械零件及船舶配件批發零售商</b>。我們不僅具備<b>進出口資格</b>，更積極耕耘國內外市場，致力於為客戶提供高品質的產品與服務。" data-en="Established in 2022 in Qingshui District, Taichung City, Antelope Hardware Ltd. is a leading wholesaler and retailer of hardware tools, machinery parts, and marine accessories. With import and export qualifications, we actively cultivate domestic and international markets, striving to provide our customers with high-quality products and services.">
           林楊五金有限公司創立於 2022 年，座落於台中市清水區，是一家<b>專業的五金器具、機械零件及船舶配件批發零售商</b>。我們不僅具備<b>進出口資格</b>，更積極耕耘國內外市場，致力於為客戶提供高品質的產品與服務。
         </p>
-        
-        <div class="flex flex-wrap justify-center gap-6 mt-8">
-          <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 w-full md:w-80 shadow-md">
-            <div class="text-4xl text-blue-500 mb-4">💡</div>
-            <div class="font-semibold text-xl mb-2 text-blue-700" data-zh="我們的理念" data-en="Our Philosophy">我們的理念</div>
-            <p class="text-gray-600" data-zh="我們秉持「<b>品質為本、服務至上</b>」的理念，致力於提供多元化產品與專業技術支援，滿足客戶在工程、製造與維修領域的各項需求。" data-en="We uphold the philosophy of “Quality First, Service Foremost,” dedicated to providing a diverse range of products and professional technical support to meet our clients' various needs in engineering, manufacturing, and maintenance.">
-              我們秉持「<b>品質為本、服務至上</b>」的理念，致力於提供多元化產品與專業技術支援，滿足客戶在工程、製造與維修領域的各項需求。
-            </p>
-          </div>
-          <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 w-full md:w-80 shadow-md">
-            <div class="text-4xl text-blue-500 mb-4">🛠️</div>
-            <div class="font-semibold text-xl mb-2 text-blue-700" data-zh="跨領域的專業" data-en="Cross-Disciplinary Expertise">跨領域的專業</div>
-            <p class="text-gray-600" data-zh="除傳統五金業務外，我們亦涉足<b>離岸風電、能源技術與顧問服務</b>，憑藉跨領域的整合能力，為客戶創造更廣泛的價值。" data-en="In addition to traditional hardware, we also venture into energy technology and consulting services, leveraging our cross-disciplinary integration capabilities to create broader value for our clients.">
-              除傳統五金業務外，我們亦涉足<b>離岸風電、能源技術與顧問服務</b>，憑藉跨領域的整合能力，為客戶創造更廣泛的價值。
-            </p>
-          </div>
-          <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 w-full md:w-80 shadow-md">
-            <div class="text-4xl text-blue-500 mb-4">📈</div>
-            <div class="font-semibold text-xl mb-2 text-blue-700" data-zh="展望未來" data-en="Future Outlook">展望未來</div>
-            <p class="text-gray-600" data-zh="藉由靈活的營運模式與穩健的管理團隊，我們持續優化供應鏈效率，提升客戶滿意度，矢志打造值得信賴的五金品牌。" data-en="With a flexible operating model and a stable management team, we continuously optimize our supply chain efficiency and enhance customer satisfaction, aspiring to build a trustworthy hardware brand.">
-              藉由靈活的營運模式與穩健的管理團隊，我們持續優化供應鏈效率，提升客戶滿意度，矢志打造值得信賴的五金品牌。
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
+        <p class="text-lg mb-6" data-zh="我們秉持「<b>品質為本、服務至上</b>」的理念，致力於提供多元化產品與專業技術支援，滿足客戶在工程、製造與維修領域的各項需求。除了傳統五金業務外，我們亦涉足<b>離岸風電、能源技術與顧問服務</b>，憑藉跨領域的整合能力，為客戶創造更廣泛的價值。" data-en="We uphold the philosophy of “Quality First, Service Foremost,” dedicated to providing a diverse range of products and professional technical support to meet our clients' various needs in engineering, manufacturing, and maintenance. In addition to traditional hardware, we also venture into energy technology and consulting services, leveraging our cross-disciplinary integration capabilities to create broader value for our clients.">
+          我們秉持「<b>品質為本、服務至上</b>」的理念，致力於提供多元化產品與專業技術支援，滿足客戶在工程、製造與維修領域的各項需求。除了傳統五金業務外，我們亦涉足<b>離岸風電、能源技術與顧問服務</b>，憑藉跨領域的整合能力，為客戶創造更廣泛的價值。
+        </p>
+        <p class="text-lg" data-zh="藉由靈活的營運模式與穩健的管理團隊，我們持續優化供應鏈效率，提升客戶滿意度，矢志打造值得信賴的五金品牌。" data-en="With a flexible operating model and a stable management team, we continuously optimize our supply chain efficiency and enhance customer satisfaction, aspiring to build a trustworthy hardware brand.">
+          藉由靈活的營運模式與穩健的管理團隊，我們持續優化供應鏈效率，提升客戶滿意度，矢志打造值得信賴的五金品牌。
+        </p>
+      </div>
+    </section>
+  </main>
 
-    <!-- 頁尾區塊：與首頁和關於我們頁面完全相同 -->
-    <footer class="text-center p-8 bg-gray-100 text-gray-600">
-        <small data-zh="臺中市清水區吳厝里和睦路三段250號1樓" data-en="1F, No. 250, Sec. 3, Hemu Rd., Wucuo Li, Qingshui Dist., Taichung City">臺中市清水區吳厝里和睦路三段250號1樓</small>
-    </footer>
-  </div>
+  <footer class="text-center p-8 bg-gray-100 text-gray-600">
+      <small data-zh="臺中市清水區吳厝里和睦路三段250號1樓" data-en="1F, No. 250, Sec. 3, Hemu Rd., Wucuo Li, Qingshui Dist., Taichung City">臺中市清水區吳厝里和睦路三段250號1樓</small>
+  </footer>
 
   <!-- JavaScript 邏輯：與首頁和關於我們頁面完全相同 -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // 漢堡選單的切換邏輯
-      const hamburger = document.getElementById('hamburger');
-      const navWrapper = document.getElementById('nav-wrapper');
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
       
-      hamburger.addEventListener('click', () => {
-        navWrapper.classList.toggle('hidden');
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
       });
 
       // 語系切換的邏輯
-      const langBtnDesktop = document.getElementById('lang-btn-desktop');
-      const langBtnMobile = document.getElementById('lang-btn-mobile');
-      const container = document.querySelector('[data-lang]');
+      const languageToggleMobile = document.getElementById('language-toggle');
+      const languageToggleDesktop = document.getElementById('language-toggle-desktop');
       
-      // 翻譯所有帶有 data 屬性的元素，包括粗體標籤
-      const elements = document.querySelectorAll('[data-zh], [data-en], footer small');
+      const elementsToTranslate = {
+          'home': document.querySelector('[data-key="home"]'),
+          'services': document.querySelector('[data-key="services"]'),
+          'about': document.querySelector('[data-key="about"]'),
+          'contact': document.querySelector('[data-key="contact"]'),
+          'toggleButton': document.getElementById('language-toggle'),
+      };
+      
+      const translations = {
+        'zh-TW': {
+            home: '首頁',
+            services: '服務項目',
+            about: '關於我們',
+            contact: '聯絡我們',
+            toggleButton: 'English',
+        },
+        'en': {
+            home: 'Home',
+            services: 'Services',
+            about: 'About Us',
+            contact: 'Contact Us',
+            toggleButton: '中文',
+        }
+      };
 
-      // 語系切換函式
+      // 語言切換函數
       function toggleLanguage() {
-        const currentLang = container.getAttribute('data-lang');
-        const newLang = currentLang === 'zh' ? 'en' : 'zh';
-        
-        container.setAttribute('data-lang', newLang);
-        
-        // 更新按鈕文字
-        if(langBtnDesktop) {
-          langBtnDesktop.textContent = newLang === 'zh' ? '🌐 EN' : '🌐 中文';
-        }
-        if(langBtnMobile) {
-          langBtnMobile.textContent = newLang === 'zh' ? '🌐 EN' : '🌐 中文';
-        }
+          let currentLang = localStorage.getItem('lang') || 'zh-TW';
+          let newLang = currentLang === 'zh-TW' ? 'en' : 'zh-TW';
 
-        // 翻譯所有帶有 data 屬性的元素
-        elements.forEach(el => {
-            const newText = el.getAttribute(`data-${newLang}`);
-            // 使用 innerHTML 來確保 <b> 標籤被正確轉譯
-            el.innerHTML = newText;
-        });
+          for (const key in elementsToTranslate) {
+              if (elementsToTranslate[key]) {
+                  elementsToTranslate[key].textContent = translations[newLang][key];
+              }
+          }
+          
+          document.documentElement.lang = newLang;
+          localStorage.setItem('lang', newLang);
 
-        // 調整 <title> 標籤的內容
-        const titleZh = "關於我們 | 林楊五金有限公司";
-        const titleEn = "Our Services | Antelope Hardware Ltd.";
-        document.title = newLang === 'zh' ? titleZh : titleEn;
+          // 更新手機和桌面版語言切換按鈕的文字
+          languageToggleMobile.textContent = (newLang === 'zh-TW' ? 'English' : '中文');
+          languageToggleDesktop.textContent = (newLang === 'zh-TW' ? 'English' : '中文');
+
+          // 針對關於我們頁面特有的翻譯
+          const aboutTitle = document.querySelector('[data-zh="關於林楊五金"]');
+          const aboutContent1 = document.querySelector('[data-zh="林楊五金有限公司創立於 2022 年，座落於台中市清水區，是一家<b>專業的五金器具、機械零件及船舶配件批發零售商</b>。我們不僅具備<b>進出口資格</b>，更積極耕耘國內外市場，致力於為客戶提供高品質的產品與服務。"]');
+          const aboutContent2 = document.querySelector('[data-zh="我們秉持「<b>品質為本、服務至上</b>」的理念，致力於提供多元化產品與專業技術支援，滿足客戶在工程、製造與維修領域的各項需求。除了傳統五金業務外，我們亦涉足<b>離岸風電、能源技術與顧問服務</b>，憑藉跨領域的整合能力，為客戶創造更廣泛的價值。"]');
+          const aboutContent3 = document.querySelector('[data-zh="藉由靈活的營運模式與穩健的管理團隊，我們持續優化供應鏈效率，提升客戶滿意度，矢志打造值得信賴的五金品牌。"]');
+          const aboutFooter = document.querySelector('footer small');
+          const bannerTitle = document.querySelector('[data-zh="您的專業五金夥伴"]');
+          const bannerSubtitle = document.querySelector('[data-zh="從港口到辦公室，我們提供您所需的解決方案"]');
+
+          if (newLang === 'en') {
+              aboutTitle.textContent = aboutTitle.getAttribute('data-en');
+              aboutContent1.innerHTML = aboutContent1.getAttribute('data-en');
+              aboutContent2.innerHTML = aboutContent2.getAttribute('data-en');
+              aboutContent3.innerHTML = aboutContent3.getAttribute('data-en');
+              aboutFooter.textContent = aboutFooter.getAttribute('data-en');
+              document.title = "About Us | Antelope Hardware Ltd.";
+              bannerTitle.textContent = bannerTitle.getAttribute('data-en');
+              bannerSubtitle.textContent = bannerSubtitle.getAttribute('data-en');
+          } else {
+              aboutTitle.textContent = aboutTitle.getAttribute('data-zh');
+              aboutContent1.innerHTML = aboutContent1.getAttribute('data-zh');
+              aboutContent2.innerHTML = aboutContent2.getAttribute('data-zh');
+              aboutContent3.innerHTML = aboutContent3.getAttribute('data-zh');
+              aboutFooter.textContent = aboutFooter.getAttribute('data-zh');
+              document.title = "關於我們 | 林楊五金有限公司";
+              bannerTitle.textContent = bannerTitle.getAttribute('data-zh');
+              bannerSubtitle.textContent = bannerSubtitle.getAttribute('data-zh');
+          }
       }
       
-      if(langBtnDesktop) {
-        langBtnDesktop.addEventListener('click', toggleLanguage);
+      // 點擊語言切換按鈕時執行函數
+      if(languageToggleMobile) {
+          languageToggleMobile.addEventListener('click', toggleLanguage);
       }
-      if(langBtnMobile) {
-        langBtnMobile.addEventListener('click', toggleLanguage);
+      if(languageToggleDesktop) {
+          languageToggleDesktop.addEventListener('click', toggleLanguage);
+      }
+
+      // 頁面載入時，根據儲存的語言設定初始顯示
+      const storedLang = localStorage.getItem('lang') || 'zh-TW';
+      document.documentElement.lang = storedLang;
+
+      for (const key in elementsToTranslate) {
+          if (elementsToTranslate[key]) {
+              elementsToTranslate[key].textContent = translations[storedLang][key];
+          }
+      }
+      // 針對關於我們頁面特有的翻譯初始化
+      const aboutTitle = document.querySelector('[data-zh="關於林楊五金"]');
+      const aboutContent1 = document.querySelector('[data-zh="林楊五金有限公司創立於 2022 年，座落於台中市清水區，是一家<b>專業的五金器具、機械零件及船舶配件批發零售商</b>。我們不僅具備<b>進出口資格</b>，更積極耕耘國內外市場，致力於為客戶提供高品質的產品與服務。"]');
+      const aboutContent2 = document.querySelector('[data-zh="我們秉持「<b>品質為本、服務至上</b>」的理念，致力於提供多元化產品與專業技術支援，滿足客戶在工程、製造與維修領域的各項需求。除了傳統五金業務外，我們亦涉足<b>離岸風電、能源技術與顧問服務</b>，憑藉跨領域的整合能力，為客戶創造更廣泛的價值。"]');
+      const aboutContent3 = document.querySelector('[data-zh="藉由靈活的營運模式與穩健的管理團隊，我們持續優化供應鏈效率，提升客戶滿意度，矢志打造值得信賴的五金品牌。"]');
+      const aboutFooter = document.querySelector('footer small');
+      const bannerTitle = document.querySelector('[data-zh="您的專業五金夥伴"]');
+      const bannerSubtitle = document.querySelector('[data-zh="從港口到辦公室，我們提供您所需的解決方案"]');
+
+      if (storedLang === 'en') {
+          aboutTitle.textContent = aboutTitle.getAttribute('data-en');
+          aboutContent1.innerHTML = aboutContent1.getAttribute('data-en');
+          aboutContent2.innerHTML = aboutContent2.getAttribute('data-en');
+          aboutContent3.innerHTML = aboutContent3.getAttribute('data-en');
+          aboutFooter.textContent = aboutFooter.getAttribute('data-en');
+          document.title = "About Us | Antelope Hardware Ltd.";
+          bannerTitle.textContent = bannerTitle.getAttribute('data-en');
+          bannerSubtitle.textContent = bannerSubtitle.getAttribute('data-en');
+      } else {
+          aboutTitle.textContent = aboutTitle.getAttribute('data-zh');
+          aboutContent1.innerHTML = aboutContent1.getAttribute('data-zh');
+          aboutContent2.innerHTML = aboutContent2.getAttribute('data-zh');
+          aboutContent3.innerHTML = aboutContent3.getAttribute('data-zh');
+          aboutFooter.textContent = aboutFooter.getAttribute('data-zh');
+          document.title = "關於我們 | 林楊五金有限公司";
+          bannerTitle.textContent = bannerTitle.getAttribute('data-zh');
+          bannerSubtitle.textContent = bannerSubtitle.getAttribute('data-zh');
       }
     });
   </script>
