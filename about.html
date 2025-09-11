@@ -88,9 +88,8 @@
 
   <!-- 主要內容區塊 -->
   <main>
-  
     
-    <!-- 內容區塊重新排版：左邊為文字，右邊為圖片 -->
+    <!-- 內容區塊重新排版：底部為圖片底 -->
     <section class="py-12 px-4 bg-cover bg-center bg-fixed relative" style="background-image: url('/pic/hero-shipping.png');">
       <!-- 疊層，讓文字更清晰 -->
       <div class="absolute inset-0 bg-black opacity-70"></div>
@@ -178,9 +177,7 @@
           const aboutContent2 = document.querySelector('[data-zh="我們秉持「<b>品質為本、服務至上</b>」的理念，致力於提供多元化產品與專業技術支援，滿足客戶在工程、製造與維修領域的各項需求。除了傳統五金業務外，我們亦涉足<b>離岸風電、能源技術與顧問服務</b>，憑藉跨領域的整合能力，為客戶創造更廣泛的價值。"]');
           const aboutContent3 = document.querySelector('[data-zh="藉由靈活的營運模式與穩健的管理團隊，我們持續優化供應鏈效率，提升客戶滿意度，矢志打造值得信賴的五金品牌。"]');
           const aboutFooter = document.querySelector('footer small');
-          const bannerTitle = document.querySelector('[data-zh="您的專業五金夥伴"]');
-          const bannerSubtitle = document.querySelector('[data-zh="從港口到辦公室，我們提供您所需的解決方案"]');
-
+          
           if (newLang === 'en') {
               aboutTitle.textContent = aboutTitle.getAttribute('data-en');
               aboutContent1.innerHTML = aboutContent1.getAttribute('data-en');
@@ -188,8 +185,6 @@
               aboutContent3.innerHTML = aboutContent3.getAttribute('data-en');
               aboutFooter.textContent = aboutFooter.getAttribute('data-en');
               document.title = "About Us | Antelope Hardware Ltd.";
-              bannerTitle.textContent = bannerTitle.getAttribute('data-en');
-              bannerSubtitle.textContent = bannerSubtitle.getAttribute('data-en');
           } else {
               aboutTitle.textContent = aboutTitle.getAttribute('data-zh');
               aboutContent1.innerHTML = aboutContent1.getAttribute('data-zh');
@@ -197,8 +192,6 @@
               aboutContent3.innerHTML = aboutContent3.getAttribute('data-zh');
               aboutFooter.textContent = aboutFooter.getAttribute('data-zh');
               document.title = "關於我們 | 林楊五金有限公司";
-              bannerTitle.textContent = bannerTitle.getAttribute('data-zh');
-              bannerSubtitle.textContent = bannerSubtitle.getAttribute('data-zh');
           }
       }
       
@@ -225,9 +218,7 @@
       const aboutContent2 = document.querySelector('[data-zh="我們秉持「<b>品質為本、服務至上</b>」的理念，致力於提供多元化產品與專業技術支援，滿足客戶在工程、製造與維修領域的各項需求。除了傳統五金業務外，我們亦涉足<b>離岸風電、能源技術與顧問服務</b>，憑藉跨領域的整合能力，為客戶創造更廣泛的價值。"]');
       const aboutContent3 = document.querySelector('[data-zh="藉由靈活的營運模式與穩健的管理團隊，我們持續優化供應鏈效率，提升客戶滿意度，矢志打造值得信賴的五金品牌。"]');
       const aboutFooter = document.querySelector('footer small');
-      const bannerTitle = document.querySelector('[data-zh="您的專業五金夥伴"]');
-      const bannerSubtitle = document.querySelector('[data-zh="從港口到辦公室，我們提供您所需的解決方案"]');
-
+      
       if (storedLang === 'en') {
           aboutTitle.textContent = aboutTitle.getAttribute('data-en');
           aboutContent1.innerHTML = aboutContent1.getAttribute('data-en');
@@ -235,8 +226,6 @@
           aboutContent3.innerHTML = aboutContent3.getAttribute('data-en');
           aboutFooter.textContent = aboutFooter.getAttribute('data-en');
           document.title = "About Us | Antelope Hardware Ltd.";
-          bannerTitle.textContent = bannerTitle.getAttribute('data-en');
-          bannerSubtitle.textContent = bannerSubtitle.getAttribute('data-en');
       } else {
           aboutTitle.textContent = aboutTitle.getAttribute('data-zh');
           aboutContent1.innerHTML = aboutContent1.getAttribute('data-zh');
@@ -244,8 +233,6 @@
           aboutContent3.innerHTML = aboutContent3.getAttribute('data-zh');
           aboutFooter.textContent = aboutFooter.getAttribute('data-zh');
           document.title = "關於我們 | 林楊五金有限公司";
-          bannerTitle.textContent = bannerTitle.getAttribute('data-zh');
-          bannerSubtitle.textContent = bannerSubtitle.getAttribute('data-zh');
       }
     });
   </script>
