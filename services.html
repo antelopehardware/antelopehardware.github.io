@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="林楊五金有限公司提供全方位的船舶補給服務，包括專人協助、本地採購、甲板物料與及時補給，確保您的航程無後顧之憂。">
+  <meta name="keywords" content="服務項目, 船舶補給, 船舶物料, 海事服務, 港口補給">
+  <meta name="author" content="林楊五金有限公司">
+  <meta name="robots" content="index, follow">
+  <title>服務項目 | 林楊五金有限公司</title>
+
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- 導入 Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Microsoft JhengHei', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+</head>
+
+<body class="bg-gray-50 font-sans">
+  <!-- 使用 data-lang 屬性來追蹤目前語系 -->
+  <div data-lang="zh">
+    <!-- 頁首區塊：與首頁和關於我們頁面完全相同 -->
+    <header class="fixed top-0 left-0 right-0 bg-white p-4 lg:p-8 shadow-md z-50 flex flex-col items-center">
+      <div class="flex justify-between w-full lg:hidden">
+          <button id="hamburger" class="text-2xl" aria-label="切換選單">
+            &#9776;
+          </button>
+          <button id="lang-btn-mobile" class="bg-gray-100 text-gray-700 py-1 px-2 rounded-lg hover:bg-gray-200 transition duration-300 font-medium whitespace-nowrap">🌐 EN</button>
+      </div>
+      <div class="flex items-center gap-2 mt-4 lg:mt-0">
+        <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/logo.jpg" alt="公司 Logo" class="w-8 h-8 rounded-full"/>
+        <div class="text-center">
+          <div class="text-lg font-bold" data-zh="林楊五金有限公司" data-en="Antelope Hardware Ltd.">林楊五金有限公司</div>
+          <small class="text-sm text-gray-500 font-normal" data-zh="林楊五金" data-en="Antelope Hardware Ltd.">Antelope Hardware Ltd.</small>
+        </div>
+      </div>
+      <div id="nav-wrapper" class="hidden lg:flex lg:flex-row items-center justify-center w-full mt-4">
+        <nav class="flex flex-col lg:flex-row gap-4 lg:gap-8 justify-center w-full lg:w-auto">
+          <a href="index.html" class="text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-4 rounded-lg text-center font-medium" data-zh="首頁" data-en="Home">首頁</a>
+          <a href="services.html" class="text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-4 rounded-lg text-center font-medium" data-zh="服務項目" data-en="Services">服務項目</a>
+          <a href="about.html" class="text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-4 rounded-lg text-center font-medium" data-zh="關於我們" data-en="About Us">關於我們</a>
+          <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-4 rounded-lg text-center font-medium" data-zh="聯絡我們" data-en="Contact Us">聯絡我們</a>
+        </nav>
+        <button id="lang-btn-desktop" class="bg-gray-100 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-200 transition duration-300 font-medium whitespace-nowrap lg:ml-8">🌐 EN</button>
+      </div>
+    </header>
+
+    <main class="pt-48 lg:pt-56">
+      <section class="py-12 px-4 text-center bg-white">
+        <!-- 主要內容區塊 -->
+        <!-- ## 標示：此處為主要文字內容區塊，可在此修改文字 ## -->
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-600 mb-4" data-zh="服務項目" data-en="Our Services">服務項目</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-8" data-zh="全方位船舶補給解決方案" data-en="Comprehensive Marine Supply Solutions">全方位船舶補給解決方案</p>
+        <div class="flex flex-wrap justify-center gap-6 mt-8">
+          <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 w-full md:w-80 shadow-md">
+            <div class="text-4xl text-blue-500 mb-4">📦</div>
+            <div class="font-semibold text-xl mb-2 text-blue-700" data-zh="專員協助流程" data-en="Specialist-Assisted Process">專員協助流程</div>
+            <p class="text-gray-600" data-zh="專人協助全流程，讓補給無縫接軌，無需分心處理繁瑣事務。" data-en="Our specialists assist throughout the entire process, ensuring a seamless supply chain so you can focus on other priorities.">專人協助全流程，讓補給無縫接軌，無需分心處理繁瑣事務。</p>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 w-full md:w-80 shadow-md">
+            <div class="text-4xl text-blue-500 mb-4">🛒</div>
+            <div class="font-semibold text-xl mb-2 text-blue-700" data-zh="台灣本地採購配送" data-en="Local Sourcing & Delivery">台灣本地採購配送</div>
+            <p class="text-gray-600" data-zh="我們提供各類日常生活用品採購，如清潔耗材、盥洗用品等。" data-en="We provide sourcing for various daily necessities, such as cleaning supplies and toiletries.">我們提供各類日常生活用品採購，如清潔耗材、盥洗用品等。</p>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 w-full md:w-80 shadow-md">
+            <div class="text-4xl text-blue-500 mb-4">🛠️</div>
+            <div class="font-semibold text-xl mb-2 text-blue-700" data-zh="甲板與機艙物料" data-en="Deck & Engine Supplies">甲板與機艙物料</div>
+            <p class="text-gray-600" data-zh="零件、工具與清潔用品，專業配送維修物料。" data-en="We professionally deliver parts, tools, and cleaning supplies for deck and engine maintenance.">零件、工具與清潔用品，專業配送維修物料。</p>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 w-full md:w-80 shadow-md">
+            <div class="text-4xl text-blue-500 mb-4">⏰</div>
+            <div class="font-semibold text-xl mb-2 text-blue-700" data-zh="及時補給服務" data-en="Timely Supply Service">及時補給服務</div>
+            <p class="text-gray-600" data-zh="專車配送，緊急補給服務，確保您的航程不受延誤。" data-en="Our dedicated vehicles provide timely and emergency supply services to ensure your voyage remains on schedule.">專車配送，緊急補給服務，確保您的航程不受延誤。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 頁尾區塊：與首頁和關於我們頁面完全相同 -->
+    <footer class="text-center p-8 bg-gray-100 text-gray-600">
+        <small data-zh="臺中市清水區吳厝里和睦路三段250號1樓" data-en="1F, No. 250, Sec. 3, Hemu Rd., Wucuo Li, Qingshui Dist., Taichung City">臺中市清水區吳厝里和睦路三段250號1樓</small>
+    </footer>
+  </div>
+
+  <!-- JavaScript 邏輯：與首頁和關於我們頁面完全相同 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 漢堡選單的切換邏輯
+      const hamburger = document.getElementById('hamburger');
+      const navWrapper = document.getElementById('nav-wrapper');
+      
+      hamburger.addEventListener('click', () => {
+        navWrapper.classList.toggle('hidden');
+      });
+
+      // 語系切換的邏輯
+      const langBtnDesktop = document.getElementById('lang-btn-desktop');
+      const langBtnMobile = document.getElementById('lang-btn-mobile');
+      const container = document.querySelector('[data-lang]');
+      const elements = document.querySelectorAll('[data-zh], [data-en], footer small');
+
+      // 語系切換函式
+      function toggleLanguage() {
+        const currentLang = container.getAttribute('data-lang');
+        const newLang = currentLang === 'zh' ? 'en' : 'zh';
+        
+        container.setAttribute('data-lang', newLang);
+        
+        // 更新按鈕文字
+        if(langBtnDesktop) {
+          langBtnDesktop.textContent = newLang === 'zh' ? '🌐 EN' : '🌐 中文';
+        }
+        if(langBtnMobile) {
+          langBtnMobile.textContent = newLang === 'zh' ? '🌐 EN' : '🌐 中文';
+        }
+
+        // 翻譯所有帶有 data 屬性的元素
+        elements.forEach(el => {
+          el.textContent = el.getAttribute(`data-${newLang}`);
+        });
+
+        // 調整 <title> 標籤的內容
+        const titleZh = "服務項目 | 林楊五金有限公司";
+        const titleEn = "Our Services | Antelope Hardware Ltd.";
+        document.title = newLang === 'zh' ? titleZh : titleEn;
+      }
+      
+      if(langBtnDesktop) {
+        langBtnDesktop.addEventListener('click', toggleLanguage);
+      }
+      if(langBtnMobile) {
+        langBtnMobile.addEventListener('click', toggleLanguage);
+      }
+    });
+  </script>
+</body>
+</html>
