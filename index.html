@@ -78,18 +78,6 @@
                 <span class="text-sm text-gray-500">Antelope Hardware Ltd.</span>
             </div>
         </a>
-  <!-- 導覽列 (使用 <nav> 標籤，符合語意化) -->
-<nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-        <!-- 公司 Logo 與名稱區塊 -->
-        <a href="index.html" class="flex items-center space-x-2">
-            <!-- 公司 Logo 圖片，使用 alt 屬性以利 SEO 和無障礙訪問 -->
-            <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/logo.jpg" alt="林楊五金有限公司 Logo" class="h-10 w-10 rounded-full object-cover shadow-md">
-            <div class="flex flex-col">
-                <span class="font-bold text-lg text-gray-900">林楊五金有限公司</span>
-                <span class="text-sm text-gray-500">Antelope Hardware Ltd.</span>
-            </div>
-        </a>
         
         <!-- 手機版選單按鈕與語言切換 -->
         <div class="flex items-center md:hidden space-x-4">
@@ -121,6 +109,7 @@
         <a href="contact.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="contact">聯絡我們</a>
     </div>
 </nav>
+
 <!-- 主要英雄區塊 (使用 <header> 標籤，符合語意化) -->
 <header id="home" class="hero-section min-h-screen flex items-center justify-center p-4 text-center text-white relative">
     <!-- 半透明黑色遮罩 -->
@@ -153,7 +142,7 @@
 
         <!-- 聯絡按鈕，點擊後顯示 QR Code -->
         <button onclick="showQRCode()" id="contact-button" class="inline-block px-8 py-4 bg-blue-600 text-white font-bold text-lg rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">
-            線上諮詢👈
+            線上諮詢
         </button>
     </div>
 </header>
@@ -166,10 +155,10 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
-        <h3 class="text-2xl font-bold mb-4">掃描Line 官方帳號</h3>
+        <h3 class="text-2xl font-bold mb-4">掃描聯繫我們</h3>
         <!-- 這裡放置您的 QR Code 圖片，請替換成實際圖片網址 -->
-        <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/M_602dlrjj.png" alt="聯絡我們" class="mx-auto w-60 h-60 rounded-lg">
-        <p class="text-gray-500 mt-4">@602dlrjj</p>
+        <img src="https://placehold.co/300x300/e5e7eb/6b7280?text=Your+QR+Code" alt="聯絡我們 QR Code" class="mx-auto w-40 h-40 rounded-lg">
+        <p class="text-gray-500 mt-4">或加入我們的 Line 官方帳號</p>
     </div>
 </div>
 
@@ -177,12 +166,12 @@
 <main class="container mx-auto px-4 py-16 space-y-24">
     <!-- 產品跑馬燈區塊 (使用 <section> 標籤) -->
     <section class="text-center">
-        <h2 id="products-title" class="text-3xl sm:text-4xl font-bold mb-8 text-gray-900" data-key="productsTitle">產  品</h2>
+        <h2 id="products-title" class="text-3xl sm:text-4xl font-bold mb-8 text-gray-900" data-key="productsTitle">精選產品</h2>
         <div class="marquee-container rounded-3xl shadow-xl border-4 border-gray-100 overflow-hidden bg-white py-6">
             <div class="marquee-content">
                 <!-- 複製圖片以達到無限滾動效果 -->
                 <!-- 請將這裡的圖片替換成您的產品圖片網址 -->
-                <img src="/pic/LOCTITE.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+             <img src="/pic/LOCTITE.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
                 <img src="/pic/11t.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
                 <img src="/pic/17t30a.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
                 <img src="/pic/18t.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
@@ -200,7 +189,7 @@
 
 <!-- 頁面底部 (使用 <footer> 標籤，符合語意化) -->
 <footer class="bg-gray-900 text-white text-center py-6 mt-16">
-    <!-- 版權宣告 -->
+    <!-- 版權年份已更新為 2025 -->
     <p class="text-sm" id="footer-text">© 2025 林楊五金有限公司. All Rights Reserved.</p>
 </footer>
 
@@ -297,6 +286,7 @@
     
     // 點擊語言切換按鈕時執行函數
     document.getElementById('language-toggle').addEventListener('click', toggleLanguage);
+    document.getElementById('language-toggle-desktop').addEventListener('click', toggleLanguage);
 
     // 頁面載入時，根據儲存的語言設定初始顯示
     document.addEventListener('DOMContentLoaded', () => {
@@ -317,6 +307,14 @@
     function hideQRCode() {
         document.getElementById('qrcode-modal').classList.add('hidden');
     }
+    
+    // 手機選單切換邏輯
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
 </script>
 
 </body>
