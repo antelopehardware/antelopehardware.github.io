@@ -150,6 +150,22 @@
             </div>
         </div>
     </section>
+
+    <!-- Google Map 地圖區塊 -->
+    <section class="py-12 px-4 bg-white fade-in">
+        <div class="max-w-4xl mx-auto p-6 bg-gray-100 rounded-lg shadow-xl">
+            <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center" data-zh="公司位置" data-en="Our Location">公司位置</h3>
+            <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-lg shadow-md">
+                <iframe
+                    class="w-full h-96"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.319766986629!2d120.55106517590821!3d24.238495078345724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34691456c6e75e11%3A0x62953e5e4d216d55!2z44GN44GN5LqM6ZmE5b-g5LiL5p2x5Y2A!5e0!3m2!1szh-TW!2stw!4v1709295315570!5m2!1szh-TW!2stw"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
   </main>
 
   <!-- 頁尾 -->
@@ -180,6 +196,7 @@
       const formPlaceholders = document.querySelectorAll('form input, form textarea');
       const formButton = document.querySelector('form button');
       const footerText = document.querySelector('footer small');
+      const mapTitle = document.querySelector('[data-zh="公司位置"]');
       
       // 語言切換函數
       function toggleLanguage() {
@@ -203,12 +220,14 @@
               pageSubtitle.textContent = pageSubtitle.getAttribute('data-en');
               formButton.textContent = formButton.getAttribute('data-en');
               footerText.textContent = footerText.getAttribute('data-en');
+              mapTitle.textContent = mapTitle.getAttribute('data-en');
               document.title = "Contact Us | Antelope Hardware Ltd.";
           } else {
               pageTitle.textContent = pageTitle.getAttribute('data-zh');
               pageSubtitle.textContent = pageSubtitle.getAttribute('data-zh');
               formButton.textContent = formButton.getAttribute('data-zh');
               footerText.textContent = footerText.getAttribute('data-zh');
+              mapTitle.textContent = mapTitle.getAttribute('data-zh');
               document.title = "聯絡我們 | 林楊五金有限公司";
           }
           
@@ -247,12 +266,14 @@
           pageSubtitle.textContent = pageSubtitle.getAttribute('data-en');
           formButton.textContent = formButton.getAttribute('data-en');
           footerText.textContent = footerText.getAttribute('data-en');
+          mapTitle.textContent = mapTitle.getAttribute('data-en');
           document.title = "Contact Us | Antelope Hardware Ltd.";
       } else {
           pageTitle.textContent = pageTitle.getAttribute('data-zh');
           pageSubtitle.textContent = pageSubtitle.getAttribute('data-zh');
           formButton.textContent = formButton.getAttribute('data-zh');
           footerText.textContent = footerText.getAttribute('data-zh');
+          mapTitle.textContent = mapTitle.getAttribute('data-zh');
           document.title = "聯絡我們 | 林楊五金有限公司";
       }
 
