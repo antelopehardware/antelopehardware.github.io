@@ -8,7 +8,7 @@
     <!-- 網頁標題，對 SEO 非常重要 -->
     <title>林楊五金有限公司 - 專業五金零件、起重吊具供應商</title>
     <!-- 頁面簡短說明，會顯示在搜尋結果中 -->
-    <meta name="description" content="林楊五金有限公司是您值得信賴的五金零件與專業吊具鋼索供應商，提供各式鋼纜、船舶機具、貨櫃配件與安全吊帶，為您的作業提供堅實後盾。">
+    <meta name="description" content="林楊五金有限公司是您值得信賴的五金零件與專業吊具鋼索供應商，提供各式鋼纜、船舶機具、貨櫃配件與安全吊帶，為您的業務提供堅實後盾。">
     
     <!-- 載入外部資源 -->
     <!-- 預先連結 Google Fonts，優化字體載入速度 -->
@@ -70,7 +70,7 @@
 <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
         <!-- 公司 Logo 與名稱區塊 -->
-        <a href="#home" class="flex items-center space-x-2">
+        <a href="index.html" class="flex items-center space-x-2">
             <!-- 公司 Logo 圖片，使用 alt 屬性以利 SEO 和無障礙訪問 -->
             <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/logo.jpg" alt="林楊五金有限公司 Logo" class="h-10 w-10 rounded-full object-cover shadow-md">
             <div class="flex flex-col">
@@ -80,11 +80,13 @@
         </a>
         <!-- 導覽連結 -->
         <div class="space-x-4 md:space-x-6 flex items-center">
-            <!-- 連結使用 # 作為佔位符。請將這裡的 # 替換成您實際頁面的網址 -->
-            <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">首頁</a>
-            <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">服務項目</a>
-            <a href="about.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">關於我們</a>
-            <a href="contact.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">聯絡我們</a>
+            <!-- 語言切換按鈕 -->
+            <button id="language-toggle" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">English</button>
+            <!-- 連結已更新為您指定的檔案名稱 -->
+            <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="home">首頁</a>
+            <a href="services.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="services">服務項目</a>
+            <a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="about">關於我們</a>
+            <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="contact">聯絡我們</a>
         </div>
     </div>
 </nav>
@@ -96,13 +98,13 @@
     <!-- 主要內容容器，使用 z-10 確保其位於遮罩上方 -->
     <div class="relative z-10 p-8 md:p-12 rounded-3xl bg-black/30 backdrop-blur-sm max-w-5xl mx-auto shadow-2xl border-2 border-white/30">
         <!-- 頁面主要標題 (使用 <h1> 標籤，每個頁面應只有一個) -->
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg">
+        <h1 id="hero-title" class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg" data-key="heroTitle">
             值得信賴的夥伴
         </h1>
-        <p class="text-xl sm:text-2xl font-light mb-8 drop-shadow-md">
+        <p id="hero-subtitle" class="text-xl sm:text-2xl font-light mb-8 drop-shadow-md" data-key="heroSubtitle">
             各式五金零件，專業吊具鋼索
         </p>
-        <a href="#" class="inline-block px-8 py-4 bg-blue-600 text-white font-bold text-lg rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">
+        <a href="services.html" id="hero-button" class="inline-block px-8 py-4 bg-blue-600 text-white font-bold text-lg rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105" data-key="heroButton">
             探索我們的服務
         </a>
     </div>
@@ -113,26 +115,26 @@
     <!-- 核心價值區塊 (使用 <section> 標籤，代表一個獨立區塊) -->
     <section class="text-center">
         <!-- 區塊標題 (使用 <h2> 標籤，子標題) -->
-        <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-gray-900">核心服務項目</h2>
+        <h2 id="services-title" class="text-3xl sm:text-4xl font-bold mb-10 text-gray-900" data-key="servicesTitle">核心服務項目</h2>
         <!-- 使用 Grid 排版，在小螢幕上是單欄，中等螢幕以上為三欄 -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             <!-- 每個服務項目卡片 -->
             <div class="bg-white p-8 rounded-3xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105">
                 <!-- 子標題 (使用 <h3> 標籤) -->
-                <h3 class="text-2xl font-semibold mb-3 text-blue-600">五金與起重配件</h3>
-                <p class="text-gray-600">
+                <h3 id="service-1-title" class="text-2xl font-semibold mb-3 text-blue-600" data-key="service1Title">五金與起重配件</h3>
+                <p id="service-1-text" class="text-gray-600" data-key="service1Text">
                     提供鋼纜、鋼鍊、起重配件、滑車吊具等，為您的工程提供堅實後盾。
                 </p>
             </div>
             <div class="bg-white p-8 rounded-3xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105">
-                <h3 class="text-2xl font-semibold mb-3 text-blue-600">船舶與工業機具</h3>
-                <p class="text-gray-600">
+                <h3 id="service-2-title" class="text-2xl font-semibold mb-3 text-blue-600" data-key="service2Title">船舶與工業機具</h3>
+                <p id="service-2-text" class="text-gray-600" data-key="service2Text">
                     專營船舶機具、海錨、錨鍊以及各式專業五金工具，確保作業順利。
                 </p>
             </div>
             <div class="bg-white p-8 rounded-3xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105">
-                <h3 class="text-2xl font-semibold mb-3 text-blue-600">貨物安全解決方案</h3>
-                <p class="text-gray-600">
+                <h3 id="service-3-title" class="text-2xl font-semibold mb-3 text-blue-600" data-key="service3Title">貨物安全解決方案</h3>
+                <p id="service-3-text" class="text-gray-600" data-key="service3Text">
                     提供尼龍安全吊帶、貨櫃配件及繩纜等，保障貨物運輸與吊掛安全。
                 </p>
             </div>
@@ -141,12 +143,12 @@
 
     <!-- 產品跑馬燈區塊 (使用 <section> 標籤) -->
     <section class="text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-gray-900">精選產品</h2>
+        <h2 id="products-title" class="text-3xl sm:text-4xl font-bold mb-8 text-gray-900" data-key="productsTitle">精選產品</h2>
         <div class="marquee-container rounded-3xl shadow-xl border-4 border-gray-100 overflow-hidden bg-white py-6">
             <div class="marquee-content">
                 <!-- 複製圖片以達到無限滾動效果 -->
                 <!-- 請將這裡的圖片替換成您的產品圖片網址 -->
-                <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/11t.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
                 <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
                 <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
                 <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
@@ -157,40 +159,125 @@
                 <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
                 <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
             </div>
-        </div>
-    </section>
-
-    <!-- 聯絡我們簡介區塊 -->
-    <section class="text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-gray-900">隨時為您服務</h2>
-        <div class="bg-white p-8 rounded-3xl shadow-xl max-w-2xl mx-auto">
-            <p class="text-lg text-gray-600 mb-6">若有任何需求或疑問，請隨時與我們聯繫，我們將竭誠為您服務。</p>
-            <div class="space-y-4 text-left font-medium">
-                <!-- 聯絡資訊，每個資訊包含 SVG 圖標 -->
-                <div class="flex items-center space-x-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    <span>電話：(02) 1234-5678</span>
-                </div>
-                <div class="flex items-center space-x-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    <span>電子郵件：info@antelopehardware.com</span>
-                </div>
-            </div>
-            <a href="#" class="mt-6 inline-block px-8 py-3 bg-gray-900 text-white font-bold rounded-full shadow-lg hover:bg-gray-800 transition-colors duration-300">
-                前往聯絡頁面
-            </a>
         </div>
     </section>
 </main>
 
 <!-- 頁面底部 (使用 <footer> 標籤，符合語意化) -->
 <footer class="bg-gray-900 text-white text-center py-6 mt-16">
-    <p class="text-sm">© 2024 林楊五金有限公司. All Rights Reserved.</p>
+    <!-- 版權年份已更新為 2025 -->
+    <p class="text-sm" id="footer-text">© 2025 林楊五金有限公司. All Rights Reserved.</p>
 </footer>
+
+<!-- 語言切換腳本 -->
+<script>
+    // 定義所有需要翻譯的文字內容
+    const translations = {
+        'zh-TW': {
+            // 導覽列文字
+            home: '首頁',
+            services: '服務項目',
+            about: '關於我們',
+            contact: '聯絡我們',
+            // 英雄區塊文字
+            heroTitle: '值得信賴的夥伴',
+            heroSubtitle: '各式五金零件，專業吊具鋼索',
+            heroButton: '探索我們的服務',
+            // 核心服務區塊文字
+            servicesTitle: '核心服務項目',
+            service1Title: '五金與起重配件',
+            service1Text: '提供鋼纜、鋼鍊、起重配件、滑車吊具等，為您的工程提供堅實後盾。',
+            service2Title: '船舶與工業機具',
+            service2Text: '專營船舶機具、海錨、錨鍊以及各式專業五金工具，確保作業順利。',
+            service3Title: '貨物安全解決方案',
+            service3Text: '提供尼龍安全吊帶、貨櫃配件及繩纜等，保障貨物運輸與吊掛安全。',
+            // 產品跑馬燈文字
+            productsTitle: '精選產品',
+            // 頁腳文字
+            footerText: '© 2025 林楊五金有限公司. All Rights Reserved.',
+            toggleButton: 'English',
+        },
+        'en': {
+            // Navigation text
+            home: 'Home',
+            services: 'Services',
+            about: 'About Us',
+            contact: 'Contact Us',
+            // Hero section text
+            heroTitle: 'Your Trusted Partner',
+            heroSubtitle: 'All Kinds of Hardware Parts & Professional Slings and Ropes',
+            heroButton: 'Explore Our Services',
+            // Core services section text
+            servicesTitle: 'Core Services',
+            service1Title: 'Hardware & Lifting Accessories',
+            service1Text: 'We provide wire ropes, steel chains, lifting accessories, and pulley tackle to support your projects.',
+            service2Title: 'Marine & Industrial Equipment',
+            service2Text: 'Specializing in marine equipment, anchors, anchor chains, and various professional hardware tools to ensure smooth operations.',
+            service3Title: 'Cargo Safety Solutions',
+            service3Text: 'We offer nylon safety belts, container accessories, and ropes to ensure the safety of cargo transport and lifting.',
+            // Product carousel text
+            productsTitle: 'Featured Products',
+            // Footer text
+            footerText: '© 2025 Antelope Hardware Ltd. All Rights Reserved.',
+            toggleButton: '中文',
+        }
+    };
+
+    // 獲取需要切換語言的元素
+    const elementsToTranslate = {
+        'home': document.querySelector('[data-key="home"]'),
+        'services': document.querySelector('[data-key="services"]'),
+        'about': document.querySelector('[data-key="about"]'),
+        'contact': document.querySelector('[data-key="contact"]'),
+        'heroTitle': document.getElementById('hero-title'),
+        'heroSubtitle': document.getElementById('hero-subtitle'),
+        'heroButton': document.getElementById('hero-button'),
+        'servicesTitle': document.getElementById('services-title'),
+        'service1Title': document.getElementById('service-1-title'),
+        'service1Text': document.getElementById('service-1-text'),
+        'service2Title': document.getElementById('service-2-title'),
+        'service2Text': document.getElementById('service-2-text'),
+        'service3Title': document.getElementById('service-3-title'),
+        'service3Text': document.getElementById('service-3-text'),
+        'productsTitle': document.getElementById('products-title'),
+        'footerText': document.getElementById('footer-text'),
+        'toggleButton': document.getElementById('language-toggle'),
+    };
+
+    // 語言切換函數
+    function toggleLanguage() {
+        // 從瀏覽器儲存中獲取當前語言，如果沒有則預設為中文
+        let currentLang = localStorage.getItem('lang') || 'zh-TW';
+        let newLang = currentLang === 'zh-TW' ? 'en' : 'zh-TW';
+
+        // 根據新語言更新所有元素的文字
+        for (const key in elementsToTranslate) {
+            if (elementsToTranslate[key]) {
+                elementsToTranslate[key].textContent = translations[newLang][key];
+            }
+        }
+        
+        // 更新網頁的 lang 屬性
+        document.documentElement.lang = newLang;
+        // 將新語言儲存到瀏覽器中
+        localStorage.setItem('lang', newLang);
+    }
+    
+    // 點擊語言切換按鈕時執行函數
+    document.getElementById('language-toggle').addEventListener('click', toggleLanguage);
+
+    // 頁面載入時，根據儲存的語言設定初始顯示
+    document.addEventListener('DOMContentLoaded', () => {
+        let currentLang = localStorage.getItem('lang') || 'zh-TW';
+        for (const key in elementsToTranslate) {
+            if (elementsToTranslate[key]) {
+                elementsToTranslate[key].textContent = translations[currentLang][key];
+            }
+        }
+        document.documentElement.lang = currentLang;
+    });
+
+</script>
 
 </body>
 </html>
