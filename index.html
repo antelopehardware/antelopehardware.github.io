@@ -85,6 +85,36 @@
       </div>
     </main>
 
+    <!-- 跑馬燈區塊 -->
+    <div class="w-full overflow-hidden my-4">
+      <div class="marquee whitespace-nowrap">
+        <a href="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/yoke.jpg" target="_blank">
+            <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/yoke.jpg" alt="產品圖片 1" class="inline-block h-32 md:h-48 mx-4 rounded-lg shadow-lg">
+        </a>
+        <a href="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/11t.jpg" target="_blank">
+            <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/11t.jpg" alt="產品圖片 2" class="inline-block h-32 md:h-48 mx-4 rounded-lg shadow-lg">
+        </a>
+        <a href="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/17t30a.jpg" target="_blank">
+            <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/17t30a.jpg" alt="產品圖片 3" class="inline-block h-32 md:h-48 mx-4 rounded-lg shadow-lg">
+        </a>
+      </div>
+    </div>
+    
+    <style>
+      .marquee {
+        display: inline-block;
+        animation: marquee 20s linear infinite;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+    
     <footer class="text-center p-8 bg-gray-100 text-gray-600">
         <small data-zh="臺中市清水區吳厝里和睦路三段250號1樓" data-en="1F, No. 250, Sec. 3, Hemu Rd., Wucuo Li, Qingshui Dist., Taichung City">臺中市清水區吳厝里和睦路三段250號1樓</small>
         <p class="text-sm mt-2" data-zh="電話:0972-138928" data-en="Phone:0972-138928">電話: 0972-138928</p>
