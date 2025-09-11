@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <!-- 頁面基本設定與 SEO 相關標籤 -->
+    <meta charset="UTF-8">
+    <!-- 設定網頁在行動裝置上的顯示方式，確保響應式設計運作 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 網頁標題，對 SEO 非常重要 -->
+    <title>林楊五金有限公司 - 專業五金零件、起重吊具供應商</title>
+    <!-- 頁面簡短說明，會顯示在搜尋結果中 -->
+    <meta name="description" content="林楊五金有限公司是您值得信賴的五金零件與專業吊具鋼索供應商，提供各式鋼纜、船舶機具、貨櫃配件與安全吊帶，為您的作業提供堅實後盾。">
+    
+    <!-- 載入外部資源 -->
+    <!-- 預先連結 Google Fonts，優化字體載入速度 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 載入 Inter 字體，讓文字排版更現代、清晰 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 載入 Tailwind CSS 框架，用於快速實現響應式設計與樣式 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 內部自定義 CSS 樣式 -->
+    <style>
+        /* 為整個頁面設定字體與背景顏色 */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        /* 英雄區塊的背景圖片設定 */
+        .hero-section {
+            background-image: url('https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/hero-shipping.png');
+            background-size: cover; /* 圖片填滿整個容器 */
+            background-position: center; /* 圖片置中顯示 */
+            background-repeat: no-repeat; /* 不重複圖片 */
+        }
+        /* 跑馬燈容器設定，隱藏溢出部分並讓內容不換行 */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        /* 跑馬燈內容設定，讓其以動畫方式橫向滾動 */
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite; /* 設定動畫名稱、時長、速度曲線與重複次數 */
+        }
+        /* 當滑鼠懸停在跑馬燈上時，暫停動畫 */
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+        /* 跑馬燈中每張圖片的樣式 */
+        .marquee-content img {
+            display: inline-block;
+            margin-right: 2.5rem; /* 設定圖片間距 */
+            transition: transform 0.3s ease-in-out; /* 圖片放大效果的過渡動畫 */
+        }
+        /* 當滑鼠懸停在圖片上時，放大圖片 */
+        .marquee-content img:hover {
+            transform: scale(1.05);
+        }
+        /* 定義跑馬燈動畫的關鍵幀 */
+        @keyframes marquee {
+            0% { transform: translateX(0); } /* 從原始位置開始 */
+            100% { transform: translateX(-50%); } /* 滾動到一半位置，因為圖片被複製了一份，所以看起來是無限滾動 */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<!-- 導覽列 (使用 <nav> 標籤，符合語意化) -->
+<nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <!-- 公司 Logo 與名稱區塊 -->
+        <a href="#home" class="flex items-center space-x-2">
+            <!-- 公司 Logo 圖片，使用 alt 屬性以利 SEO 和無障礙訪問 -->
+            <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/logo.jpg" alt="林楊五金有限公司 Logo" class="h-10 w-10 rounded-full object-cover shadow-md">
+            <div class="flex flex-col">
+                <span class="font-bold text-lg text-gray-900">林楊五金有限公司</span>
+                <span class="text-sm text-gray-500">Antelope Hardware Ltd.</span>
+            </div>
+        </a>
+        <!-- 導覽連結 -->
+        <div class="space-x-4 md:space-x-6 flex items-center">
+            <!-- 連結使用 # 作為佔位符。請將這裡的 # 替換成您實際頁面的網址 -->
+            <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">首頁</a>
+            <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">服務項目</a>
+            <a href="about.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">關於我們</a>
+            <a href="contact.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">聯絡我們</a>
+        </div>
+    </div>
+</nav>
+
+<!-- 主要英雄區塊 (使用 <header> 標籤，符合語意化) -->
+<header id="home" class="hero-section min-h-screen flex items-center justify-center p-4 text-center text-white relative">
+    <!-- 半透明黑色遮罩 -->
+    <div class="absolute inset-0 bg-black/50"></div>
+    <!-- 主要內容容器，使用 z-10 確保其位於遮罩上方 -->
+    <div class="relative z-10 p-8 md:p-12 rounded-3xl bg-black/30 backdrop-blur-sm max-w-5xl mx-auto shadow-2xl border-2 border-white/30">
+        <!-- 頁面主要標題 (使用 <h1> 標籤，每個頁面應只有一個) -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg">
+            值得信賴的夥伴
+        </h1>
+        <p class="text-xl sm:text-2xl font-light mb-8 drop-shadow-md">
+            各式五金零件，專業吊具鋼索
+        </p>
+        <a href="#" class="inline-block px-8 py-4 bg-blue-600 text-white font-bold text-lg rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">
+            探索我們的服務
+        </a>
+    </div>
+</header>
+
+<!-- 頁面主要內容 (使用 <main> 標籤，符合語意化) -->
+<main class="container mx-auto px-4 py-16 space-y-24">
+    <!-- 核心價值區塊 (使用 <section> 標籤，代表一個獨立區塊) -->
+    <section class="text-center">
+        <!-- 區塊標題 (使用 <h2> 標籤，子標題) -->
+        <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-gray-900">核心服務項目</h2>
+        <!-- 使用 Grid 排版，在小螢幕上是單欄，中等螢幕以上為三欄 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <!-- 每個服務項目卡片 -->
+            <div class="bg-white p-8 rounded-3xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105">
+                <!-- 子標題 (使用 <h3> 標籤) -->
+                <h3 class="text-2xl font-semibold mb-3 text-blue-600">五金與起重配件</h3>
+                <p class="text-gray-600">
+                    提供鋼纜、鋼鍊、起重配件、滑車吊具等，為您的工程提供堅實後盾。
+                </p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105">
+                <h3 class="text-2xl font-semibold mb-3 text-blue-600">船舶與工業機具</h3>
+                <p class="text-gray-600">
+                    專營船舶機具、海錨、錨鍊以及各式專業五金工具，確保作業順利。
+                </p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105">
+                <h3 class="text-2xl font-semibold mb-3 text-blue-600">貨物安全解決方案</h3>
+                <p class="text-gray-600">
+                    提供尼龍安全吊帶、貨櫃配件及繩纜等，保障貨物運輸與吊掛安全。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 產品跑馬燈區塊 (使用 <section> 標籤) -->
+    <section class="text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-gray-900">精選產品</h2>
+        <div class="marquee-container rounded-3xl shadow-xl border-4 border-gray-100 overflow-hidden bg-white py-6">
+            <div class="marquee-content">
+                <!-- 複製圖片以達到無限滾動效果 -->
+                <!-- 請將這裡的圖片替換成您的產品圖片網址 -->
+                <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/LOCTITE.jpg" alt="LOCTITE 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯絡我們簡介區塊 -->
+    <section class="text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-gray-900">隨時為您服務</h2>
+        <div class="bg-white p-8 rounded-3xl shadow-xl max-w-2xl mx-auto">
+            <p class="text-lg text-gray-600 mb-6">若有任何需求或疑問，請隨時與我們聯繫，我們將竭誠為您服務。</p>
+            <div class="space-y-4 text-left font-medium">
+                <!-- 聯絡資訊，每個資訊包含 SVG 圖標 -->
+                <div class="flex items-center space-x-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <span>電話：(02) 1234-5678</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>電子郵件：info@antelopehardware.com</span>
+                </div>
+            </div>
+            <a href="#" class="mt-6 inline-block px-8 py-3 bg-gray-900 text-white font-bold rounded-full shadow-lg hover:bg-gray-800 transition-colors duration-300">
+                前往聯絡頁面
+            </a>
+        </div>
+    </section>
+</main>
+
+<!-- 頁面底部 (使用 <footer> 標籤，符合語意化) -->
+<footer class="bg-gray-900 text-white text-center py-6 mt-16">
+    <p class="text-sm">© 2024 林楊五金有限公司. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
