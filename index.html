@@ -78,19 +78,49 @@
                 <span class="text-sm text-gray-500">Antelope Hardware Ltd.</span>
             </div>
         </a>
-        <!-- 導覽連結 -->
-        <div class="space-x-4 md:space-x-6 flex items-center">
-            <!-- 語言切換按鈕 -->
+  <!-- 導覽列 (使用 <nav> 標籤，符合語意化) -->
+<nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <!-- 公司 Logo 與名稱區塊 -->
+        <a href="index.html" class="flex items-center space-x-2">
+            <!-- 公司 Logo 圖片，使用 alt 屬性以利 SEO 和無障礙訪問 -->
+            <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/logo.jpg" alt="林楊五金有限公司 Logo" class="h-10 w-10 rounded-full object-cover shadow-md">
+            <div class="flex flex-col">
+                <span class="font-bold text-lg text-gray-900">林楊五金有限公司</span>
+                <span class="text-sm text-gray-500">Antelope Hardware Ltd.</span>
+            </div>
+        </a>
+        
+        <!-- 手機版選單按鈕與語言切換 -->
+        <div class="flex items-center md:hidden space-x-4">
             <button id="language-toggle" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">English</button>
-            <!-- 連結已更新為您指定的檔案名稱 -->
+            <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                <!-- 漢堡選單圖示 (SVG) -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- 導覽連結 (桌機版顯示，手機版預設隱藏) -->
+        <div id="nav-links" class="hidden md:flex md:space-x-6">
             <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="home">首頁</a>
             <a href="services.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="services">服務項目</a>
             <a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="about">關於我們</a>
             <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="contact">聯絡我們</a>
+            <!-- 桌面版語言切換按鈕，與手機版獨立 -->
+            <button id="language-toggle-desktop" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">English</button>
         </div>
     </div>
+    
+    <!-- 手機版下拉選單 (預設隱藏) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-md w-full shadow-lg">
+        <a href="index.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="home">首頁</a>
+        <a href="services.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="services">服務項目</a>
+        <a href="about.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="about">關於我們</a>
+        <a href="contact.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="contact">聯絡我們</a>
+    </div>
 </nav>
-
 <!-- 主要英雄區塊 (使用 <header> 標籤，符合語意化) -->
 <header id="home" class="hero-section min-h-screen flex items-center justify-center p-4 text-center text-white relative">
     <!-- 半透明黑色遮罩 -->
@@ -123,7 +153,7 @@
 
         <!-- 聯絡按鈕，點擊後顯示 QR Code -->
         <button onclick="showQRCode()" id="contact-button" class="inline-block px-8 py-4 bg-blue-600 text-white font-bold text-lg rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">
-            線上諮詢
+            線上諮詢👈
         </button>
     </div>
 </header>
@@ -170,7 +200,7 @@
 
 <!-- 頁面底部 (使用 <footer> 標籤，符合語意化) -->
 <footer class="bg-gray-900 text-white text-center py-6 mt-16">
-    <!-- 版權年份已更新為 2025 -->
+    <!-- 版權宣告 -->
     <p class="text-sm" id="footer-text">© 2025 林楊五金有限公司. All Rights Reserved.</p>
 </footer>
 
