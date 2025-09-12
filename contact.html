@@ -87,65 +87,89 @@
 
   <!-- 主要內容區塊 -->
   <main>
-    <!-- 內容區塊，背景圖與透明度效果 (與 services.html 統一) -->
+    <!-- 內容區塊，背景圖與透明度效果 -->
     <section class="py-12 px-4 bg-cover bg-center bg-fixed relative" style="background-image: url('https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/hero-shipping.png');">
         <!-- 疊層，讓文字更清晰 -->
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="relative z-10 max-w-4xl mx-auto p-6 bg-white/90 rounded-lg shadow-xl fade-in">
             <h2 class="text-3xl font-bold mb-4 text-gray-800 text-center" data-zh="聯絡我們" data-en="Contact Us">聯絡我們</h2>
-            <p class="text-gray-600 mb-8 text-center" data-zh="請填寫以下表格，我們會盡快與您聯繫！" data-en="Please fill out the form below, and we will get back to you as soon as possible!"></p>
+            <p class="text-gray-600 mb-8 text-center" data-zh="請填寫以下表單，我們會盡快與您聯繫！" data-en="Please fill out the form below, and we will get back to you as soon as possible!"></p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- 聯絡資訊區塊 -->
-                <div class="flex flex-col space-y-4 text-gray-700">
-                    <div class="info-box bg-gray-100 p-4 rounded-lg shadow-sm">
-                        <p class="font-semibold" data-zh="公司名稱" data-en="Company Name">公司名稱</p>
-                        <p>林楊五金有限公司</p>
-                    </div>
-                    <div class="info-box bg-gray-100 p-4 rounded-lg shadow-sm">
-                        <p class="font-semibold" data-zh="統一編號" data-en="Tax ID">統一編號</p>
-                        <p>89156878</p>
-                    </div>
-                    <div class="info-box bg-gray-100 p-4 rounded-lg shadow-sm">
-                        <p class="font-semibold" data-zh="聯絡電話" data-en="Phone">聯絡電話</p>
-                        <p>0972-138-928</p>
-                    </div>
-                    <div class="info-box bg-gray-100 p-4 rounded-lg shadow-sm">
-                        <p class="font-semibold" data-zh="電子信箱" data-en="Email">電子信箱</p>
-                        <p>antelopehw@outlook.com</p>
-                    </div>
-                    <div class="info-box bg-gray-100 p-4 rounded-lg shadow-sm">
-                        <p class="font-semibold" data-zh="官方LINE" data-en="Official LINE">官方LINE</p>
-                        <p>@602dlrjj</p>
-                        <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/M_602dlrjj.png" alt="官方 LINE QR code" class="w-24 h-24 mt-2 mx-auto rounded-lg">
-                    </div>
-                    <div class="info-box bg-gray-100 p-4 rounded-lg shadow-sm">
-                        <p class="font-semibold" data-zh="辦公時間" data-en="Office Hours">辦公時間</p>
-                        <p>週一至週五 08:00-17:00 (GMT+8)</p>
+            <div class="space-y-8">
+                <!-- 聯絡資訊區塊 - 重新設計 -->
+                <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                    <!-- 將 grid-cols-3 改為 grid-cols-2，以避免文字溢出 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
+                        <!-- 公司名稱 -->
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 10h.01M9 14h.01M15 14h.01M15 10h.01M9 18h.01M15 18h.01M12 10h.01M12 14h.01M12 18h.01" />
+                            </svg>
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-sm" data-zh="公司名稱" data-en="Company Name">公司名稱</p>
+                                <p class="text-base">林楊五金有限公司</p>
+                            </div>
+                        </div>
+                        <!-- 統一編號 -->
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6.643v-2.31c0-.441-.358-.8-1.5-.8s-1.5.8-1.5.8h-2.222c-.672 0-1.222.55-1.222 1.222v9.333c0 .673.55 1.222 1.222 1.222h13.555c.672 0 1.222-.55 1.222-1.222v-9.333c0-.672-.55-1.222-1.222-1.222h-2.222c0-.441-.358-.8-1.5-.8s-1.5.8-1.5.8v2.31" />
+                                <rect x="3" y="10" width="18" height="12" rx="2" ry="2" />
+                            </svg>
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-sm" data-zh="統一編號" data-en="Tax ID">統一編號</p>
+                                <p class="text-base">89156878</p>
+                            </div>
+                        </div>
+                        <!-- 聯絡電話 -->
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-sm" data-zh="聯絡電話" data-en="Phone">聯絡電話</p>
+                                <p class="text-base">0972-138-928</p>
+                            </div>
+                        </div>
+                        <!-- 電子信箱 -->
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 2l-8 5.333M5 10l8 5.333m-10-8h16a2 2 0 012 2v8a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2z" />
+                            </svg>
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-sm" data-zh="電子信箱" data-en="Email">電子信箱</p>
+                                <p class="text-base">antelopehw@outlook.com</p>
+                            </div>
+                        </div>
+                        <!-- 官方LINE -->
+                        <!-- 調整為左文字右圖片的排版，避免文字溢出 -->
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-sm">
+                          <div class="flex flex-col flex-grow">
+                              <p class="font-semibold text-sm" data-zh="官方LINE" data-en="Official LINE">官方LINE</p>
+                              <p class="text-base">@602dlrjj</p>
+                          </div>
+                          <div class="flex-shrink-0">
+                              <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/M_602dlrjj.png" alt="官方 LINE QR code" class="w-24 h-24 rounded-lg">
+                          </div>
+                        </div>
+                        <!-- 辦公時間 -->
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-sm" data-zh="辦公時間" data-en="Office Hours">辦公時間</p>
+                                <p class="text-base">週一至週五 08:00-17:00 (GMT+8)</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 聯絡表單區塊 -->
-                <div>
-                    <form action="#" method="POST" class="bg-gray-100 p-6 rounded-lg shadow-md space-y-4">
-                        <div class="space-y-2">
-                            <label for="name" class="block font-medium text-gray-700" data-zh="姓名" data-en="Name">姓名</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" data-zh="您的姓名" data-en="Your Name" placeholder="您的姓名">
-                        </div>
-                        <div class="space-y-2">
-                            <label for="email" class="block font-medium text-gray-700" data-zh="電子信箱" data-en="Email">電子信箱</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" data-zh="您的電子信箱" data-en="Your Email" placeholder="您的電子信箱">
-                        </div>
-                        <div class="space-y-2">
-                            <label for="subject" class="block font-medium text-gray-700" data-zh="主旨" data-en="Subject">主旨</label>
-                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" data-zh="訊息主旨" data-en="Message Subject" placeholder="訊息主旨">
-                        </div>
-                        <div class="space-y-2">
-                            <label for="message" class="block font-medium text-gray-700" data-zh="訊息內容" data-en="Message">訊息內容</label>
-                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" data-zh="您的訊息內容" data-en="Your message" placeholder="您的訊息內容"></textarea>
-                        </div>
-                        <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" data-zh="送出訊息" data-en="Send Message">送出訊息</button>
-                    </form>
+                <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                    <iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-modals"
+                        width="100%" height="600px" src="https://www.surveycake.com/s/KXqwA" style="border:1px solid #ddd;" allowTransparency="true" frameborder="0">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -158,7 +182,7 @@
             <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-lg shadow-md">
                 <iframe
                     class="w-full h-96"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.319766986629!2d120.55106517590821!3d24.238495078345724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34691456c6e75e11%3A0x62953e5e4d216d55!2z44GN44GN5LqM6ZmE5b-g5LiL5p2x5Y2A!5e0!3m2!1szh-TW!2stw!4v1709295315570!5m2!1szh-TW!2stw"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3291.4676366229965!2d120.60539517480798!3d24.27008856862791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34691379ff25aa01%3A0xb8c996c06374c3f9!2z5p6X5qWK5LqU6YeR5pyJ6ZmQ5YWs5Y-4!5e1!3m2!1szh-TW!2stw!4v1757637496847!5m2!1szh-TW!2stw"
                     allowfullscreen=""
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
@@ -190,11 +214,8 @@
       
       const navLinks = document.querySelectorAll('.nav-link');
       const pageTitle = document.querySelector('[data-zh="聯絡我們"]');
-      const pageSubtitle = document.querySelector('[data-zh="請填寫以下表格，我們會盡快與您聯繫！"]');
+      const pageSubtitle = document.querySelector('[data-zh="請填寫以下表單，我們會盡快與您聯繫！"]');
       const infoLabels = document.querySelectorAll('.info-box p.font-semibold');
-      const formLabels = document.querySelectorAll('form label');
-      const formPlaceholders = document.querySelectorAll('form input, form textarea');
-      const formButton = document.querySelector('form button');
       const footerText = document.querySelector('footer small');
       const mapTitle = document.querySelector('[data-zh="公司位置"]');
       
@@ -218,14 +239,12 @@
           if (newLang === 'en') {
               pageTitle.textContent = pageTitle.getAttribute('data-en');
               pageSubtitle.textContent = pageSubtitle.getAttribute('data-en');
-              formButton.textContent = formButton.getAttribute('data-en');
               footerText.textContent = footerText.getAttribute('data-en');
               mapTitle.textContent = mapTitle.getAttribute('data-en');
               document.title = "Contact Us | Antelope Hardware Ltd.";
           } else {
               pageTitle.textContent = pageTitle.getAttribute('data-zh');
               pageSubtitle.textContent = pageSubtitle.getAttribute('data-zh');
-              formButton.textContent = formButton.getAttribute('data-zh');
               footerText.textContent = footerText.getAttribute('data-zh');
               mapTitle.textContent = mapTitle.getAttribute('data-zh');
               document.title = "聯絡我們 | 林楊五金有限公司";
@@ -234,11 +253,7 @@
           // 更新所有帶有 data-zh 和 data-en 屬性的元素
           document.querySelectorAll('[data-zh], [data-en]').forEach(el => {
               const newText = el.getAttribute(`data-${newLang === 'zh-Hant' ? 'zh' : 'en'}`);
-              if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                  el.setAttribute('placeholder', newText);
-              } else {
-                  el.textContent = newText;
-              }
+              el.textContent = newText;
           });
       }
       
@@ -264,14 +279,12 @@
       if (storedLang === 'en') {
           pageTitle.textContent = pageTitle.getAttribute('data-en');
           pageSubtitle.textContent = pageSubtitle.getAttribute('data-en');
-          formButton.textContent = formButton.getAttribute('data-en');
           footerText.textContent = footerText.getAttribute('data-en');
           mapTitle.textContent = mapTitle.getAttribute('data-en');
           document.title = "Contact Us | Antelope Hardware Ltd.";
       } else {
           pageTitle.textContent = pageTitle.getAttribute('data-zh');
           pageSubtitle.textContent = pageSubtitle.getAttribute('data-zh');
-          formButton.textContent = formButton.getAttribute('data-zh');
           footerText.textContent = footerText.getAttribute('data-zh');
           mapTitle.textContent = mapTitle.getAttribute('data-zh');
           document.title = "聯絡我們 | 林楊五金有限公司";
@@ -279,11 +292,7 @@
 
       document.querySelectorAll('[data-zh], [data-en]').forEach(el => {
         const newText = el.getAttribute(`data-${storedLang === 'zh-Hant' ? 'zh' : 'en'}`);
-        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-            el.setAttribute('placeholder', newText);
-        } else {
-            el.textContent = newText;
-        }
+        el.textContent = newText;
       });
     });
   </script>
