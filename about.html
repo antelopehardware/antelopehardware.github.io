@@ -262,25 +262,93 @@
     height: 35px;
   }
 </style>
-  <!-- Inline follow/share buttons -->
-<div class="inline-social">
-  <a href="https://www.facebook.com/profile.php?id=61578766202427" target="_blank" rel="noopener" class="btn-follow" aria-label="追蹤 Facebook">
-    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="..." /></svg>
-    <span>追蹤 FB</span>
-  </a>
 
-  <a href="https://www.instagram.com/antelopehw_2025/" target="_blank" rel="noopener" class="btn-follow" aria-label="追蹤 Instagram">
-    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="..." /></svg>
-    <span>追蹤 IG</span>
-  </a>
-</div>
+
+  <!-- ===== Footer Social Icons (Centered + Tooltip) ===== -->
+<footer>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/profile.php?id=61578766202427"
+       target="_blank" rel="noopener"
+       aria-label="Facebook - 林楊五金"
+       class="social-link" data-tooltip="追蹤我們">
+      <!-- Facebook icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="#3b5998">
+        <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.333v21.334C0 23.403.597 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.657-4.788 1.325 0 2.465.098 2.797.142v3.245l-1.92.001c-1.507 0-1.8.717-1.8 1.767v2.317h3.6l-.468 3.622h-3.132V24h6.137C23.403 24 24 23.403 24 22.667V1.333C24 .597 23.403 0 22.675 0z"/>
+      </svg>
+    </a>
+
+    <a href="https://www.instagram.com/antelopehw_2025/"
+       target="_blank" rel="noopener"
+       aria-label="Instagram - 林楊五金"
+       class="social-link" data-tooltip="追蹤我們">
+      <!-- Instagram icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="#d62976">
+        <path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2zm0 1.5A4.26 4.26 0 0 0 3.5 7.75v8.5A4.26 4.26 0 0 0 7.75 20.5h8.5a4.26 4.26 0 0 0 4.25-4.25v-8.5A4.26 4.26 0 0 0 16.25 3.5zm4.25 3A5.75 5.75 0 1 1 6.25 12 5.75 5.75 0 0 1 12 6.5zm0 1.5A4.25 4.25 0 1 0 16.25 12 4.25 4.25 0 0 0 12 8zm5.4-2.35a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05z"/>
+      </svg>
+    </a>
+  </div>
+</footer>
 
 <style>
-.inline-social { display:flex; gap:10px; align-items:center; margin-top:12px; }
-.btn-follow { display:inline-flex; gap:8px; align-items:center; padding:8px 10px; border-radius:8px; background:#f7f7f7; text-decoration:none; font-weight:600; }
-.btn-follow svg{ display:block; }
-.btn-follow:hover{ filter:brightness(.95); }
+/* ===== Footer 社群圖示樣式 ===== */
+footer {
+  background-color: #f8f8f8;    /* 可改為透明或其他底色 */
+  padding: 20px 0;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;      /* 水平置中 */
+  gap: 24px;                    /* 兩圖間距 */
+  align-items: center;
+  position: relative;
+}
+
+/* ===== 基礎樣式 ===== */
+.social-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-4px);
+  opacity: 0.9;
+}
+
+/* ===== Tooltip 浮出提示 ===== */
+.social-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 140%;                 /* 浮出位置（icon 上方） */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0,0,0,0.75);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.social-link:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -4px);
+}
+
+/* 手機上關閉浮出提示（避免遮擋） */
+@media (max-width: 768px) {
+  .social-link::after {
+    display: none;
+  }
+}
 </style>
+
 
 </body>
 </html>
