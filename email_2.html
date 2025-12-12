@@ -5,95 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Antelope Hardware Introduction</title>
     <style type="text/css">
-        /* Reset styles */
+        /* ================= 重置樣式 (Reset) ================= */
         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
         table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
-        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; }
         table { border-collapse: collapse !important; }
         body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft JhengHei', sans-serif; background-color: #f4f4f4; }
         
-        /* Custom Styles */
+        /* ================= 主要框架樣式 ================= */
         .wrapper { width: 100%; table-layout: fixed; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; background-color: #f4f4f4; }
-        .webkit { max-width: 600px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         
+        /* [調整] 電腦版最大寬度調整為 700px，解決過於狹長的問題 */
+        .webkit { max-width: 700px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        
+        /* 頁首樣式 */
         .header { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: #ffffff; padding: 50px 30px; text-align: center; }
-        .logo-text { font-size: 26px; font-weight: bold; letter-spacing: 1.5px; margin-bottom: 5px; display: block; word-wrap: break-word; }
-        .hero-title { font-size: 32px; font-weight: 800; margin: 25px 0 15px 0; line-height: 1.4; }
+        .logo-text { font-size: 28px; font-weight: bold; letter-spacing: 1.5px; margin-bottom: 5px; display: block; word-wrap: break-word; }
+        .hero-title { font-size: 34px; font-weight: 800; margin: 25px 0 15px 0; line-height: 1.4; }
         .hero-subtitle { font-size: 16px; font-weight: 300; opacity: 0.95; line-height: 1.6; max-width: 90%; margin: 0 auto; }
         
-        .section-title { color: #1e3c72; font-size: 22px; font-weight: bold; text-align: center; margin-bottom: 40px; border-bottom: 2px solid #f0f0f0; padding-bottom: 15px; display: inline-block; letter-spacing: 1px; }
+        /* 標題與文字樣式 */
+        .section-title { color: #1e3c72; font-size: 24px; font-weight: bold; text-align: center; margin-bottom: 40px; border-bottom: 2px solid #f0f0f0; padding-bottom: 15px; display: inline-block; letter-spacing: 1px; }
         
-        .icon-box { background-color: #eef2f8; border-radius: 50%; width: 64px; height: 64px; text-align: center; vertical-align: middle; line-height: 64px; }
-        /* 使用 vertical-align: middle 確保圖示垂直居中 */
-        .icon-box svg { vertical-align: middle; display: inline-block; }
+        /* [調整] Icon 容器樣式 */
+        .icon-box { background-color: #eef2f8; border-radius: 50%; width: 80px; height: 80px; text-align: center; vertical-align: middle; line-height: 80px; overflow: hidden; }
         
-        .content-box { padding-left: 25px; padding-right: 10px; vertical-align: top; }
-        .feature-head { font-size: 19px; font-weight: bold; color: #333; margin-bottom: 6px; display: block; line-height: 1.4; }
+        /* 內容區塊樣式 */
+        .content-box { padding-left: 30px; padding-right: 10px; vertical-align: top; }
+        .feature-head { font-size: 20px; font-weight: bold; color: #333; margin-bottom: 6px; display: block; line-height: 1.4; }
         .feature-head-en { font-size: 13px; color: #2a5298; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px; }
-        .feature-text { font-size: 15px; color: #555; line-height: 1.8; margin: 0; word-break: break-word; }
+        .feature-text { font-size: 16px; color: #555; line-height: 1.8; margin: 0; word-break: break-word; }
         
-        .cta-box { background-color: #fffaf0; border: 2px dashed #ffc107; padding: 35px 25px; text-align: center; border-radius: 12px; margin: 40px 20px; }
-        .cta-btn { background-color: #ff9800; color: #ffffff !important; padding: 18px 36px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 18px; display: inline-block; margin-top: 20px; box-shadow: 0 4px 0 #e68900; letter-spacing: 1px; white-space: nowrap; }
+        /* 按鈕區塊樣式 */
+        .cta-box { background-color: #fffaf0; border: 2px dashed #ffc107; padding: 40px 30px; text-align: center; border-radius: 12px; margin: 40px 20px; }
+        .cta-btn { background-color: #ff9800; color: #ffffff !important; padding: 18px 40px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 20px; display: inline-block; margin-top: 20px; box-shadow: 0 4px 0 #e68900; letter-spacing: 1px; white-space: nowrap; }
         
+        /* 頁尾樣式 */
         .footer { background-color: #2c3e50; color: #bdc3c7; padding: 40px 20px; text-align: center; font-size: 14px; line-height: 1.8; }
         .footer strong { color: #ffffff; letter-spacing: 0.5px; }
         .footer a { color: #ffffff; text-decoration: none; }
         
-        /* Mobile Responsive */
-        @media screen and (max-width: 600px) {
+        /* ================= 手機版 RWD 設定 (小於 700px) ================= */
+        @media screen and (max-width: 700px) {
             .header { padding: 40px 20px !important; }
-            .hero-title { font-size: 24px !important; line-height: 1.4 !important; }
-            .logo-text { font-size: 22px !important; }
+            .hero-title { font-size: 26px !important; line-height: 1.4 !important; }
+            .logo-text { font-size: 24px !important; }
             
-            /* 強制將圖示與文字區塊都變成 block，佔滿寬度，避免擠壓 */
-            td[class="mobile-block"] { display: block !important; width: 100% !important; text-align: center !important; padding-bottom: 15px !important; box-sizing: border-box !important; }
+            /* 強制區塊換行，避免擠壓 */
+            td[class="mobile-block"] { display: block !important; width: 100% !important; text-align: center !important; padding-bottom: 20px !important; box-sizing: border-box !important; }
             td[class="mobile-text-box"] { display: block !important; width: 100% !important; text-align: center !important; padding-left: 0 !important; padding-right: 0 !important; box-sizing: border-box !important; }
             
-            .feature-text { font-size: 15px !important; text-align: center !important; padding: 0 10px !important; }
+            .feature-text { font-size: 16px !important; text-align: center !important; padding: 0 10px !important; }
             .icon-box { margin: 0 auto !important; }
             
-            .cta-box { margin: 30px 15px !important; padding: 25px 15px !important; }
-            .cta-btn { display: block !important; width: auto !important; margin: 20px auto 0 auto !important; padding: 15px 20px !important; font-size: 16px !important; }
+            .cta-box { margin: 30px 15px !important; padding: 30px 20px !important; }
+            .cta-btn { display: block !important; width: auto !important; margin: 20px auto 0 auto !important; padding: 15px 20px !important; font-size: 18px !important; }
         }
     </style>
 </head>
 <body>
     <center class="wrapper">
         <div class="webkit">
-            <!-- HEADER -->
+            <!-- ================= HEADER (頁首區塊) ================= -->
             <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
                     <td class="header">
+                        <!-- [編輯] LOGO 公司名稱 -->
                         <span class="logo-text">林楊五金有限公司</span>
-                        <div style="font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 25px; color: #aec6cf;">Antelope Hardware Ltd.</div>
+                        <div style="font-size: 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 25px; color: #aec6cf;">Antelope Hardware Ltd.</div>
+                        
+                        <!-- [編輯] 主標題 -->
                         <h1 class="hero-title">採購太繁瑣？<br />讓我們成為您的最強後盾！</h1>
                         <div class="hero-subtitle">Purchasing made simple.<br />Your All-in-One Procurement Partner.</div>
                     </td>
                 </tr>
             </table>
 
-            <!-- BODY CONTENT -->
-            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="padding: 50px 30px 20px 30px;">
+            <!-- ================= BODY (主要內容區塊) ================= -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="padding: 50px 40px 20px 40px;">
                 <tr>
                     <td align="center">
                         <div class="section-title">Why Choose Us? 我們的優勢</div>
                     </td>
                 </tr>
 
-                <!-- Feature 1 -->
+                <!-- ================= 特色 1：一站式購足 ================= -->
                 <tr>
-                    <td style="padding-bottom: 40px;">
+                    <td style="padding-bottom: 50px;">
                         <table width="100%" cellpadding="0" cellspacing="0" border="0">
                             <tr>
-                                <td width="80" valign="top" class="mobile-block">
+                                <!-- 左側圖示區 -->
+                                <td width="100" valign="top" class="mobile-block">
                                     <div class="icon-box" style="margin: 0 auto;">
-                                        <!-- SVG Icon: List -->
-                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2a5298" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M9 11l3 3L22 4"></path>
-                                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-                                        </svg>
+                                        <!-- [圖片替換] 請將下方 src 內的連結替換為您的 Icon 圖片網址 (建議 80x80px) -->
+                                        <!-- 如果要用本地圖片，請上傳到圖床後取得連結 -->
+                                        <img src="https://placehold.co/160x160/2a5298/ffffff?text=Check" width="80" height="80" alt="一站式購足 Icon" style="display:block; border:0;" />
                                     </div>
                                 </td>
+                                <!-- 右側文字區 -->
                                 <td class="content-box mobile-text-box">
                                     <span class="feature-head-en">One-Stop Shop</span>
                                     <span class="feature-head">一站式購足：省時省力</span>
@@ -107,20 +116,19 @@
                     </td>
                 </tr>
 
-                <!-- Feature 2 -->
+                <!-- ================= 特色 2：彈性報價 ================= -->
                 <tr>
-                    <td style="padding-bottom: 40px;">
+                    <td style="padding-bottom: 50px;">
                         <table width="100%" cellpadding="0" cellspacing="0" border="0">
                             <tr>
-                                <td width="80" valign="top" class="mobile-block">
+                                <!-- 左側圖示區 -->
+                                <td width="100" valign="top" class="mobile-block">
                                     <div class="icon-box" style="margin: 0 auto;">
-                                        <!-- SVG Icon: Flexible / Tag -->
-                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2a5298" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
-                                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                        </svg>
+                                        <!-- [圖片替換] 請將下方 src 替換為您的 Icon -->
+                                        <img src="https://placehold.co/160x160/2a5298/ffffff?text=Price" width="80" height="80" alt="彈性報價 Icon" style="display:block; border:0;" />
                                     </div>
                                 </td>
+                                <!-- 右側文字區 -->
                                 <td class="content-box mobile-text-box">
                                     <span class="feature-head-en">Flexible Sourcing</span>
                                     <span class="feature-head">彈性報價：選擇最多元</span>
@@ -134,19 +142,19 @@
                     </td>
                 </tr>
 
-                <!-- Feature 3 -->
+                <!-- ================= 特色 3：急件協尋 ================= -->
                 <tr>
                     <td>
                         <table width="100%" cellpadding="0" cellspacing="0" border="0">
                             <tr>
-                                <td width="80" valign="top" class="mobile-block">
+                                <!-- 左側圖示區 -->
+                                <td width="100" valign="top" class="mobile-block">
                                     <div class="icon-box" style="margin: 0 auto;">
-                                        <!-- SVG Icon: Urgent / Lightning -->
-                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2a5298" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                                        </svg>
+                                        <!-- [圖片替換] 請將下方 src 替換為您的 Icon -->
+                                        <img src="https://placehold.co/160x160/2a5298/ffffff?text=Urgent" width="80" height="80" alt="急件協尋 Icon" style="display:block; border:0;" />
                                     </div>
                                 </td>
+                                <!-- 右側文字區 -->
                                 <td class="content-box mobile-text-box">
                                     <span class="feature-head-en">Urgent Solutions</span>
                                     <span class="feature-head">急件協尋：使命必達</span>
@@ -162,10 +170,10 @@
 
             </table>
 
-            <!-- CTA AREA -->
+            <!-- ================= CTA (行動呼籲區塊) ================= -->
             <div class="cta-box">
-                <h3 style="margin: 0 0 12px 0; color: #d35400; font-size: 20px;">免費報價試算 Free Quote</h3>
-                <p style="margin: 0 0 20px 0; font-size: 15px; color: #555; line-height: 1.6;">
+                <h3 style="margin: 0 0 12px 0; color: #d35400; font-size: 22px;">免費報價試算 Free Quote</h3>
+                <p style="margin: 0 0 20px 0; font-size: 16px; color: #555; line-height: 1.6;">
                     歡迎直接回傳規格或詢價單，比較看看差異！<br>
                     Send us your specs and compare the difference.
                 </p>
@@ -174,21 +182,21 @@
                 </a>
             </div>
 
-            <!-- FOOTER -->
+            <!-- ================= FOOTER (頁尾區塊) ================= -->
             <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
                     <td class="footer">
                         <strong style="font-size: 16px;">林楊五金有限公司</strong><br>
                         <span style="opacity: 0.8; font-size: 13px;">Antelope Hardware Ltd.</span><br><br>
                         
-                        <!-- Address -->
+                        <!-- [編輯] 地址資訊 -->
                         <div style="margin-bottom: 15px;">
                             <span style="display:inline-block; margin-right: 5px;">📍</span> 
                             436 台中市清水區和睦路三段 250 號<br>
                             <span style="font-size: 12px; color: #95a5a6; display: block; margin-top: 5px;">No. 250, Sec. 3, Hemu Rd., Qingshui Dist., Taichung City 436, Taiwan</span>
                         </div>
 
-                        <!-- Contact Grid -->
+                        <!-- [編輯] 聯絡資訊 -->
                          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 20px;">
                             <tr>
                                 <td align="center" style="padding: 8px;">
