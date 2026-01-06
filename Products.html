@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="林楊五金有限公司產品目錄，提供各類五金工具、手工具、電動工具及工業補給。">
+    <title>產品中心 | 林楊五金有限公司</title>
+
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- 導入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', 'Microsoft JhengHei', sans-serif; }
+        .modal-active { overflow: hidden; }
+        .product-card:hover .overlay { opacity: 1; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        
+        /* 限制產品圖比例，確保在四欄佈局下高度一致 */
+        .img-container {
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Microsoft JhengHei', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 導覽列 (同步自 services.html) -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- 公司 Logo 與名稱區塊 -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/logo.jpg" alt="林楊五金有限公司 Logo" class="h-10 w-10 rounded-full object-cover shadow-md">
+                <div class="flex flex-col">
+                    <span class="font-bold text-lg text-gray-900">林楊五金有限公司</span>
+                    <span class="text-sm text-gray-500">Antelope Hardware Ltd.</span>
+                </div>
+            </a>
+            
+            <!-- 手機版選單按鈕與語言切換 -->
+            <div class="flex items-center md:hidden space-x-4">
+                <button id="lang-btn-mobile" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">English</button>
+                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- 導覽連結 -->
+            <div id="nav-links-wrapper" class="hidden md:flex md:space-x-6">
+                <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-zh="首頁" data-en="Home">首頁</a>
+                <a href="services.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-zh="服務項目" data-en="Services">服務項目</a>
+                <a href="products.html" class="nav-link text-blue-600 font-bold transition-colors duration-300" data-zh="產品中心" data-en="Products">產品中心</a>
+                <a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-zh="關於我們" data-en="About Us">關於我們</a>
+                <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-zh="聯絡我們" data-en="Contact Us">聯絡我們</a>
+                <button id="lang-btn-desktop" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">English</button>
+            </div>
+        </div>
+        
+        <!-- 手機版下拉選單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-md w-full shadow-lg">
+            <a href="index.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100" data-zh="首頁" data-en="Home">首頁</a>
+            <a href="services.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100" data-zh="服務項目" data-en="Services">服務項目</a>
+            <a href="products.html" class="block py-3 px-4 text-blue-600 font-bold hover:bg-blue-100" data-zh="產品中心" data-en="Products">產品中心</a>
+            <a href="about.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100" data-zh="關於我們" data-en="About Us">關於我們</a>
+            <a href="contact.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100" data-zh="聯絡我們" data-en="Contact Us">聯絡我們</a>
+        </div>
+    </nav>
+
+    <!-- 頁首標題 -->
+    <header class="bg-gray-800 py-16 text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30 bg-cover bg-center" style="background-image: url('https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/hero-shipping.png');"></div>
+        <div class="relative z-10">
+            <h1 class="text-4xl font-bold mb-2" data-zh="產品中心" data-en="Product Center">產品中心</h1>
+            <p class="text-lg opacity-90" data-zh="為您採購最優質的五金物資與設備" data-en="Procuring high-quality hardware supplies and equipment for you">為您採購最優質的五金物資與設備</p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <!-- 分類篩選按鈕 -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12 fade-in" id="filter-buttons">
+            <button onclick="filterProducts('all')" class="filter-btn active bg-blue-600 text-white px-5 py-2 rounded-full shadow-md transition text-sm sm:text-base" data-zh="全部產品" data-en="All Products">全部產品</button>
+            <button onclick="filterProducts('tools')" class="filter-btn bg-white text-gray-700 hover:bg-blue-100 px-5 py-2 rounded-full shadow-sm transition text-sm sm:text-base" data-zh="手工具" data-en="Hand Tools">手工具</button>
+            <button onclick="filterProducts('power')" class="filter-btn bg-white text-gray-700 hover:bg-blue-100 px-5 py-2 rounded-full shadow-sm transition text-sm sm:text-base" data-zh="電動工具" data-en="Power Tools">電動工具</button>
+            <button onclick="filterProducts('fasteners')" class="filter-btn bg-white text-gray-700 hover:bg-blue-100 px-5 py-2 rounded-full shadow-sm transition text-sm sm:text-base" data-zh="螺絲緊固件" data-en="Fasteners">螺絲緊固件</button>
+            <button onclick="filterProducts('safety')" class="filter-btn bg-white text-gray-700 hover:bg-blue-100 px-5 py-2 rounded-full shadow-sm transition text-sm sm:text-base" data-zh="工業安全用品" data-en="Safety Gear">工業安全用品</button>
+        </div>
+
+        <!-- 產品網格: 手機 1 欄 / 平板 2 欄 / 桌面 4 欄 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 fade-in" id="product-grid">
+            <!-- 產品卡片將由 JS 動態產生 -->
+        </div>
+    </main>
+
+    <!-- 產品詳細 Modal (大圖檢視) -->
+    <div id="productModal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4 bg-black bg-opacity-75 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl z-10">&times;</button>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 bg-gray-100 flex items-center justify-center p-6">
+                    <img id="modalImg" src="" alt="產品大圖" class="max-w-full h-auto rounded-lg shadow-md transition-all duration-300">
+                </div>
+                <div class="md:w-1/2 p-8">
+                    <span id="modalCategory" class="text-blue-600 font-semibold text-sm uppercase tracking-wider">分類</span>
+                    <h2 id="modalTitle" class="text-3xl font-bold mt-2 mb-4">產品名稱</h2>
+                    <p id="modalDesc" class="text-gray-600 mb-6 leading-relaxed">產品介紹...</p>
+                    
+                    <div class="border-t border-gray-100 pt-6">
+                        <h3 class="font-bold text-gray-800 mb-2" data-zh="規格詳情：" data-en="Specifications:">規格詳情：</h3>
+                        <ul id="modalSpecs" class="list-disc list-inside text-gray-600 space-y-1 text-sm">
+                            <!-- 規格清單 -->
+                        </ul>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="mailto:service@antelope-hardware.com" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition w-full text-center">
+                            <i class="fas fa-paper-plane mr-2"></i> <span data-zh="立即詢問報價" data-en="Inquire for Quote">立即詢問報價</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <footer class="text-center p-8 bg-gray-100 text-gray-600 mt-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h4 class="font-bold text-gray-900 mb-2">林楊五金有限公司 Antelope Hardware Ltd.</h4>
+            <small data-zh="臺中市清水區吳厝里和睦路三段250號1樓" data-en="1F, No. 250, Sec. 3, Hemu Rd., Wucuo Li, Qingshui Dist., Taichung City">臺中市清水區吳厝里和睦路三段250號1樓</small>
+            <p class="mt-4 text-xs text-gray-400">&copy; 2025 Antelope Hardware Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 產品數據
+        const products = [
+            {
+                id: 1,
+                category: "tools",
+                name: { zh: "高強度棘輪扳手組", en: "Ratchet Wrench Set" },
+                categoryName: { zh: "手工具", en: "Hand Tools" },
+                img: "https://images.unsplash.com/photo-1581147036324-c17ac41dfa6c?w=600&auto=format",
+                desc: { zh: "採用優質鉻釩鋼鍛造，耐磨損且扭力強勁。72齒棘輪設計，適合狹小空間作業。", en: "Forged from high-quality CR-V steel, wear-resistant with strong torque. 72-tooth ratchet design for confined spaces." },
+                specs: { 
+                    zh: ["材質：CR-V 鉻釩鋼", "規格：1/4\", 3/8\", 1/2\"", "表面處理：鏡面鍍鉻"],
+                    en: ["Material: CR-V Steel", "Sizes: 1/4\", 3/8\", 1/2\"", "Finish: Mirror Chrome"]
+                }
+            },
+            {
+                id: 2,
+                category: "power",
+                name: { zh: "專業級無刷衝擊起子機", en: "Brushless Impact Driver" },
+                categoryName: { zh: "電動工具", en: "Power Tools" },
+                img: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&auto=format",
+                desc: { zh: "搭載高效率無刷馬達，延長使用壽命與工作時效。", en: "Equipped with high-efficiency brushless motor for longer life and runtime." },
+                specs: {
+                    zh: ["電壓：18V", "最大扭力：205 Nm", "空載轉速：0-3250 RPM"],
+                    en: ["Voltage: 18V", "Max Torque: 205 Nm", "No-load Speed: 0-3250 RPM"]
+                }
+            },
+            {
+                id: 3,
+                category: "fasteners",
+                name: { zh: "304不鏽鋼六角螺絲", en: "304 Stainless Steel Hex Bolts" },
+                categoryName: { zh: "螺絲緊固件", en: "Fasteners" },
+                img: "https://images.unsplash.com/photo-1610992015732-2449b0c26670?w=600&auto=format",
+                desc: { zh: "優質不鏽鋼材質，具備極佳的耐腐蝕性與強度。", en: "High-quality stainless steel with excellent corrosion resistance." },
+                specs: {
+                    zh: ["規格：M4 - M20", "長度：10mm - 200mm", "標準：DIN 933"],
+                    en: ["Specs: M4 - M20", "Length: 10mm - 200mm", "Standard: DIN 933"]
+                }
+            },
+            {
+                id: 4,
+                category: "safety",
+                name: { zh: "防霧型防護目鏡", en: "Anti-fog Safety Goggles" },
+                categoryName: { zh: "工業安全用品", en: "Safety Gear" },
+                img: "https://images.unsplash.com/photo-1597423298074-889859234120?w=600&auto=format",
+                desc: { zh: "符合國際安全認證，提供最佳眼部防護。", en: "Meets international safety standards, providing optimal eye protection." },
+                specs: {
+                    zh: ["認證：ANSI Z87.1", "功能：防霧、防括傷", "材質：聚碳酸酯"],
+                    en: ["Cert: ANSI Z87.1", "Features: Anti-fog, Anti-scratch", "Material: Polycarbonate"]
+                }
+            }
+        ];
+
+        function renderProducts(filter = 'all') {
+            const grid = document.getElementById('product-grid');
+            const lang = document.documentElement.lang === 'zh-Hant' ? 'zh' : 'en';
+            grid.innerHTML = '';
+
+            const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'product-card bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer group';
+                card.onclick = () => openModal(p);
+                
+                card.innerHTML = `
+                    <div class="relative img-container bg-gray-50">
+                        <img src="${p.img}" alt="${p.name[lang]}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="overlay absolute inset-0 bg-black/10 opacity-0 transition-opacity flex items-center justify-center">
+                            <span class="bg-white/90 text-gray-800 px-3 py-1.5 rounded-full text-xs font-bold shadow-sm">${lang === 'zh' ? '查看細節' : 'View Details'}</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-1">
+                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-tight">${p.categoryName[lang]}</span>
+                        </div>
+                        <h3 class="font-bold text-base text-gray-900 line-clamp-1 group-hover:text-blue-600 transition-colors">${p.name[lang]}</h3>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterProducts(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white', 'shadow-md');
+                btn.classList.add('bg-white', 'text-gray-700');
+            });
+            event.currentTarget.classList.remove('bg-white', 'text-gray-700');
+            event.currentTarget.classList.add('bg-blue-600', 'text-white', 'shadow-md');
+            renderProducts(category);
+        }
+
+        const modal = document.getElementById('productModal');
+        function openModal(product) {
+            const lang = document.documentElement.lang === 'zh-Hant' ? 'zh' : 'en';
+            document.getElementById('modalImg').src = product.img;
+            document.getElementById('modalTitle').textContent = product.name[lang];
+            document.getElementById('modalCategory').textContent = product.categoryName[lang];
+            document.getElementById('modalDesc').textContent = product.desc[lang];
+            
+            const specsList = document.getElementById('modalSpecs');
+            specsList.innerHTML = '';
+            product.specs[lang].forEach(s => {
+                const li = document.createElement('li');
+                li.textContent = s;
+                specsList.appendChild(li);
+            });
+
+            modal.classList.remove('hidden');
+            document.body.classList.add('modal-active');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.classList.remove('modal-active');
+        }
+
+        window.onclick = (e) => { if (e.target == modal) closeModal(); }
+
+        // 多語系切換邏輯
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuBtn.onclick = () => mobileMenu.classList.toggle('hidden');
+
+            const langBtnMobile = document.getElementById('lang-btn-mobile');
+            const langBtnDesktop = document.getElementById('lang-btn-desktop');
+
+            function updateUI(newLang) {
+                document.documentElement.lang = newLang;
+                localStorage.setItem('lang', newLang);
+                
+                const isZh = newLang === 'zh-Hant';
+                document.querySelectorAll('[data-zh], [data-en]').forEach(el => {
+                    el.textContent = el.getAttribute(`data-${isZh ? 'zh' : 'en'}`);
+                });
+
+                langBtnMobile.textContent = isZh ? 'English' : '中文';
+                langBtnDesktop.textContent = isZh ? 'English' : '中文';
+                document.title = isZh ? "產品中心 | 林楊五金有限公司" : "Products | Antelope Hardware Ltd.";
+                
+                renderProducts();
+            }
+
+            const storedLang = localStorage.getItem('lang') || 'zh-Hant';
+            updateUI(storedLang);
+
+            langBtnMobile.onclick = () => updateUI(document.documentElement.lang === 'zh-Hant' ? 'en' : 'zh-Hant');
+            langBtnDesktop.onclick = () => updateUI(document.documentElement.lang === 'zh-Hant' ? 'en' : 'zh-Hant');
+        });
+    </script>
+</body>
+</html>
