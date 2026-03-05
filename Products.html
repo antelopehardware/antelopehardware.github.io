@@ -129,7 +129,7 @@
                     <p id="modalDesc" class="text-gray-600 mb-6 leading-relaxed">產品介紹...</p>
                     
                     <div class="mt-8">
-                        <a href="mailto:service@antelope-hardware.com" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition w-full text-center">
+                        <a id="inquiryLink" href="mailto:service@antelope-hardware.com" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition w-full text-center">
                             <i class="fas fa-paper-plane mr-2"></i> <span data-key="inquireQuote">立即詢問報價</span>
                         </a>
                     </div>
@@ -308,6 +308,21 @@
             document.getElementById('modalCategory').textContent = product.categoryName[lang];
             document.getElementById('modalDesc').textContent = product.desc[lang];
             
+            // 更新詢價連結的 mailto 屬性，帶入主旨與內容範本
+            const inquiryLink = document.getElementById('inquiryLink');
+            const email = 'service@antelope-hardware.com';
+            let subject, bodyTemplate;
+            if (lang === 'zh') {
+                // 中文主旨：產品名稱詢價
+                subject = `${product.name[lang]}詢價`;
+                bodyTemplate = `公司名稱:\n聯絡人:\n電話:\n詢問數量、規格等內容`;
+            } else {
+                // English subject and body template
+                subject = `Quote request - ${product.name[lang]}`;
+                bodyTemplate = `Company Name:\nContact Person:\nPhone:\nQuantity/specifications, etc.`;
+            }
+            inquiryLink.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyTemplate)}`;
+
             modal.classList.remove('hidden');
             document.body.classList.add('modal-active');
         }
