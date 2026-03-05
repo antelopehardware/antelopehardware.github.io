@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <!-- 頁面基本設定與 SEO 相關標籤 -->
+    <meta charset="UTF-8">
+    <!-- 設定網頁在行動裝置上的顯示方式，確保響應式設計運作 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 網頁標題，對 SEO 非常重要 -->
+    <title>林楊五金有限公司 - 專業五金零件、起重吊具供應商</title>
+    <!-- 頁面簡短說明，會顯示在搜尋結果中 -->
+    <meta name="description" content="林楊五金有限公司是您值得信賴的五金零件與專業吊具鋼索供應商，提供各式鋼纜、船舶機具、貨櫃配件與安全吊帶，為您的業務提供堅實後盾。">
+    
+    <!-- 載入外部資源 -->
+    <!-- 預先連結 Google Fonts，優化字體載入速度 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 載入 Inter 字體，讓文字排版更現代、清晰 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 載入 Tailwind CSS 框架，用於快速實現響應式設計與樣式 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 內部自定義 CSS 樣式 -->
+    <style>
+        /* 為整個頁面設定字體與背景顏色 */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        /* 英雄區塊的背景圖片設定 */
+        .hero-section {
+            background-image: url('https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/hero-shipping.png');
+            background-size: cover; /* 圖片填滿整個容器 */
+            background-position: center; /* 圖片置中顯示 */
+            background-repeat: no-repeat; /* 不重複圖片 */
+        }
+        /* 跑馬燈容器設定，隱藏溢出部分並讓內容不換行 */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        /* 跑馬燈內容設定，讓其以動畫方式橫向滾動 */
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite; /* 設定動畫名稱、時長、速度曲線與重複次數 */
+        }
+        /* 當滑鼠懸停在跑馬燈上時，暫停動畫 */
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+        /* 跑馬燈中每張圖片的樣式 */
+        .marquee-content img {
+            display: inline-block;
+            margin-right: 2.5rem; /* 設定圖片間距 */
+            transition: transform 0.3s ease-in-out; /* 圖片放大效果的過渡動畫 */
+        }
+        /* 當滑鼠懸停在圖片上時，放大圖片 */
+        .marquee-content img:hover {
+            transform: scale(1.05);
+        }
+        /* 定義跑馬燈動畫的關鍵幀 */
+        @keyframes marquee {
+            0% { transform: translateX(0); } /* 從原始位置開始 */
+            100% { transform: translateX(-50%); } /* 滾動到一半位置，因為圖片被複製了一份，所以看起來是無限滾動 */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<!-- 導覽列 (使用 <nav> 標籤，符合語意化) -->
+<nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <!-- 公司 Logo 與名稱區塊 -->
+        <a href="index.html" class="flex items-center space-x-2">
+            <!-- 公司 Logo 圖片，使用 alt 屬性以利 SEO 和無障礙訪問 -->
+            <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/logo.jpg" alt="林楊五金有限公司 Logo" class="h-10 w-10 rounded-full object-cover shadow-md">
+            <div class="flex flex-col">
+                <span class="font-bold text-lg text-gray-900">林楊五金有限公司</span>
+                <span class="text-sm text-gray-500">Antelope Hardware Ltd.</span>
+            </div>
+        </a>
+        
+        <!-- 手機版選單按鈕與語言切換 -->
+        <div class="flex items-center md:hidden space-x-4">
+            <button id="language-toggle" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">English</button>
+            <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                <!-- 漢堡選單圖示 (SVG) -->
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- 導覽連結 (桌機版顯示，手機版預設隱藏) -->
+        <div id="nav-links" class="hidden md:flex md:space-x-6">
+            <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="home">首頁</a>
+            <a href="services.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="services">服務項目</a>
+            <a href="Products.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="products">產品</a>
+            <a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="about">關於我們</a>
+            <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="contact">聯絡我們</a>
+            <!-- 桌面版語言切換按鈕，與手機版獨立 -->
+            <button id="language-toggle-desktop" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">English</button>
+        </div>
+    </div>
+    
+    <!-- 手機版下拉選單 (預設隱藏) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-md w-full shadow-lg">
+        <a href="index.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="home">首頁</a>
+        <a href="services.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="services">服務項目</a>
+        <a href="Products.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="products">產品</a>
+        <a href="about.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="about">關於我們</a>
+        <a href="contact.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="contact">聯絡我們</a>
+    </div>
+</nav>
+
+<!-- 主要英雄區塊 (使用 <header> 標籤，符合語意化) -->
+<header id="home" class="hero-section min-h-screen flex items-center justify-center p-4 text-center text-white relative">
+    <!-- 半透明黑色遮罩 -->
+    <div class="absolute inset-0 bg-black/50"></div>
+    <!-- 主要內容容器，使用 z-10 確保其位於遮罩上方 -->
+    <div class="relative z-10 p-8 md:p-12 rounded-3xl bg-black/30 backdrop-blur-sm max-w-5xl mx-auto shadow-2xl border-2 border-white/30">
+        <!-- 頁面主要標題 (使用 <h1> 標籤，每個頁面應只有一個) -->
+        <h1 id="hero-title" class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg" data-key="heroTitle">
+            值得信賴的夥伴
+        </h1>
+        <p id="hero-subtitle" class="text-xl sm:text-2xl font-light mb-8 drop-shadow-md" data-key="heroSubtitle">
+            各式五金零件，專業吊具鋼索
+        </p>
+
+        <!-- 將原本核心服務項目的內容整合進來 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-8">
+            <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
+                <h3 id="service-1-title" class="text-xl font-semibold mb-2 text-white" data-key="service1Title">五金與起重配件</h3>
+                <p id="service-1-text" class="text-gray-200 text-sm" data-key="service1Text">提供鋼纜、鋼鍊、起重配件、滑車吊具等，為您的工程提供堅實後盾。</p>
+            </div>
+            <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
+                <h3 id="service-2-title" class="text-xl font-semibold mb-2 text-white" data-key="service2Title">船舶與工業機具</h3>
+                <p id="service-2-text" class="text-gray-200 text-sm" data-key="service2Text">專營船舶機具、海錨、錨鍊以及各式專業五金工具，確保作業順利。</p>
+            </div>
+            <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm">
+                <h3 id="service-3-title" class="text-xl font-semibold mb-2 text-white" data-key="service3Title">貨物安全解決方案</h3>
+                <p id="service-3-text" class="text-gray-200 text-sm" data-key="service3Text">提供尼龍安全吊帶、貨櫃配件及繩纜等，保障貨物運輸與吊掛安全。</p>
+            </div>
+        </div>
+
+        <!-- 聯絡按鈕，點擊後顯示 QR Code -->
+        <button onclick="showQRCode()" id="contact-button" class="inline-block px-8 py-4 bg-blue-600 text-white font-bold text-lg rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">
+            線上諮詢
+        </button>
+    </div>
+</header>
+
+<!-- QR Code 彈出視窗 -->
+<div id="qrcode-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+    <div class="bg-white p-8 rounded-2xl shadow-xl text-center relative max-w-sm w-full mx-4">
+        <button onclick="hideQRCode()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition-colors">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <h3 class="text-2xl font-bold mb-4">掃描聯繫我們</h3>
+        <!-- 這裡放置您的 QR Code 圖片，請替換成實際圖片網址 -->
+        <img src="/M_602dlrjj.png" alt="聯絡我們 QR Code" class="mx-auto w-40 h-40 rounded-lg">
+        <p class="text-gray-500 mt-4">或加入Line 官方帳號 @602dlrjj</p>
+    </div>
+</div>
+
+<!-- 頁面主要內容 (使用 <main> 標籤，符合語意化) -->
+<main class="container mx-auto px-4 py-16 space-y-24">
+    <!-- 產品跑馬燈區塊 (使用 <section> 標籤) -->
+    <section class="text-center">
+        <h2 id="products-title" class="text-3xl sm:text-4xl font-bold mb-8 text-gray-900" data-key="productsTitle">精選產品</h2>
+        <div class="marquee-container rounded-3xl shadow-xl border-4 border-gray-100 overflow-hidden bg-white py-6">
+            <div class="marquee-content">
+                <!-- 複製圖片以達到無限滾動效果 -->
+                <!-- 請將這裡的圖片替換成您的產品圖片網址 -->
+             <img src="/pic/LOCTITE.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/11t.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/17t30a.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/18t.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/20250812_133716.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/20250902_132915.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/20250902_132920.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/plastic.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/chain.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/fluke.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/yoke.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/250917_095647_group_1.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/line_oa_chat_250917_095647_group_2.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/line_oa_chat_250917_095647_group_3.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/line_oa_chat_250917_095658_group_0.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/line_oa_chat_250917_095658_group_1.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/line_oa_chat_250917_095658_group_2.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/line_oa_chat_250917_095658_group_3.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/line_oa_chat_250917_095658_group_4.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/line_oa_chat_250917_095658_group_5.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+                <img src="/pic/line_oa_chat_250917_095658_group_6.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+            <img src="/pic/line_oa_chat_250917_095658_group_7.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+            <img src="/pic/line_oa_chat_250917_095658_group_8.jpg" alt=" 產品" class="h-40 w-auto object-contain rounded-lg shadow-md">
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- 頁面底部 (使用 <footer> 標籤，符合語意化) -->
+<footer class="bg-gray-900 text-white text-center py-6 mt-16">
+    <!-- 版權年份為 2025 -->
+    <p class="text-sm" id="footer-text">© 2025 林楊五金有限公司. All Rights Reserved.</p>
+</footer>
+
+<!-- 語言切換與 QR Code 彈窗腳本 -->
+<script>
+    // 定義所有需要翻譯的文字內容
+    const translations = {
+        'zh-TW': {
+            // 導覽列文字
+            home: '首頁',
+            services: '服務項目',
+            products: '產品',
+            about: '關於我們',
+            contact: '聯絡我們',
+            // 英雄區塊文字
+            heroTitle: '值得信賴的夥伴',
+            heroSubtitle: '各式五金零件，專業吊具鋼索',
+            heroButton: '線上諮詢',
+            // 核心服務區塊文字
+            service1Title: '五金與起重配件',
+            service1Text: '提供鋼纜、鋼鍊、起重配件、滑車吊具等，為您的工程提供堅實後盾。',
+            service2Title: '船舶與工業機具',
+            service2Text: '專營船舶機具、海錨、錨鍊以及各式專業五金工具，確保作業順利。',
+            service3Title: '貨物安全解決方案',
+            service3Text: '提供尼龍安全吊帶、貨櫃配件及繩纜等，保障貨物運輸與吊掛安全。',
+            // 產品跑馬燈文字
+            productsTitle: '精選產品',
+            // 頁腳文字
+            footerText: '© 2025 林楊五金有限公司. All Rights Reserved.',
+            toggleButton: 'English',
+        },
+        'en': {
+            // Navigation text
+            home: 'Home',
+            services: 'Services',
+            products: 'Products',
+            about: 'About Us',
+            contact: 'Contact Us',
+            // Hero section text
+            heroTitle: 'Your Trusted Partner',
+            heroSubtitle: 'All Kinds of Hardware Parts & Professional Slings and Ropes',
+            heroButton: 'Online Consultation',
+            // Core services section text
+            service1Title: 'Hardware & Lifting Accessories',
+            service1Text: 'We provide wire ropes, steel chains, lifting accessories, and pulley tackle to support your projects.',
+            service2Title: 'Marine & Industrial Equipment',
+            service2Text: 'Specializing in marine equipment, anchors, anchor chains, and various professional hardware tools to ensure smooth operations.',
+            service3Title: 'Cargo Safety Solutions',
+            service3Text: 'We offer nylon safety belts, container accessories, and ropes to ensure the safety of cargo transport and lifting.',
+            // Product carousel text
+            productsTitle: 'Featured Products',
+            // Footer text
+            footerText: '© 2025 Antelope Hardware Ltd. All Rights Reserved.',
+            toggleButton: '中文',
+        }
+    };
+
+    // 獲取需要切換語言的元素
+    const elementsToTranslate = {
+        'home': document.querySelector('[data-key="home"]'),
+        'services': document.querySelector('[data-key="services"]'),
+        'products': document.querySelector('[data-key="products"]'),
+        'about': document.querySelector('[data-key="about"]'),
+        'contact': document.querySelector('[data-key="contact"]'),
+        'heroTitle': document.getElementById('hero-title'),
+        'heroSubtitle': document.getElementById('hero-subtitle'),
+        'heroButton': document.getElementById('contact-button'), // 變更 ID
+        'service1Title': document.getElementById('service-1-title'),
+        'service1Text': document.getElementById('service-1-text'),
+        'service2Title': document.getElementById('service-2-title'),
+        'service2Text': document.getElementById('service-2-text'),
+        'service3Title': document.getElementById('service-3-title'),
+        'service3Text': document.getElementById('service-3-text'),
+        'productsTitle': document.getElementById('products-title'),
+        'footerText': document.getElementById('footer-text'),
+        'toggleButton': document.getElementById('language-toggle'),
+    };
+
+    // 語言切換函數
+    function toggleLanguage() {
+        // 從瀏覽器儲存中獲取當前語言，如果沒有則預設為中文
+        let currentLang = localStorage.getItem('lang') || 'zh-TW';
+        let newLang = currentLang === 'zh-TW' ? 'en' : 'zh-TW';
+
+        // 根據新語言更新所有元素的文字
+        for (const key in elementsToTranslate) {
+            if (elementsToTranslate[key]) {
+                elementsToTranslate[key].textContent = translations[newLang][key];
+            }
+        }
+        
+        // 更新網頁的 lang 屬性
+        document.documentElement.lang = newLang;
+        // 將新語言儲存到瀏覽器中
+        localStorage.setItem('lang', newLang);
+    }
+    
+    // 點擊語言切換按鈕時執行函數
+    document.getElementById('language-toggle').addEventListener('click', toggleLanguage);
+    document.getElementById('language-toggle-desktop').addEventListener('click', toggleLanguage);
+
+    // 頁面載入時，根據儲存的語言設定初始顯示
+    document.addEventListener('DOMContentLoaded', () => {
+        let currentLang = localStorage.getItem('lang') || 'zh-TW';
+        for (const key in elementsToTranslate) {
+            if (elementsToTranslate[key]) {
+                elementsToTranslate[key].textContent = translations[currentLang][key];
+            }
+        }
+        document.documentElement.lang = currentLang;
+    });
+
+    // QR Code 彈窗顯示/隱藏函數
+    function showQRCode() {
+        document.getElementById('qrcode-modal').classList.remove('hidden');
+    }
+
+    function hideQRCode() {
+        document.getElementById('qrcode-modal').classList.add('hidden');
+    }
+    
+    // 手機選單切換邏輯
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+<a href="https://wa.me/886972138928" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="50" height="50">
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .whatsapp-float img {
+    width: 35px;
+    height: 35px;
+  }
+</style>
+
+</body>
+</html>
