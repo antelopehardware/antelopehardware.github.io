@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="林楊五金有限公司提供五金器具、機械零件及船舶配件的批發與零售，包括專人協助、本地採購與及時補給。">
+  <meta name="keywords" content="服務項目,鋼纜、鋼鍊，起重配件，船舶機具，海錨、錨鍊，五金工具，貨櫃配件，滑車吊具，吊車專用鋼纜，尼龍安全吊帶，繩纜">
+  <meta name="author" content="林楊五金有限公司">
+  <meta name="robots" content="index, follow">
+  <title>服務項目 | 林楊五金有限公司</title>
+
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- 導入 Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* 淡入動畫效果 */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+        animation: fadeIn 1s ease-out;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Microsoft JhengHei', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 font-sans">
+  
+  <!-- 導覽列 (與 about.html 統一) -->
+  <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <!-- 公司 Logo 與名稱區塊 -->
+      <a href="index.html" class="flex items-center space-x-2">
+        <!-- 公司 Logo 圖片 -->
+        <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/logo.jpg" alt="林楊五金有限公司 Logo" class="h-10 w-10 rounded-full object-cover shadow-md">
+        <div class="flex flex-col">
+          <span class="font-bold text-lg text-gray-900">林楊五金有限公司</span>
+          <span class="text-sm text-gray-500">Antelope Hardware Ltd.</span>
+        </div>
+      </a>
+      
+      <!-- 手機版選單按鈕與語言切換 -->
+      <div class="flex items-center md:hidden space-x-4">
+        <button id="lang-btn-mobile" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">English</button>
+        <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+          <!-- 漢堡選單圖示 (SVG) -->
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- 導覽連結 (桌機版顯示，手機版預設隱藏) -->
+      <div id="nav-links-wrapper" class="hidden md:flex md:space-x-6">
+        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="home" data-zh="首頁" data-en="Home">首頁</a>
+        <a href="services.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="services" data-zh="服務項目" data-en="Services">服務項目</a>
+        <a href="Products.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="products" data-zh="產品" data-en="Products">產品</a>
+        <a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="about" data-zh="關於我們" data-en="About Us">關於我們</a>
+        <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="contact" data-zh="聯絡我們" data-en="Contact Us">聯絡我們</a>
+        <!-- 桌面版語言切換按鈕，與手機版獨立 -->
+        <button id="lang-btn-desktop" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">English</button>
+      </div>
+    </div>
+    
+    <!-- 手機版下拉選單 (預設隱藏) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-md w-full shadow-lg">
+      <a href="index.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="home" data-zh="首頁" data-en="Home">首頁</a>
+      <a href="services.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="services" data-zh="服務項目" data-en="Services">服務項目</a>
+      <a href="Products.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="products" data-zh="產品" data-en="Products">產品</a>
+      <a href="about.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="about" data-zh="關於我們" data-en="About Us">關於我們</a>
+      <a href="contact.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="contact" data-zh="聯絡我們" data-en="Contact Us">聯絡我們</a>
+    </div>
+  </nav>
+
+  <!-- 主要內容區塊 -->
+  <main>
+    <!-- 內容區塊，背景圖與透明度效果 -->
+    <section class="py-12 px-4 bg-cover bg-center bg-fixed relative" style="background-image: url('https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/hero-shipping.png');">
+        <!-- 疊層，讓文字更清晰 -->
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 max-w-4xl mx-auto p-6 bg-white/90 rounded-lg shadow-xl text-center fade-in">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800" data-zh="服務項目" data-en="Our Services">服務項目</h2>
+            <p class="text-gray-600 mb-8" data-zh="我們提供多元化的五金產品與專業服務，滿足您在不同領域的各種需求。" data-en="We provide a diverse range of hardware products and professional services to meet your various needs in different fields."></p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- 服務項目 1 - 專員協助流程 -->
+                <div class="service-item bg-gray-50 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700" data-zh="專員協助流程" data-en="Specialist Assistance Process">專員協助流程</h3>
+                    <p class="text-gray-600 text-sm" data-zh="專人協助全流程，讓補給無縫接軌，無需分心處理繁瑣事務。" data-en="Dedicated personnel assist throughout the entire process, ensuring a seamless connection for resupply without the need to be distracted by trivial matters."></p>
+                </div>
+                <!-- 服務項目 2 - 台灣本地採購配送 -->
+                <div class="service-item bg-gray-50 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700" data-zh="台灣本地採購配送" data-en="Taiwan Local Procurement and Delivery">台灣本地採購配送</h3>
+                    <p class="text-gray-600 text-sm" data-zh="我們提供各類日常生活用品採購，如清潔耗材、盥洗用品等。" data-en="We provide procurement services for various daily necessities, such as cleaning materials and toiletries."></p>
+                </div>
+                <!-- 服務項目 3 - 甲板與機艙物料 -->
+                <div class="service-item bg-gray-50 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700" data-zh="甲板與機艙物料" data-en="Deck and Engine Room Supplies">甲板與機艙物料</h3>
+                    <p class="text-gray-600 text-sm" data-zh="零件、工具與清潔用品，專業配送維修物料。" data-en="Parts, tools, and cleaning supplies, with professional delivery of maintenance materials."></p>
+                </div>
+                <!-- 服務項目 4 - 及時補給服務 -->
+                <div class="service-item bg-gray-50 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700" data-zh="及時補給服務" data-en="Timely Resupply Service">及時補給服務</h3>
+                    <p class="text-gray-600 text-sm" data-zh="專車配送，緊急補給服務，確保您的行程不受延誤。" data-en="Dedicated vehicle delivery and emergency resupply services to ensure your schedule is not delayed."></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 產品列表 -->
+    <section class="py-12 px-4 max-w-5xl mx-auto fade-in">
+        <h3 class="text-2xl font-bold text-center mb-8 text-gray-800" data-zh="產品類型" data-en="Product Categories">產品類型</h3>
+        <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <li class="p-3 bg-white rounded-lg shadow-sm text-center text-gray-700 text-sm font-medium transition-transform transform hover:scale-105" data-zh="鋼纜、鋼鍊" data-en="Wire Ropes, Chains">鋼纜、鋼鍊</li>
+            <li class="p-3 bg-white rounded-lg shadow-sm text-center text-gray-700 text-sm font-medium transition-transform transform hover:scale-105" data-zh="起重配件" data-en="Lifting Accessories">起重配件</li>
+            <li class="p-3 bg-white rounded-lg shadow-sm text-center text-gray-700 text-sm font-medium transition-transform transform hover:scale-105" data-zh="船舶機具" data-en="Marine Equipment">船舶機具</li>
+            <li class="p-3 bg-white rounded-lg shadow-sm text-center text-gray-700 text-sm font-medium transition-transform transform hover:scale-105" data-zh="海錨、錨鍊" data-en="Anchors, Chains">海錨、錨鍊</li>
+            <li class="p-3 bg-white rounded-lg shadow-sm text-center text-gray-700 text-sm font-medium transition-transform transform hover:scale-105" data-zh="五金工具" data-en="Hardware Tools">五金工具</li>
+            <li class="p-3 bg-white rounded-lg shadow-sm text-center text-gray-700 text-sm font-medium transition-transform transform hover:scale-105" data-zh="貨櫃配件" data-en="Container Parts">貨櫃配件</li>
+            <li class="p-3 bg-white rounded-lg shadow-sm text-center text-gray-700 text-sm font-medium transition-transform transform hover:scale-105" data-zh="滑車吊具" data-en="Pulleys, Hoists">滑車吊具</li>
+            <li class="p-3 bg-white rounded-lg shadow-sm text-center text-gray-700 text-sm font-medium transition-transform transform hover:scale-105" data-zh="吊車專用鋼纜" data-en="Crane Ropes">吊車專用鋼纜</li>
+            <li class="p-3 bg-white rounded-lg shadow-sm text-center text-gray-700 text-sm font-medium transition-transform transform hover:scale-105" data-zh="尼龍安全吊帶" data-en="Nylon Slings">尼龍安全吊帶</li>
+            <li class="p-3 bg-white rounded-lg shadow-sm text-center text-gray-700 text-sm font-medium transition-transform transform hover:scale-105" data-zh="繩纜" data-en="Ropes">繩纜</li>
+        </ul>
+    </section>
+  </main>
+
+  <footer class="text-center p-8 bg-gray-100 text-gray-600">
+      <small data-zh="臺中市清水區吳厝里和睦路三段250號1樓" data-en="1F, No. 250, Sec. 3, Hemu Rd., Wucuo Li, Qingshui Dist., Taichung City">臺中市清水區吳厝里和睦路三段250號1樓</small>
+  </footer>
+
+  <!-- JavaScript 邏輯 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 漢堡選單的切換邏輯 (與 about.html 相同)
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // 語系切換的邏輯 (整合 about.html 的按鈕 ID 和 services.html 的翻譯內容)
+      const languageToggleMobile = document.getElementById('lang-btn-mobile');
+      const languageToggleDesktop = document.getElementById('lang-btn-desktop');
+      
+      const navLinks = document.querySelectorAll('.nav-link');
+      const serviceTitle = document.querySelector('[data-zh="服務項目"]');
+      const serviceSubtitle = document.querySelector('[data-zh="我們提供多元化的五金產品與專業服務，滿足您在不同領域的各種需求。"]');
+      const serviceItems = document.querySelectorAll('.service-item h3, .service-item p');
+      const productItems = document.querySelectorAll('ul li');
+      const footerText = document.querySelector('footer small');
+      const productTitle = document.querySelector('[data-zh="產品類型"]');
+      
+      // 語言切換函數
+      function toggleLanguage() {
+          const currentLang = document.documentElement.lang;
+          const newLang = currentLang === 'zh-Hant' ? 'en' : 'zh-Hant';
+          document.documentElement.lang = newLang;
+          localStorage.setItem('lang', newLang);
+
+          // 更新導覽列連結
+          navLinks.forEach(link => {
+            link.textContent = link.getAttribute('data-' + (newLang === 'zh-Hant' ? 'zh' : 'en'));
+          });
+          
+          // 更新按鈕文字
+          languageToggleMobile.textContent = (newLang === 'zh-Hant' ? 'English' : '中文');
+          languageToggleDesktop.textContent = (newLang === 'zh-Hant' ? 'English' : '中文');
+
+          // 更新服務項目頁面的內容
+          if (newLang === 'en') {
+              serviceTitle.textContent = serviceTitle.getAttribute('data-en');
+              serviceSubtitle.textContent = serviceSubtitle.getAttribute('data-en');
+              productTitle.textContent = productTitle.getAttribute('data-en');
+              footerText.textContent = footerText.getAttribute('data-en');
+              document.title = "Our Services | Antelope Hardware Ltd.";
+          } else {
+              serviceTitle.textContent = serviceTitle.getAttribute('data-zh');
+              serviceSubtitle.textContent = serviceSubtitle.getAttribute('data-zh');
+              productTitle.textContent = productTitle.getAttribute('data-zh');
+              footerText.textContent = footerText.getAttribute('data-zh');
+              document.title = "服務項目 | 林楊五金有限公司";
+          }
+          
+          // 更新所有帶有 data 屬性的元素
+          document.querySelectorAll('[data-zh], [data-en]').forEach(el => {
+              const newText = el.getAttribute(`data-${newLang === 'zh-Hant' ? 'zh' : 'en'}`);
+              el.textContent = newText;
+          });
+      }
+      
+      // 點擊語言切換按鈕時執行函數
+      if(languageToggleMobile) {
+          languageToggleMobile.addEventListener('click', toggleLanguage);
+      }
+      if(languageToggleDesktop) {
+          languageToggleDesktop.addEventListener('click', toggleLanguage);
+      }
+
+      // 頁面載入時，根據儲存的語言設定初始顯示
+      const storedLang = localStorage.getItem('lang') || 'zh-Hant';
+      document.documentElement.lang = storedLang;
+
+      navLinks.forEach(link => {
+        link.textContent = link.getAttribute('data-' + (storedLang === 'zh-Hant' ? 'zh' : 'en'));
+      });
+      languageToggleMobile.textContent = (storedLang === 'zh-Hant' ? 'English' : '中文');
+      languageToggleDesktop.textContent = (storedLang === 'zh-Hant' ? 'English' : '中文');
+      
+      // 針對服務項目頁面特有的翻譯初始化
+      if (storedLang === 'en') {
+          serviceTitle.textContent = serviceTitle.getAttribute('data-en');
+          serviceSubtitle.textContent = serviceSubtitle.getAttribute('data-en');
+          productTitle.textContent = productTitle.getAttribute('data-en');
+          footerText.textContent = footerText.getAttribute('data-en');
+          document.title = "Our Services | Antelope Hardware Ltd.";
+      } else {
+          serviceTitle.textContent = serviceTitle.getAttribute('data-zh');
+          serviceSubtitle.textContent = serviceSubtitle.getAttribute('data-zh');
+          productTitle.textContent = productTitle.getAttribute('data-zh');
+          footerText.textContent = footerText.getAttribute('data-zh');
+          document.title = "服務項目 | 林楊五金有限公司";
+      }
+
+      document.querySelectorAll('[data-zh], [data-en]').forEach(el => {
+        const newText = el.getAttribute(`data-${storedLang === 'zh-Hant' ? 'zh' : 'en'}`);
+        el.textContent = newText;
+      });
+    });
+  </script>
+</body>
+</html>
