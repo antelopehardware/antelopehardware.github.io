@@ -1,0 +1,25 @@
+# robots.txt 文件 - 為搜尋引擎爬蟲提供指導
+
+# 允許所有爬蟲
+User-agent: *
+Allow: /
+
+# Sitemap 位置
+Sitemap: https://www.antelopehw.com.tw/sitemap.xml
+
+# 規則: 禁止爬蟲存取特定目錄 (如果需要)
+# Disallow: /admin/
+# Disallow: /private/
+
+# 爬取延遲設定 (秒)
+Crawl-delay: 1
+
+# 針對 Google 的特定規則
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# 針對 Bingbot 的特定規則
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
