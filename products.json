@@ -1,0 +1,172 @@
+{
+  "categories": [
+    {
+      "id": "tools",
+      "name": {
+        "zh": "手工具",
+        "en": "Hand Tools"
+      }
+    },
+    {
+      "id": "power",
+      "name": {
+        "zh": "電動工具",
+        "en": "Power Tools"
+      }
+    },
+    {
+      "id": "fasteners",
+      "name": {
+        "zh": "螺絲緊固件",
+        "en": "Fasteners"
+      }
+    },
+    {
+      "id": "safety",
+      "name": {
+        "zh": "工業安全用品",
+        "en": "Safety Gear"
+      }
+    },
+    {
+      "id": "cleaning",
+      "name": {
+        "zh": "工業清潔",
+        "en": "Industrial cleaning"
+      }
+    }
+  ],
+  "products": [
+    {
+      "id": 6,
+      "category": "tools",
+      "name": {
+        "zh": "伸縮船鉤",
+        "en": "Retractable boat hook"
+      },
+      "categoryName": {
+        "zh": "手工具",
+        "en": "Hand Tools"
+      },
+      "img": "https://raw.githubusercontent.com/sanmu2025/sanmu2025.github.io/refs/heads/main/pic-a/boathook.jpg",
+      "desc": {
+        "zh": "長度 可洽詢",
+        "en": "Extension length is available upon request."
+      },
+      "specs": {
+        "zh": [
+          "材質：不鏽鋼、鋁合金"
+        ],
+        "en": [
+          "Materials: Stainless steel, aluminum alloy"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "category": "cleaning",
+      "name": {
+        "zh": "比利時 速的奧 除汙紙巾",
+        "en": "SOUDAL SWIPEX Super Cleaning Wipes"
+      },
+      "categoryName": {
+        "zh": "工業清潔",
+        "en": "Industrial cleaning"
+      },
+      "img": "https://raw.githubusercontent.com/sanmu2025/sanmu2025.github.io/refs/heads/main/pic-a/cleaningA.jpg",
+      "desc": {
+        "zh": "去除矽利康、黏合劑、泡沫、油脂",
+        "en": "Remove silicone, adhesives, foam, and grease."
+      },
+      "specs": {
+        "zh": [
+          "(100張/罐)"
+        ],
+        "en": [
+          "(100 sheets/can)"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "category": "fasteners",
+      "name": {
+        "zh": "自鎖螺絲護套",
+        "en": "Self-locking screw sleeve"
+      },
+      "categoryName": {
+        "zh": "螺絲緊固件",
+        "en": "Fasteners"
+      },
+      "img": "https://raw.githubusercontent.com/sanmu2025/sanmu2025.github.io/refs/heads/main/pic-a/Screwsleeve.jpg",
+      "desc": {
+        "zh": "無尾,可自鎖",
+        "en": "Tailless, self-locking"
+      },
+      "specs": {
+        "zh": [
+          "規格眾多",
+          "M2 M2.5 M3 M4 M5 M6"
+        ],
+        "en": [
+          "Numerous specifications"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "category": "safety",
+      "name": {
+        "zh": "電工穿線器",
+        "en": "Electrician's Fish Tape / Wire Puller"
+      },
+      "categoryName": {
+        "zh": "工業安全用品",
+        "en": "Safety Gear"
+      },
+      "img": "https://raw.githubusercontent.com/sanmu2025/sanmu2025.github.io/refs/heads/main/pic-a/threader.jpg",
+      "desc": {
+        "zh": "行家的選擇，復原能力強，輕鬆過彎，在家DIY穿線也可以",
+        "en": "The Professional's Choice,Excellent shape retention / High resilience,Navigates bends and corners with ease"
+      },
+      "specs": {
+        "zh": [
+          "可供長度 (總計 7 款)"
+        ],
+        "en": [
+          "Available Lengths (7 models in total)"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "category": "tools",
+      "name": {
+        "zh": "狼頭牌 2001A 方型漏斗",
+        "en": "2001A Square Funnel"
+      },
+      "categoryName": {
+        "zh": "手工具",
+        "en": "Hand Tools"
+      },
+      "img": "https://raw.githubusercontent.com/sanmu2025/sanmu2025.github.io/refs/heads/main/pic-a/2001A.jpg",
+      "desc": {
+        "zh": "●*PAT漏斗定位設計*\n●*DIY換油*\n●半透明設計可以看的到油位",
+        "en": "Semi-transparent design\nPAT funnel positioning design"
+      },
+      "specs": {
+        "zh": [
+          "●材質:PP(高密度塑膠)",
+          "●重量:80g",
+          "●容量:850cc",
+          "●尺寸:180x100x145m/m"
+        ],
+        "en": [
+          "Material: PP",
+          "Weight: 80g",
+          "Capacity: 850cc"
+        ]
+      }
+    }
+  ]
+}
