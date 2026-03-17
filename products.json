@@ -233,6 +233,57 @@
           "Common lengths: 3m, 5m, 7.5m, 10m"
         ]
       }
+    },
+    {
+      "id": 13,
+      "category": "fasteners",
+      "name": {
+        "zh": "鐵板牙螺絲(大扁)",
+        "en": "Sheet metal screw"
+      },
+      "categoryName": {
+        "zh": "螺絲緊固件",
+        "en": "Fasteners"
+      },
+      "img": "https://raw.githubusercontent.com/sanmu2025/sanmu2025.github.io/refs/heads/main/pic-a/20260316_10390_7.jpg",
+      "desc": {
+        "zh": "鐵板牙螺絲(大扁頭)5/32",
+        "en": "5/32 * 1/2 \" ~3-1/2 \""
+      },
+      "specs": {
+        "zh": [
+          "∅:5/32(約3.9687mm)",
+          "尺寸詳洽"
+        ],
+        "en": [
+          "For detailed dimensions, please inquire"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "category": "power",
+      "name": {
+        "zh": "六角水泥鑽頭",
+        "en": "Hex Shank Masonry Drill Bit"
+      },
+      "categoryName": {
+        "zh": "電動工具",
+        "en": "Power Tools"
+      },
+      "img": "https://raw.githubusercontent.com/sanmu2025/sanmu2025.github.io/refs/heads/main/pic-a/20260316_1223_5_8.jpg",
+      "desc": {
+        "zh": "各種尺寸",
+        "en": "Available in various sizes"
+      },
+      "specs": {
+        "zh": [
+          "尺寸詳洽"
+        ],
+        "en": [
+          "For detailed dimensions, please inquire"
+        ]
+      }
     }
   ]
 }
