@@ -34,6 +34,13 @@
         "zh": "工業清潔",
         "en": "Industrial cleaning"
       }
+    },
+    {
+      "id": "consumables",
+      "name": {
+        "zh": "五金耗材",
+        "en": "Hardware Consumables"
+      }
     }
   ],
   "products": [
@@ -282,6 +289,35 @@
         ],
         "en": [
           "For detailed dimensions, please inquire"
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "category": "consumables",
+      "name": {
+        "zh": "中性矽利康密封膠（通用型 / 建築用）",
+        "en": "Neutral Silicone (GP/Const.)"
+      },
+      "categoryName": {
+        "zh": "五金耗材",
+        "en": "Hardware Consumables"
+      },
+      "img": "https://raw.githubusercontent.com/sanmu2025/sanmu2025.github.io/refs/heads/main/pic-a/20260209_1024.jpg",
+      "desc": {
+        "zh": "適用於多種材質，提供多種規格",
+        "en": "Multi-material / Various Specs"
+      },
+      "specs": {
+        "zh": [
+          "280ml",
+          "透明、白色、灰色",
+          "25支/箱"
+        ],
+        "en": [
+          "Volume:\t280ml",
+          "Color:\tClear / White / Gray",
+          "Packing:\t25 pcs / Ctn"
         ]
       }
     }
