@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="透過林楊五金有限公司的聯絡方式取得報價或諮詢，查看公司名稱、統一編號、聯絡人、電話、信箱、官方LINE、辦公時間與地址。">
+  <meta name="keywords" content="聯絡我們, 聯絡表單, 報價, 各式五金零件, 聯絡資訊, 辦公時間">
+  <meta name="author" content="林楊五金有限公司">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.antelopehw.com.tw/contact.html">
+  <title>聯絡我們 | 林楊五金有限公司</title>
+
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- 導入 Tailwind CSS 並配置 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Microsoft JhengHei', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 font-sans">
+  
+  <!-- 導覽列 (與 services.html 統一) -->
+  <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <!-- 公司 Logo 與名稱區塊 -->
+      <a href="index.html" class="flex items-center space-x-2">
+        <!-- 公司 Logo 圖片 -->
+        <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/logo.jpg" alt="林楊五金有限公司 Logo" class="h-10 w-10 rounded-full object-cover shadow-md">
+        <div class="flex flex-col">
+          <span class="font-bold text-lg text-gray-900">林楊五金有限公司</span>
+          <span class="text-sm text-gray-500">Antelope Hardware Ltd.</span>
+        </div>
+      </a>
+      
+      <!-- 手機版選單按鈕與語言切換 -->
+      <div class="flex items-center md:hidden space-x-4">
+        <button id="lang-btn-mobile" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">English</button>
+        <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+          <!-- 漢堡選單圖示 (SVG) -->
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- 導覽連結 (桌機版顯示，手機版預設隱藏) -->
+      <div id="nav-links-wrapper" class="hidden md:flex md:space-x-6">
+        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="home" data-zh="首頁" data-en="Home">首頁</a>
+        <a href="services.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="services" data-zh="服務項目" data-en="Services">服務項目</a>
+        <a href="Products.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="products" data-zh="產品" data-en="Products">產品</a>
+        <a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="about" data-zh="關於我們" data-en="About Us">關於我們</a>
+        <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300" data-key="contact" data-zh="聯絡我們" data-en="Contact Us">聯絡我們</a>
+        <!-- 桌面版語言切換按鈕，與手機版獨立 -->
+        <button id="lang-btn-desktop" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300">English</button>
+      </div>
+    </div>
+    
+    <!-- 手機版下拉選單 (預設隱藏) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-md w-full shadow-lg">
+      <a href="index.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="home" data-zh="首頁" data-en="Home">首頁</a>
+      <a href="services.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="services" data-zh="服務項目" data-en="Services">服務項目</a>
+      <a href="Products.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="products" data-zh="產品" data-en="Products">產品</a>
+      <a href="about.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="about" data-zh="關於我們" data-en="About Us">關於我們</a>
+      <a href="contact.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-100 transition-colors" data-key="contact" data-zh="聯絡我們" data-en="Contact Us">聯絡我們</a>
+    </div>
+  </nav>
+
+  <!-- 主要內容區塊 -->
+  <main>
+    <!-- 內容區塊，背景圖與透明度效果 -->
+    <section class="py-12 px-4 bg-cover bg-center bg-fixed relative" style="background-image: url('https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/hero-shipping.png');">
+        <!-- 疊層，讓文字更清晰 -->
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 max-w-4xl mx-auto p-6 bg-white/90 rounded-lg shadow-xl fade-in">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800 text-center" data-zh="聯絡我們" data-en="Contact Us">聯絡我們</h2>
+            <p class="text-gray-600 mb-8 text-center" data-zh="請填寫以下表單，我們會盡快與您聯繫！" data-en="Please fill out the form below, and we will get back to you as soon as possible!"></p>
+
+            <div class="space-y-8">
+                <!-- 聯絡資訊區塊 -->
+                <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                    <!-- 將 grid-cols-3 改為 grid-cols-2，以避免文字溢出 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
+                        <!-- 公司名稱 -->
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 10h.01M9 14h.01M15 14h.01M15 10h.01M9 18h.01M15 18h.01M12 10h.01M12 14h.01M12 18h.01" />
+                            </svg>
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-sm" data-zh="公司名稱" data-en="Company Name">
+                                公司名稱 / Company Name
+                              </p>
+                              <p class="text-base" data-zh="林楊五金有限公司" data-en="Antelope Hardware Ltd.">
+                                林楊五金有限公司
+                              </p>
+
+                            </div>
+                        </div>
+                        <!-- 統一編號 -->
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6.643v-2.31c0-.441-.358-.8-1.5-.8s-1.5.8-1.5.8h-2.222c-.672 0-1.222.55-1.222 1.222v9.333c0 .673.55 1.222 1.222 1.222h13.555c.672 0 1.222-.55 1.222-1.222v-9.333c0-.672-.55-1.222-1.222-1.222h-2.222c0-.441-.358-.8-1.5-.8s-1.5.8-1.5.8v2.31" />
+                                <rect x="3" y="10" width="18" height="12" rx="2" ry="2" />
+                            </svg>
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-sm" data-zh="統一編號" data-en="Tax ID">統一編號</p>
+                                <p class="text-base">89156878</p>
+                            </div>
+                        </div>
+                        <!-- 聯絡電話 -->
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-sm" data-zh="聯絡電話" data-en="Phone">
+                                聯絡電話 / Phone
+                              </p>
+                              <a href="tel:+886972138928" class="text-base hover:underline" 
+                                 data-zh="0972-138-928" data-en="+886 972-138-928">
+                                0972-138-928
+                              </a>
+
+                            </div>
+                        </div>
+                        <!-- 電子信箱 -->
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 2l-8 5.333M5 10l8 5.333m-10-8h16a2 2 0 012 2v8a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2z" />
+                            </svg>
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-sm" data-zh="電子信箱" data-en="Email">電子信箱</p>
+                                <p class="text-base">service@antelopehw.com.tw</p>
+                            </div>
+                        </div>
+                        <!-- 官方LINE -->
+                        <!-- 調整為左文字右圖片的排版，避免文字溢出 -->
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-sm">
+                          <div class="flex flex-col flex-grow">
+                              <p class="font-semibold text-sm" data-zh="官方LINE" data-en="Official LINE">官方LINE</p>
+                              <p class="text-base">@602dlrjj</p>
+                          </div>
+                          <div class="flex-shrink-0">
+                              <img src="https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/M_602dlrjj.png" alt="官方 LINE QR code" class="w-24 h-24 rounded-lg">
+                          </div>
+                        </div>
+                        <!-- 辦公時間 -->
+                        <div class="flex items-center space-x-4 bg-white p-4 rounded-lg shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-sm" data-zh="辦公時間" data-en="Office Hours">
+                                  辦公時間 / Office Hours
+                                </p>
+                                <p class="text-base" data-zh="週一至週五 08:00-17:00 (GMT+8)" data-en="Monday to Friday, 8:00 AM – 5:00 PM (GMT+8)">
+                                  週一至週五 08:00-17:00 (GMT+8)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 替換後的 Web3Forms 聯絡表單區塊 -->
+                <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-100 relative overflow-hidden">
+                    <!-- 裝飾性背景圖形 -->
+                    <div class="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 bg-blue-50 rounded-full opacity-50 z-0 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 -ml-16 -mb-16 w-32 h-32 bg-blue-50 rounded-full opacity-50 z-0 pointer-events-none"></div>
+                    
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center flex items-center justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 2l-8 5.333M5 10l8 5.333m-10-8h16a2 2 0 012 2v8a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2z" />
+                            </svg>
+                            <span data-zh="線上留言" data-en="Online Inquiry">線上留言</span>
+                        </h3>
+                        
+                        <!-- Web3Forms 表單設定 -->
+                        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                            <!-- Web3Forms Access Key -->
+                            <input type="hidden" name="access_key" value="b3a425ac-2da6-432b-a663-fe2feb5ed08b">
+                            <!-- 寄信的主旨 -->
+                            <input type="hidden" name="subject" value="來自 林楊五金網站 的新聯絡表單">
+                            <!-- 防機器人選項 -->
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- 聯絡人 (必填) -->
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="name">
+                                        <span data-zh="聯絡人" data-en="Contact Name">聯絡人</span> <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" name="聯絡人" id="name" required 
+                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder-gray-400"
+                                           placeholder="請輸入您的姓名">
+                                </div>
+                                
+                                <!-- 連絡電話 (必填) -->
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="phone">
+                                        <span data-zh="連絡電話" data-en="Contact Phone">連絡電話</span> <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="tel" name="連絡電話" id="phone" required 
+                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder-gray-400"
+                                           placeholder="請輸入您的聯絡電話">
+                                </div>
+
+                                <!-- E-Mail (必填) -->
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="email">
+                                        <span data-zh="E-Mail" data-en="Email Address">E-Mail</span> <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="email" name="email" id="email" required 
+                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder-gray-400"
+                                           placeholder="example@mail.com">
+                                </div>
+
+                                <!-- Line ID (選填) -->
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="line_id">
+                                        <span data-zh="Line ID" data-en="Line ID">Line ID</span> <span class="text-gray-400 text-sm ml-1" data-zh="(選填)" data-en="(Optional)">(選填)</span>
+                                    </label>
+                                    <input type="text" name="Line_ID" id="line_id" 
+                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder-gray-400"
+                                           placeholder="請輸入您的 Line ID">
+                                </div>
+
+                                <!-- 公司名稱 (選填) -->
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="company">
+                                        <span data-zh="公司名稱" data-en="Company Name">公司名稱</span> <span class="text-gray-400 text-sm ml-1" data-zh="(選填)" data-en="(Optional)">(選填)</span>
+                                    </label>
+                                    <input type="text" name="公司名稱" id="company" 
+                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder-gray-400"
+                                           placeholder="請輸入貴公司名稱">
+                                </div>
+
+                                <!-- 公司電話 (選填) -->
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="company_phone">
+                                        <span data-zh="公司電話" data-en="Company Phone">公司電話</span> <span class="text-gray-400 text-sm ml-1" data-zh="(選填)" data-en="(Optional)">(選填)</span>
+                                    </label>
+                                    <input type="tel" name="公司電話" id="company_phone" 
+                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder-gray-400"
+                                           placeholder="請輸入公司電話">
+                                </div>
+                            </div>
+                            
+                            <!-- 詢問內容 (必填) -->
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2" for="message">
+                                    <span data-zh="詢問內容" data-en="Inquiry Content">詢問內容</span> <span class="text-red-500">*</span>
+                                </label>
+                                <textarea name="詢問內容" id="message" rows="5" required 
+                                          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder-gray-400 resize-none"
+                                          placeholder="請詳細描述您的需求或想詢問的五金零件款式..."></textarea>
+                            </div>
+                            
+                            <!-- 提交按鈕 -->
+                            <div class="text-center pt-2">
+                                <button type="submit" class="w-full md:w-auto px-10 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center mx-auto space-x-2 focus:ring-4 focus:ring-blue-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                                    </svg>
+                                    <span data-zh="送出表單" data-en="Submit Form">送出表單</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Map 地圖區塊 -->
+    <section class="py-12 px-4 bg-white fade-in">
+        <div class="max-w-4xl mx-auto p-6 bg-gray-100 rounded-lg shadow-xl">
+            <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center" data-zh="公司位置" data-en="Our Location">公司位置</h3>
+            <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-lg shadow-md">
+                <iframe
+                    class="w-full h-96"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3291.4676366229965!2d120.60539517480798!3d24.27008856862791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34691379ff25aa01%3A0xb8c996c06374c3f9!2z5p6X5qWK5LqU6YeR5pyJ6ZmQ5YWs5Y-4!5e1!3m2!1szh-TW!2stw!4v1757637496847!5m2!1szh-TW!2stw"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+  </main>
+
+  <!-- 頁尾 -->
+  <footer class="text-center p-8 bg-gray-100 text-gray-600">
+      <div class="max-w-7xl mx-auto px-4">
+          <h4 class="font-bold text-gray-900 mb-2">林楊五金有限公司 Antelope Hardware Ltd.</h4>
+          <small data-key="footerAddress">臺中市清水區吳厝里和睦路三段250號1樓</small>
+          <p class="mt-4 text-xs text-gray-400">&copy; 2025 Antelope Hardware Ltd. All Rights Reserved.</p>
+          <div class="mt-4 flex justify-center space-x-4">
+              <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors" title="追蹤我們 (臉書)">
+                  <i class="fab fa-facebook-f text-lg"></i>
+              </a>
+              <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors" title="追蹤我們(IG)">
+                  <i class="fab fa-instagram text-lg"></i>
+              </a>
+          </div>
+      </div>
+  </footer>
+
+  <!-- JavaScript 邏輯 (與 services.html 統一) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 漢堡選單的切換邏輯
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // 語系切換的邏輯
+      const languageToggleMobile = document.getElementById('lang-btn-mobile');
+      const languageToggleDesktop = document.getElementById('lang-btn-desktop');
+      
+      const navLinks = document.querySelectorAll('.nav-link');
+      const pageTitle = document.querySelector('[data-zh="聯絡我們"]');
+      const pageSubtitle = document.querySelector('[data-zh="請填寫以下表單，我們會盡快與您聯繫！"]');
+      const infoLabels = document.querySelectorAll('.info-box p.font-semibold');
+      const footerText = document.querySelector('footer small');
+      const mapTitle = document.querySelector('[data-zh="公司位置"]');
+      
+      // 語言切換函數
+      function toggleLanguage() {
+          const currentLang = document.documentElement.lang;
+          const newLang = currentLang === 'zh-Hant' ? 'en' : 'zh-Hant';
+          document.documentElement.lang = newLang;
+          localStorage.setItem('lang', newLang);
+
+          // 更新導覽列連結
+          navLinks.forEach(link => {
+            link.textContent = link.getAttribute('data-' + (newLang === 'zh-Hant' ? 'zh' : 'en'));
+          });
+          
+          // 更新按鈕文字
+          languageToggleMobile.textContent = (newLang === 'zh-Hant' ? 'English' : '中文');
+          languageToggleDesktop.textContent = (newLang === 'zh-Hant' ? 'English' : '中文');
+
+          // 更新聯絡我們頁面的內容
+          if (newLang === 'en') {
+              if (pageTitle) pageTitle.textContent = pageTitle.getAttribute('data-en');
+              if (pageSubtitle) pageSubtitle.textContent = pageSubtitle.getAttribute('data-en');
+              if (footerText) footerText.textContent = footerText.getAttribute('data-en');
+              if (mapTitle) mapTitle.textContent = mapTitle.getAttribute('data-en');
+              document.title = "Contact Us | Antelope Hardware Ltd.";
+          } else {
+              if (pageTitle) pageTitle.textContent = pageTitle.getAttribute('data-zh');
+              if (pageSubtitle) pageSubtitle.textContent = pageSubtitle.getAttribute('data-zh');
+              if (footerText) footerText.textContent = footerText.getAttribute('data-zh');
+              if (mapTitle) mapTitle.textContent = mapTitle.getAttribute('data-zh');
+              document.title = "聯絡我們 | 林楊五金有限公司";
+          }
+          
+          // 更新所有帶有 data-zh 和 data-en 屬性的元素 (包括表單欄位)
+          document.querySelectorAll('[data-zh], [data-en]').forEach(el => {
+              // 若元素有內部HTML需要保留(例如含星號的標籤)，我們只更新該span內的文字
+              const newText = el.getAttribute(`data-${newLang === 'zh-Hant' ? 'zh' : 'en'}`);
+              if(newText) {
+                  el.textContent = newText;
+              }
+          });
+      }
+      
+      // 點擊語言切換按鈕時執行函數
+      if(languageToggleMobile) {
+          languageToggleMobile.addEventListener('click', toggleLanguage);
+      }
+      if(languageToggleDesktop) {
+          languageToggleDesktop.addEventListener('click', toggleLanguage);
+      }
+
+      // 頁面載入時，根據儲存的語言設定初始顯示
+      const storedLang = localStorage.getItem('lang') || 'zh-Hant';
+      document.documentElement.lang = storedLang;
+
+      navLinks.forEach(link => {
+        link.textContent = link.getAttribute('data-' + (storedLang === 'zh-Hant' ? 'zh' : 'en'));
+      });
+      if(languageToggleMobile) languageToggleMobile.textContent = (storedLang === 'zh-Hant' ? 'English' : '中文');
+      if(languageToggleDesktop) languageToggleDesktop.textContent = (storedLang === 'zh-Hant' ? 'English' : '中文');
+      
+      // 針對聯絡我們頁面特有的翻譯初始化
+      if (storedLang === 'en') {
+          if (pageTitle) pageTitle.textContent = pageTitle.getAttribute('data-en');
+          if (pageSubtitle) pageSubtitle.textContent = pageSubtitle.getAttribute('data-en');
+          if (footerText) footerText.textContent = footerText.getAttribute('data-en');
+          if (mapTitle) mapTitle.textContent = mapTitle.getAttribute('data-en');
+          document.title = "Contact Us | Antelope Hardware Ltd.";
+      } else {
+          if (pageTitle) pageTitle.textContent = pageTitle.getAttribute('data-zh');
+          if (pageSubtitle) pageSubtitle.textContent = pageSubtitle.getAttribute('data-zh');
+          if (footerText) footerText.textContent = footerText.getAttribute('data-zh');
+          if (mapTitle) mapTitle.textContent = mapTitle.getAttribute('data-zh');
+          document.title = "聯絡我們 | 林楊五金有限公司";
+      }
+
+      document.querySelectorAll('[data-zh], [data-en]').forEach(el => {
+        const newText = el.getAttribute(`data-${storedLang === 'zh-Hant' ? 'zh' : 'en'}`);
+        if(newText){
+            el.textContent = newText;
+        }
+      });
+    });
+  </script>
+
+  <!-- WhatsApp 浮動按鈕 -->
+<a href="https://wa.me/886972138928" class="whatsapp-float" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="50" height="50">
+</a>
+
+<style>
+.whatsapp-float {
+position: fixed;
+width: 60px;
+height: 60px;
+bottom: 20px;
+right: 20px;
+background-color: #25d366;
+color: #FFF;
+border-radius: 50px;
+text-align: center;
+box-shadow: 2px 2px 3px #999;
+z-index: 100;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.whatsapp-float img {
+width: 35px;
+height: 35px;
+}
+</style>
+
+</body>
+</html>
