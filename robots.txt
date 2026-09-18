@@ -1,0 +1,6 @@
+# robots.txt - Search engine crawling guidance
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://antelopehardware.github.io/sitemap.xml

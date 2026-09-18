@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- 首頁：五金零件、起重吊具與鋼索供應 -->
+    <url>
+        <loc>https://antelopehardware.github.io/</loc>
+        <lastmod>2026-09-18</lastmod>
+    </url>
+    
+    <!-- 產品中心：五金工具、工業補給與安全用品 -->
+    <url>
+        <loc>https://antelopehardware.github.io/Products.html</loc>
+        <lastmod>2026-09-18</lastmod>
+    </url>
+    
+    <!-- 服務項目：船舶物料、採購配送與及時補給 -->
+    <url>
+        <loc>https://antelopehardware.github.io/services.html</loc>
+        <lastmod>2026-09-18</lastmod>
+    </url>
+    
+    <!-- 關於我們：台中清水五金與船舶配件供應商 -->
+    <url>
+        <loc>https://antelopehardware.github.io/about.html</loc>
+        <lastmod>2026-09-18</lastmod>
+    </url>
+    
+    <!-- 聯絡我們：報價、五金零件諮詢與公司地址 -->
+    <url>
+        <loc>https://antelopehardware.github.io/contact.html</loc>
+        <lastmod>2026-09-18</lastmod>
+    </url>
+</urlset>
