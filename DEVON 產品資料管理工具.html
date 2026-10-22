@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVON 產品資料管理系統</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Top Header -->
+    <header class="bg-slate-900 text-white shadow-md sticky top-0 z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-red-600 text-white font-black px-2.5 py-1 rounded text-lg tracking-wider">DEVON</div>
+                <h1 class="text-xl font-bold tracking-tight">產品資料管理系統</h1>
+            </div>
+            <div class="flex items-center space-x-3">
+                <!-- Import JSON Button -->
+                <label class="cursor-pointer bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-slate-600 px-3 py-1.5 rounded-lg text-sm font-medium transition flex items-center shadow-sm">
+                    <i class="fa-solid fa-file-import mr-2 text-red-400"></i>匯入 JSON
+                    <input type="file" id="importInput" accept=".json" class="hidden" onchange="handleImport(event)">
+                </label>
+                <!-- Export JSON Button -->
+                <button onclick="exportJSON()" class="bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition flex items-center shadow-sm">
+                    <i class="fa-solid fa-file-export mr-2"></i>匯出 JSON
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-6">
+
+        <!-- Sidebar Controls & Categories -->
+        <aside class="w-full md:w-64 flex-shrink-0 space-y-6">
+            <!-- Action Bar -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+                <button onclick="openProductModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-2.5 px-4 rounded-lg shadow transition flex items-center justify-center">
+                    <i class="fa-solid fa-plus mr-2"></i>新增產品
+                </button>
+            </div>
+
+            <!-- Categories Filter & Manager -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+                <div class="flex items-center justify-between mb-3">
+                    <h2 class="font-bold text-slate-800 flex items-center text-sm uppercase tracking-wider">
+                        <i class="fa-solid fa-tags mr-2 text-red-500"></i>分類選單
+                    </h2>
+                    <button onclick="openCategoryModal()" class="text-xs text-red-600 hover:text-red-700 font-medium flex items-center">
+                        <i class="fa-solid fa-gear mr-1"></i>管理分類
+                    </button>
+                </div>
+                
+                <nav class="space-y-1" id="categoryNav">
+                    <!-- Dynamic categories list will render here -->
+                </nav>
+            </div>
+
+            <!-- Data Statistics -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+                <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">資料統計</h3>
+                <div class="grid grid-cols-2 gap-2 text-center">
+                    <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                        <span class="block text-2xl font-extrabold text-slate-800" id="statCategoryCount">0</span>
+                        <span class="text-xs text-slate-500">分類總數</span>
+                    </div>
+                    <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                        <span class="block text-2xl font-extrabold text-red-600" id="statProductCount">0</span>
+                        <span class="text-xs text-slate-500">產品總數</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Product Grid & Filter Area -->
+        <section class="flex-1 flex flex-col space-y-4">
+            
+            <!-- Search & Toolbar -->
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="relative w-full sm:w-80">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="searchInput" oninput="renderProducts()" placeholder="搜尋產品名稱或說明..." class="w-full pl-9 pr-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500">
+                </div>
+                
+                <div class="flex items-center space-x-2 text-sm text-slate-500 w-full sm:w-auto justify-end">
+                    <span id="productCounter">顯示中: 0 項</span>
+                    <button onclick="resetData()" class="ml-4 text-xs text-slate-400 hover:text-red-500 transition underline">
+                        重設為預設值
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Dynamic product cards will be rendered here -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="hidden bg-white rounded-xl shadow-sm border border-slate-200 p-12 text-center">
+                <div class="w-16 h-16 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-700 mb-1">找不到相關產品</h3>
+                <p class="text-sm text-slate-500 mb-4">嘗試調整搜尋關鍵字，或是新增一筆新產品。</p>
+                <button onclick="openProductModal()" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition">
+                    <i class="fa-solid fa-plus mr-2"></i>新增產品
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Product Edit/Create Modal -->
+    <div id="productModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-lg overflow-hidden transform transition-all">
+            <div class="bg-slate-900 px-6 py-4 flex items-center justify-between text-white">
+                <h3 id="productModalTitle" class="font-bold text-lg">新增產品</h3>
+                <button onclick="closeProductModal()" class="text-slate-400 hover:text-white transition text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <form id="productForm" onsubmit="saveProduct(event)" class="p-6 space-y-4">
+                <input type="hidden" id="editProductIndex" value="-1">
+                
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">所屬分類</label>
+                    <select id="prodCategory" required class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500">
+                        <!-- Options generated dynamically -->
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">產品名稱</label>
+                    <input type="text" id="prodName" required placeholder="例如: 18V 鋰電衝擊起子機" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">產品描述</label>
+                    <textarea id="prodDescription" rows="3" placeholder="請簡短描述產品特色..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">圖片網址 (URL)</label>
+                    <input type="url" id="prodImage" required placeholder="https://images.unsplash.com/..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500" onchange="updateImagePreview(this.value)">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">圖片替代文字 (Image Alt)</label>
+                    <input type="text" id="prodImageAlt" placeholder="示意圖說明" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500">
+                </div>
+
+                <!-- Preview Box -->
+                <div class="mt-2 bg-slate-50 border border-slate-200 rounded-lg p-2 text-center">
+                    <span class="block text-xs text-slate-400 mb-1">圖片預覽</span>
+                    <img id="imagePreview" src="https://placehold.co/600x400?text=No+Image" class="h-28 mx-auto object-cover rounded border" onerror="this.src='https://placehold.co/600x400?text=Invalid+Image'">
+                </div>
+
+                <div class="flex items-center justify-end space-x-3 pt-4 border-t border-slate-100">
+                    <button type="button" onclick="closeProductModal()" class="px-4 py-2 border border-slate-300 rounded-lg text-sm text-slate-600 hover:bg-slate-50 transition">取消</button>
+                    <button type="submit" class="px-5 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm font-medium shadow transition">儲存變更</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Category Manager Modal -->
+    <div id="categoryModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden flex flex-col max-h-[85vh]">
+            <div class="bg-slate-900 px-6 py-4 flex items-center justify-between text-white">
+                <h3 class="font-bold text-lg">管理分類項目</h3>
+                <button onclick="closeCategoryModal()" class="text-slate-400 hover:text-white transition text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-4 overflow-y-auto custom-scrollbar flex-1">
+                <!-- Add Category Form -->
+                <form onsubmit="addCategory(event)" class="flex items-end gap-2 bg-slate-50 p-3 rounded-lg border border-slate-200">
+                    <div class="flex-1 space-y-2">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500">分類 ID (英文代碼)</label>
+                            <input type="text" id="catId" required placeholder="例如: sawing" class="w-full px-2 py-1.5 border border-slate-300 rounded text-xs focus:ring-1 focus:ring-red-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500">分類名稱</label>
+                            <input type="text" id="catName" required placeholder="例如: 鋸切工具" class="w-full px-2 py-1.5 border border-slate-300 rounded text-xs focus:ring-1 focus:ring-red-500">
+                        </div>
+                    </div>
+                    <button type="submit" class="bg-slate-900 hover:bg-slate-800 text-white px-3 py-4 rounded text-xs font-medium transition whitespace-nowrap">
+                        <i class="fa-solid fa-plus mr-1"></i>新增
+                    </button>
+                </form>
+
+                <hr class="border-slate-100">
+
+                <div class="space-y-2" id="categoryManagerList">
+                    <!-- Dynamic categories editor list -->
+                </div>
+            </div>
+
+            <div class="p-4 bg-slate-50 border-t border-slate-200 text-right">
+                <button onclick="closeCategoryModal()" class="px-4 py-1.5 bg-slate-200 hover:bg-slate-300 rounded-lg text-xs text-slate-700 font-medium transition">完成</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Message -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl flex items-center space-x-3 transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+        <i class="fa-solid fa-circle-check text-green-400 text-lg" id="toastIcon"></i>
+        <span text-sm font-medium id="toastMessage">操作成功</span>
+    </div>
+
+    <script>
+        // Initial Default Data
+        const initialData = {
+            "categories": [
+                { "id": "drilling", "name": "鑽孔鎖固" },
+                { "id": "impact", "name": "衝擊工具" },
+                { "id": "concrete", "name": "混凝土作業" },
+                { "id": "cutting", "name": "切割工具" },
+                { "id": "grinding", "name": "研磨工具" },
+                { "id": "battery", "name": "充電系統與配件" }
+            ],
+            "products": [
+                {
+                    "category": "drilling",
+                    "name": "電鑽與起子系列",
+                    "description": "適用於安裝、裝修及設備維護。",
+                    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=85",
+                    "imageAlt": "鑽孔與鎖固系列示意"
+                },
+                {
+                    "category": "impact",
+                    "name": "衝擊工具系列",
+                    "description": "對應高扭力鎖固與拆卸作業。",
+                    "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
+                    "imageAlt": "衝擊工具系列示意"
+                },
+                {
+                    "category": "concrete",
+                    "name": "電鎚與混凝土系列",
+                    "description": "適用於鑽孔、打鑿等施工需求。",
+                    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=85",
+                    "imageAlt": "混凝土作業工具系列示意"
+                },
+                {
+                    "category": "cutting",
+                    "name": "切割工具系列",
+                    "description": "支援多種材料的現場切割作業。",
+                    "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
+                    "imageAlt": "切割工具系列示意"
+                },
+                {
+                    "category": "grinding",
+                    "name": "研磨工具系列",
+                    "description": "用於表面研磨、修整及打磨工作。",
+                    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=85",
+                    "imageAlt": "研磨工具系列示意"
+                },
+                {
+                    "category": "battery",
+                    "name": "電池與配件系列",
+                    "description": "搭配充電工具使用的電池與常用配件。",
+                    "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
+                    "imageAlt": "充電系統與配件系列示意"
+                }
+            ]
+        };
+
+        // App State
+        let appData = JSON.parse(JSON.stringify(initialData));
+        let activeCategory = 'all';
+
+        // Load data from LocalStorage if available
+        function loadSavedData() {
+            const saved = localStorage.getItem('devon_products_data');
+            if (saved) {
+                try {
+                    appData = JSON.parse(saved);
+                } catch(e) {
+                    console.error("無法解析快取的資料，改用預設資料", e);
+                }
+            }
+        }
+
+        // Save State to LocalStorage
+        function saveData() {
+            localStorage.setItem('devon_products_data', JSON.stringify(appData));
+            updateStats();
+        }
+
+        // Initialize UI
+        window.onload = function() {
+            loadSavedData();
+            renderCategories();
+            renderProducts();
+            updateStats();
+        };
+
+        // Render Category List Sidebar
+        function renderCategories() {
+            const container = document.getElementById('categoryNav');
+            let html = `
+                <button onclick="filterCategory('all')" class="w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition flex items-center justify-between ${activeCategory === 'all' ? 'bg-red-50 text-red-600 font-bold' : 'text-slate-600 hover:bg-slate-100'}">
+                    <span>全部分類</span>
+                    <span class="text-xs bg-slate-200 text-slate-600 px-2 py-0.5 rounded-full">${appData.products.length}</span>
+                </button>
+            `;
+
+            appData.categories.forEach(cat => {
+                const count = appData.products.filter(p => p.category === cat.id).length;
+                const isActive = activeCategory === cat.id;
+                html += `
+                    <button onclick="filterCategory('${cat.id}')" class="w-full text-left px-3 py-2 rounded-lg text-sm transition flex items-center justify-between ${isActive ? 'bg-red-50 text-red-600 font-bold' : 'text-slate-600 hover:bg-slate-100'}">
+                        <span class="truncate">${cat.name}</span>
+                        <span class="text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">${count}</span>
+                    </button>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Switch Active Category Filter
+        function filterCategory(catId) {
+            activeCategory = catId;
+            renderCategories();
+            renderProducts();
+        }
+
+        // Render Product Cards Grid
+        function renderProducts() {
+            const grid = document.getElementById('productGrid');
+            const emptyState = document.getElementById('emptyState');
+            const searchKeyword = document.getElementById('searchInput').value.trim().toLowerCase();
+
+            let filtered = appData.products.filter(prod => {
+                const matchesCategory = activeCategory === 'all' || prod.category === activeCategory;
+                const matchesSearch = prod.name.toLowerCase().includes(searchKeyword) || 
+                                      (prod.description && prod.description.toLowerCase().includes(searchKeyword));
+                return matchesCategory && matchesSearch;
+            });
+
+            document.getElementById('productCounter').innerText = `顯示中: ${filtered.length} 項`;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+
+            let html = '';
+            filtered.forEach((prod) => {
+                // Find original index in appData.products for editing/deleting
+                const originalIndex = appData.products.indexOf(prod);
+                const categoryObj = appData.categories.find(c => c.id === prod.category);
+                const categoryName = categoryObj ? categoryObj.name : prod.category;
+
+                html += `
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition flex flex-col group">
+                        <div class="relative h-44 bg-slate-100 overflow-hidden">
+                            <img src="${prod.image}" alt="${prod.imageAlt || prod.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/600x400?text=無圖片'">
+                            <span class="absolute top-2 left-2 bg-slate-900/80 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-md">
+                                ${categoryName}
+                            </span>
+                        </div>
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-base mb-1.5">${prod.name}</h3>
+                                <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed">${prod.description || '無詳細描述'}</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-end space-x-2">
+                                <button onclick="editProduct(${originalIndex})" class="p-2 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition text-xs font-medium flex items-center">
+                                    <i class="fa-solid fa-pen-to-square mr-1"></i>編輯
+                                </button>
+                                <button onclick="deleteProduct(${originalIndex})" class="p-2 text-slate-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition text-xs font-medium flex items-center">
+                                    <i class="fa-solid fa-trash-can mr-1"></i>刪除
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            grid.innerHTML = html;
+        }
+
+        // Open Product Modal (New or Edit)
+        function openProductModal(index = -1) {
+            const modal = document.getElementById('productModal');
+            const select = document.getElementById('prodCategory');
+            
+            // Populate category select options
+            select.innerHTML = appData.categories.map(c => `<option value="${c.id}">${c.name}</option>`).join('');
+
+            if (index >= 0) {
+                // Edit Mode
+                const prod = appData.products[index];
+                document.getElementById('productModalTitle').innerText = '編輯產品';
+                document.getElementById('editProductIndex').value = index;
+                document.getElementById('prodCategory').value = prod.category;
+                document.getElementById('prodName').value = prod.name;
+                document.getElementById('prodDescription').value = prod.description || '';
+                document.getElementById('prodImage').value = prod.image;
+                document.getElementById('prodImageAlt').value = prod.imageAlt || '';
+                updateImagePreview(prod.image);
+            } else {
+                // New Mode
+                document.getElementById('productModalTitle').innerText = '新增產品';
+                document.getElementById('editProductIndex').value = -1;
+                document.getElementById('productForm').reset();
+                if (activeCategory !== 'all') {
+                    document.getElementById('prodCategory').value = activeCategory;
+                }
+                updateImagePreview('');
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').classList.add('hidden');
+        }
+
+        function updateImagePreview(url) {
+            const img = document.getElementById('imagePreview');
+            img.src = url || 'https://placehold.co/600x400?text=No+Image';
+        }
+
+        // Save Product (Create / Update)
+        function saveProduct(event) {
+            event.preventDefault();
+            const index = parseInt(document.getElementById('editProductIndex').value);
+            
+            const newProduct = {
+                category: document.getElementById('prodCategory').value,
+                name: document.getElementById('prodName').value.trim(),
+                description: document.getElementById('prodDescription').value.trim(),
+                image: document.getElementById('prodImage').value.trim(),
+                imageAlt: document.getElementById('prodImageAlt').value.trim() || document.getElementById('prodName').value.trim()
+            };
+
+            if (index >= 0) {
+                appData.products[index] = newProduct;
+                showToast("產品資料已成功更新");
+            } else {
+                appData.products.push(newProduct);
+                showToast("已成功新增產品");
+            }
+
+            saveData();
+            renderCategories();
+            renderProducts();
+            closeProductModal();
+        }
+
+        // Edit Product Helper
+        function editProduct(index) {
+            openProductModal(index);
+        }
+
+        // Delete Product
+        function deleteProduct(index) {
+            if (confirm(`確定要刪除「${appData.products[index].name}」嗎？`)) {
+                appData.products.splice(index, 1);
+                saveData();
+                renderCategories();
+                renderProducts();
+                showToast("已成功刪除產品");
+            }
+        }
+
+        // Category Manager Functions
+        function openCategoryModal() {
+            renderCategoryManagerList();
+            document.getElementById('categoryModal').classList.remove('hidden');
+        }
+
+        function closeCategoryModal() {
+            document.getElementById('categoryModal').classList.add('hidden');
+            renderCategories();
+            renderProducts();
+        }
+
+        function renderCategoryManagerList() {
+            const list = document.getElementById('categoryManagerList');
+            let html = '';
+
+            appData.categories.forEach((cat, idx) => {
+                const productCount = appData.products.filter(p => p.category === cat.id).length;
+                html += `
+                    <div class="flex items-center justify-between p-2.5 bg-white rounded-lg border border-slate-200">
+                        <div>
+                            <span class="font-bold text-sm text-slate-800">${cat.name}</span>
+                            <span class="text-xs text-slate-400 block">ID: ${cat.id} (${productCount} 個項目)</span>
+                        </div>
+                        <button onclick="deleteCategory(${idx})" class="text-xs text-red-500 hover:text-red-700 p-1.5 rounded hover:bg-red-50 transition">
+                            <i class="fa-solid fa-trash-can"></i> 刪除
+                        </button>
+                    </div>
+                `;
+            });
+
+            list.innerHTML = html;
+        }
+
+        function addCategory(event) {
+            event.preventDefault();
+            const id = document.getElementById('catId').value.trim().toLowerCase();
+            const name = document.getElementById('catName').value.trim();
+
+            if (appData.categories.some(c => c.id === id)) {
+                alert("分類 ID 已存在，請改用其他代碼！");
+                return;
+            }
+
+            appData.categories.push({ id, name });
+            saveData();
+            renderCategoryManagerList();
+            document.getElementById('catId').value = '';
+            document.getElementById('catName').value = '';
+            showToast("已成功新增分類");
+        }
+
+        function deleteCategory(index) {
+            const cat = appData.categories[index];
+            const count = appData.products.filter(p => p.category === cat.id).length;
+
+            if (count > 0) {
+                if (!confirm(`分類「${cat.name}」底下尚有 ${count} 個產品。刪除分類將不會刪除產品，但可能會導致分類顯示異常。確定刪除？`)) {
+                    return;
+                }
+            }
+
+            appData.categories.splice(index, 1);
+            saveData();
+            renderCategoryManagerList();
+            showToast("已成功刪除分類");
+        }
+
+        // Export JSON File
+        function exportJSON() {
+            const jsonString = JSON.stringify(appData, null, 2);
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'devon-products.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            showToast("已成功匯出 JSON 檔案！");
+        }
+
+        // Import JSON File
+        function handleImport(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const parsed = JSON.parse(e.target.result);
+                    if (parsed && Array.isArray(parsed.categories) && Array.isArray(parsed.products)) {
+                        appData = parsed;
+                        saveData();
+                        activeCategory = 'all';
+                        renderCategories();
+                        renderProducts();
+                        showToast("已成功匯入並更新資料！");
+                    } else {
+                        alert("匯入失敗：JSON 格式不符，須包含 'categories' 及 'products' 陣列。");
+                    }
+                } catch (err) {
+                    alert("無法讀取 JSON 檔案，請確認檔案格式是否正確。");
+                }
+                event.target.value = ''; // Reset input
+            };
+            reader.readAsText(file);
+        }
+
+        // Reset to Initial State
+        function resetData() {
+            if (confirm("確定要將資料重設為原始檔預設狀態嗎？未匯出的修改將會消失！")) {
+                appData = JSON.parse(JSON.stringify(initialData));
+                saveData();
+                activeCategory = 'all';
+                renderCategories();
+                renderProducts();
+                showToast("已重設為預設資料");
+            }
+        }
+
+        // Update Statistics Panel
+        function updateStats() {
+            document.getElementById('statCategoryCount').innerText = appData.categories.length;
+            document.getElementById('statProductCount').innerText = appData.products.length;
+        }
+
+        // Notification Toast
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
