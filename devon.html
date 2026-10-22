@@ -7,7 +7,9 @@
     <link rel="canonical" href="https://antelopehardware.github.io/devon.html">
     <title>DEVON 大有電動工具 | 林楊五金</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="brand-products.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="brand-products.js" defer></script>
     <style>
         body { font-family: 'Microsoft JhengHei', sans-serif; }
         .devon-hero { background: linear-gradient(112deg, #111111 0%, #242424 58%, #991b1b 100%); }
@@ -38,7 +40,7 @@
             </div>
         </header>
 
-        <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8" aria-labelledby="devon-products-title">
+        <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8" aria-labelledby="devon-products-title" data-product-catalog data-product-source="data/devon-products.json" style="--brand-accent: #b91c1c">
             <div class="mb-8 flex flex-col gap-2 border-b border-gray-200 pb-5 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                     <p class="text-xs font-bold uppercase tracking-widest text-red-800">Power Tool Selection</p>
@@ -46,49 +48,26 @@
                 </div>
                 <p class="text-sm text-gray-500">系列分類示意，實際供應品項與規格請洽詢。</p>
             </div>
-            <div class="mb-6 flex flex-wrap gap-2" role="group" aria-label="DEVON 商品分類篩選">
-                <button type="button" class="category-filter rounded-full bg-red-700 px-4 py-2 text-sm font-bold text-white" data-filter="all" aria-pressed="true">全部</button>
-                <button type="button" class="category-filter rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-red-50" data-filter="drilling" aria-pressed="false">鑽孔鎖固</button>
-                <button type="button" class="category-filter rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-red-50" data-filter="impact" aria-pressed="false">衝擊工具</button>
-                <button type="button" class="category-filter rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-red-50" data-filter="concrete" aria-pressed="false">混凝土作業</button>
-                <button type="button" class="category-filter rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-red-50" data-filter="cutting" aria-pressed="false">切割工具</button>
-                <button type="button" class="category-filter rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-red-50" data-filter="grinding" aria-pressed="false">研磨工具</button>
-                <button type="button" class="category-filter rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-red-50" data-filter="battery" aria-pressed="false">充電系統與配件</button>
+            <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <label class="sr-only" for="product-search">搜尋 DEVON 商品</label>
+                <input id="product-search" type="search" data-product-search class="w-full border border-gray-300 bg-white px-4 py-2 text-sm sm:max-w-sm" placeholder="搜尋商品名稱或用途" autocomplete="off">
+                <p data-product-status class="text-sm text-gray-600" aria-live="polite"></p>
             </div>
-            <!-- DEVON 大有商品編輯區：
-                 修改商品：在下方找到對應的 <article>，替換圖片 src、圖片說明 alt、分類 data-category、
-                 商品分類文字、標題 <h3> 與描述 <p>。
-                 新增商品：複製一整段 <article>...</article>，貼在此商品清單內，再修改以上欄位。
-                 data-category 必須與上方篩選按鈕的 data-filter 完全相同（drilling、impact、concrete、
-                 cutting、grinding、battery）；若要增加新分類，需同時新增篩選按鈕。
-                 圖片可放在網站資料夾並填相對路徑（例如 images/devon/drill.jpg），或填可公開存取的圖片網址。 -->
+            <div data-product-filters class="mb-6 flex flex-wrap gap-2" role="group" aria-label="DEVON 商品分類篩選"></div>
             <div id="devon-product-grid" class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-                <!-- 商品範例：src=圖片路徑/網址；alt=圖片說明；分類文字、標題、描述請改成實際商品資訊。 -->
-                <article class="product-card overflow-hidden border border-gray-200 bg-white" data-category="drilling">
-                    <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="鑽孔與鎖固系列示意" class="aspect-square w-full object-cover" loading="lazy">
-                    <div class="p-3"><p class="mb-1 text-xs font-bold text-red-800">鑽孔鎖固</p><h3 class="font-bold">電鑽與起子系列</h3><p class="mt-1 text-sm leading-5 text-gray-600">適用於安裝、裝修及設備維護。</p></div>
-                </article>
-                <article class="product-card overflow-hidden border border-gray-200 bg-white" data-category="impact">
-                    <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="衝擊工具系列示意" class="aspect-square w-full object-cover" loading="lazy">
-                    <div class="p-3"><p class="mb-1 text-xs font-bold text-red-800">衝擊工具</p><h3 class="font-bold">衝擊工具系列</h3><p class="mt-1 text-sm leading-5 text-gray-600">對應高扭力鎖固與拆卸作業。</p></div>
-                </article>
-                <article class="product-card overflow-hidden border border-gray-200 bg-white" data-category="concrete">
-                    <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="混凝土作業工具系列示意" class="aspect-square w-full object-cover" loading="lazy">
-                    <div class="p-3"><p class="mb-1 text-xs font-bold text-red-800">混凝土作業</p><h3 class="font-bold">電鎚與混凝土系列</h3><p class="mt-1 text-sm leading-5 text-gray-600">適用於鑽孔、打鑿等施工需求。</p></div>
-                </article>
-                <article class="product-card overflow-hidden border border-gray-200 bg-white" data-category="cutting">
-                    <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="切割工具系列示意" class="aspect-square w-full object-cover" loading="lazy">
-                    <div class="p-3"><p class="mb-1 text-xs font-bold text-red-800">切割工具</p><h3 class="font-bold">切割工具系列</h3><p class="mt-1 text-sm leading-5 text-gray-600">支援多種材料的現場切割作業。</p></div>
-                </article>
-                <article class="product-card overflow-hidden border border-gray-200 bg-white" data-category="grinding">
-                    <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="研磨工具系列示意" class="aspect-square w-full object-cover" loading="lazy">
-                    <div class="p-3"><p class="mb-1 text-xs font-bold text-red-800">研磨工具</p><h3 class="font-bold">研磨工具系列</h3><p class="mt-1 text-sm leading-5 text-gray-600">用於表面研磨、修整及打磨工作。</p></div>
-                </article>
-                <article class="product-card overflow-hidden border border-gray-200 bg-white" data-category="battery">
-                    <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="充電系統與配件系列示意" class="aspect-square w-full object-cover" loading="lazy">
-                    <div class="p-3"><p class="mb-1 text-xs font-bold text-red-800">充電系統與配件</p><h3 class="font-bold">電池與配件系列</h3><p class="mt-1 text-sm leading-5 text-gray-600">搭配充電工具使用的電池與常用配件。</p></div>
-                </article>
+                <template data-product-template>
+                    <article class="overflow-hidden border border-gray-200 bg-white">
+                        <img class="aspect-square w-full object-cover" loading="lazy">
+                        <div class="p-3"><p class="mb-1 text-xs font-bold" data-product-category></p><h3 class="font-bold" data-product-name></h3><p class="mt-1 text-sm leading-5 text-gray-600" data-product-description></p></div>
+                    </article>
+                </template>
             </div>
+            <p data-product-empty class="hidden py-10 text-center text-gray-600">找不到符合條件的商品。</p>
+            <nav data-product-pagination class="mt-8 flex items-center justify-center gap-4" aria-label="商品分頁" hidden>
+                <button type="button" data-page="previous" class="border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50">上一頁</button>
+                <span data-page-status class="text-sm text-gray-600" aria-live="polite"></span>
+                <button type="button" data-page="next" class="border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50">下一頁</button>
+            </nav>
         </section>
 
         <section class="border-y border-gray-200 bg-white">
@@ -116,26 +95,5 @@
         </div>
         <a href="Products.html" class="mt-4 inline-block text-red-300 hover:text-white">返回產品中心</a>
     </footer>
-    <script>
-        const devonFilters = document.querySelectorAll('.category-filter');
-        const devonCards = document.querySelectorAll('#devon-product-grid .product-card');
-
-        devonFilters.forEach((button) => {
-            button.addEventListener('click', () => {
-                const selectedCategory = button.dataset.filter;
-                devonFilters.forEach((filter) => {
-                    const isActive = filter === button;
-                    filter.classList.toggle('bg-red-700', isActive);
-                    filter.classList.toggle('text-white', isActive);
-                    filter.classList.toggle('bg-white', !isActive);
-                    filter.classList.toggle('text-gray-700', !isActive);
-                    filter.setAttribute('aria-pressed', String(isActive));
-                });
-                devonCards.forEach((card) => {
-                    card.hidden = selectedCategory !== 'all' && card.dataset.category !== selectedCategory;
-                });
-            });
-        });
-    </script>
 </body>
 </html>

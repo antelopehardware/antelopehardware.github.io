@@ -1,0 +1,21 @@
+.brand-filter {
+    border-radius: 9999px;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.brand-filter:hover {
+    background-color: color-mix(in srgb, var(--brand-accent) 10%, white);
+}
+
+.brand-filter[aria-pressed="true"] {
+    background-color: var(--brand-accent);
+    color: white;
+}
+
+.brand-product-category {
+    color: var(--brand-accent);
+}
