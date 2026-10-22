@@ -1,54 +1,95 @@
 {
   "categories": [
-    { "id": "hand", "name": "手工具" },
-    { "id": "power", "name": "電動工具" },
-    { "id": "measuring", "name": "測量工具" },
-    { "id": "automotive", "name": "汽車維修" },
-    { "id": "garden", "name": "園藝工具" },
-    { "id": "accessories", "name": "工具配件" }
+    {
+      "id": "electric tool",
+      "name": "電動工具"
+    },
+    {
+      "id": "safety gear",
+      "name": "工程.防護用具"
+    },
+    {
+      "id": "diy tools",
+      "name": "家用五金"
+    }
   ],
   "products": [
     {
-      "category": "hand",
-      "name": "手工具系列",
-      "description": "適用於組裝、日常保養與維修作業。",
-      "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
-      "imageAlt": "手工具系列示意"
+      "category": "electric tool",
+      "name": "20V 鋰電鎚鑽-單主機(TRHLI20168)",
+      "description": "空載轉速：0-850rpm\n衝擊頻率：0-5100bpm\n衝擊能量：1.5J",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/TRHLI20168.webp",
+      "imageAlt": "20V 鋰電鎚鑽TRHLI20168"
     },
     {
-      "category": "power",
-      "name": "電動工具系列",
-      "description": "涵蓋鑽孔、鎖固及切磨等作業方向。",
-      "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=85",
-      "imageAlt": "電動工具系列示意"
+      "category": "electric tool",
+      "name": "充電式浪板起子機20V15牛頓-雙2.0套裝(UTDSLI204282)",
+      "description": "充電式浪板起子機 20V 15牛頓 -雙2.0套裝",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/UTDSLI204282.webp",
+      "imageAlt": "充電式浪板起子機"
     },
     {
-      "category": "measuring",
-      "name": "測量工具系列",
-      "description": "支援施工、裝修與尺寸測量需求。",
-      "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
-      "imageAlt": "測量工具系列示意"
+      "category": "electric tool",
+      "name": "42V鋰電460N.m衝擊扳手-雙2A套裝組(UTIWLI42462)",
+      "description": "無刷電機/電壓：42V\n方頭驅動：1/2英寸\n空載轉速：0-1600/0-1900/0-2300轉/分鐘",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/UTIWLI42462.webp",
+      "imageAlt": "42V鋰電460N.m衝擊扳手"
     },
     {
-      "category": "automotive",
-      "name": "汽車維修系列",
-      "description": "提供車輛保養與維修常用工具選擇。",
-      "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=85",
-      "imageAlt": "汽車維修工具系列示意"
+      "category": "electric tool",
+      "name": "42V-99N.m鋰電衝擊電鑽-雙2A套裝組(UTIDLI429982)",
+      "description": "無刷電機/電壓：42V\n空載轉速：0-500/0-2000rpm\n最大衝擊頻率：30000bpm",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/UTIDLI429982.webp",
+      "imageAlt": "99N.m鋰電衝擊電鑽"
     },
     {
-      "category": "garden",
-      "name": "園藝工具系列",
-      "description": "對應庭園整理與戶外維護工作。",
-      "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
-      "imageAlt": "園藝工具系列示意"
+      "category": "electric tool",
+      "name": "90度無刷衝擊起子機-單主機(TAIRLI2081)",
+      "description": "電壓：20V\n最大扭力：80Nm\n六角柄：6.35mm",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/TAIRLI2081.webp",
+      "imageAlt": "90度無刷衝擊起子機"
     },
     {
-      "category": "accessories",
-      "name": "工具配件系列",
-      "description": "搭配工具使用的耗材與常用配件。",
-      "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=85",
-      "imageAlt": "工具配件系列示意"
+      "category": "electric tool",
+      "name": "鋰電405N.m衝擊扳手工作燈-雙2A套裝組(UTOSLI23056)",
+      "description": "鋰電衝擊扳手：\n無刷電機/電壓：20V/方頭驅動：1/2英寸\n空載轉速：0-1800/0-2000/0-2400rpm",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/UTOSLI23056.webp",
+      "imageAlt": "405N.m衝擊扳手"
+    },
+    {
+      "category": "electric tool",
+      "name": "鋰電285N.m衝擊起子機+鑽尾-雙2A套裝組(UTOSLI250784)",
+      "description": "無刷電機/電壓：20V\n六角柄：6.35mm\n空載轉速：0-1600/0-1900/0-2600rpm",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/UTOSLI250784.png",
+      "imageAlt": "285N.m衝擊起子機"
+    },
+    {
+      "category": "electric tool",
+      "name": "166N.m震動電鑽套組-雙5A(UTIDLI201668)",
+      "description": "空載轉速：0-550/0-2100rpm         \n最大衝擊頻率：31500次/分\n最大扭力：166Nm",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/UTIDLI201668.webp",
+      "imageAlt": "166N.m震動電鑽"
+    },
+    {
+      "category": "safety gear",
+      "name": "5件電器測量組套(TOS23066)",
+      "description": "數位交流鉗形表 \n數位萬用電錶 \n紅外線溫度計 、測試筆\n智慧電壓偵測剝線器",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/TOS23066-1000x1000.png.webp",
+      "imageAlt": "測量組套"
+    },
+    {
+      "category": "diy tools",
+      "name": "零件箱17吋x13吋(TPBX1711)",
+      "description": "19個分隔區域 \n尺寸：432mm（17\"）*335mm（13\"）*65mm（2.5\"）",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/TPBX1711.webp",
+      "imageAlt": "零件箱"
+    },
+    {
+      "category": "safety gear",
+      "name": "六袋工具腰包/L260×W150mm(THT16P40625)",
+      "description": "尺寸：長260毫米×寬150毫米\n材質：1680D聚酯纖維",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/THT16P40625.webp",
+      "imageAlt": "工具腰包"
     }
   ]
 }
