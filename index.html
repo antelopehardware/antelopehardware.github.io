@@ -32,6 +32,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- 載入 Inter 字體，讓文字排版更現代、清晰 -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- 載入 Tailwind CSS 框架，用於快速實現響應式設計與樣式 -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -249,11 +250,11 @@
         <small data-key="footerAddress">臺中市清水區吳厝里和睦路三段250號1樓</small>
         <p class="mt-4 text-xs text-gray-400" id="footer-text">&copy; 2025 Antelope Hardware. All Rights Reserved.</p>
         <div class="mt-4 flex justify-center space-x-4">
-            <a href="https://www.facebook.com/profile.php?id=61578766202427" class="text-gray-400 hover:text-blue-400 transition-colors" title="追蹤我們 (臉書)">
-                <i class="fab fa-facebook-f text-lg"></i>
+            <a href="https://www.facebook.com/profile.php?id=61578766202427" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 transition-colors" title="追蹤我們 (臉書)" aria-label="Facebook">
+                <i class="fab fa-facebook-f text-lg" aria-hidden="true"></i>
             </a>
-            <a href="https://www.instagram.com/antelopehw_2025/" class="text-gray-400 hover:text-blue-400 transition-colors" title="追蹤我們(IG)">
-                <i class="fab fa-instagram text-lg"></i>
+            <a href="https://www.instagram.com/antelopehw_2025/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-pink-400 transition-colors" title="追蹤我們 (Instagram)" aria-label="Instagram">
+                <i class="fab fa-instagram text-lg" aria-hidden="true"></i>
             </a>
         </div>
     </div>
@@ -284,7 +285,7 @@
             // 產品跑馬燈文字
             productsTitle: '精選產品',
             // 頁腳文字
-            footerText: '© 2025 林楊五金 (東海國際有限公司). All Rights Reserved.',
+            footerText: '© 2025 林楊五金. All Rights Reserved.',
             toggleButton: 'English',
         },
         'en': {
@@ -308,7 +309,7 @@
             // Product carousel text
             productsTitle: 'Featured Products',
             // Footer text
-            footerText: '© 2025 Antelope Hardware Ltd. All Rights Reserved.',
+            footerText: '© 2025 Antelope Hardware. All Rights Reserved.',
             toggleButton: '中文',
         }
     };
