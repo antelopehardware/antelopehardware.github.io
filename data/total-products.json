@@ -1,0 +1,54 @@
+{
+  "categories": [
+    { "id": "hand", "name": "手工具" },
+    { "id": "power", "name": "電動工具" },
+    { "id": "measuring", "name": "測量工具" },
+    { "id": "automotive", "name": "汽車維修" },
+    { "id": "garden", "name": "園藝工具" },
+    { "id": "accessories", "name": "工具配件" }
+  ],
+  "products": [
+    {
+      "category": "hand",
+      "name": "手工具系列",
+      "description": "適用於組裝、日常保養與維修作業。",
+      "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
+      "imageAlt": "手工具系列示意"
+    },
+    {
+      "category": "power",
+      "name": "電動工具系列",
+      "description": "涵蓋鑽孔、鎖固及切磨等作業方向。",
+      "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=85",
+      "imageAlt": "電動工具系列示意"
+    },
+    {
+      "category": "measuring",
+      "name": "測量工具系列",
+      "description": "支援施工、裝修與尺寸測量需求。",
+      "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
+      "imageAlt": "測量工具系列示意"
+    },
+    {
+      "category": "automotive",
+      "name": "汽車維修系列",
+      "description": "提供車輛保養與維修常用工具選擇。",
+      "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=85",
+      "imageAlt": "汽車維修工具系列示意"
+    },
+    {
+      "category": "garden",
+      "name": "園藝工具系列",
+      "description": "對應庭園整理與戶外維護工作。",
+      "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
+      "imageAlt": "園藝工具系列示意"
+    },
+    {
+      "category": "accessories",
+      "name": "工具配件系列",
+      "description": "搭配工具使用的耗材與常用配件。",
+      "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=85",
+      "imageAlt": "工具配件系列示意"
+    }
+  ]
+}

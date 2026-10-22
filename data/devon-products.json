@@ -1,0 +1,54 @@
+{
+  "categories": [
+    { "id": "drilling", "name": "鑽孔鎖固" },
+    { "id": "impact", "name": "衝擊工具" },
+    { "id": "concrete", "name": "混凝土作業" },
+    { "id": "cutting", "name": "切割工具" },
+    { "id": "grinding", "name": "研磨工具" },
+    { "id": "battery", "name": "充電系統與配件" }
+  ],
+  "products": [
+    {
+      "category": "drilling",
+      "name": "電鑽與起子系列",
+      "description": "適用於安裝、裝修及設備維護。",
+      "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=85",
+      "imageAlt": "鑽孔與鎖固系列示意"
+    },
+    {
+      "category": "impact",
+      "name": "衝擊工具系列",
+      "description": "對應高扭力鎖固與拆卸作業。",
+      "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
+      "imageAlt": "衝擊工具系列示意"
+    },
+    {
+      "category": "concrete",
+      "name": "電鎚與混凝土系列",
+      "description": "適用於鑽孔、打鑿等施工需求。",
+      "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=85",
+      "imageAlt": "混凝土作業工具系列示意"
+    },
+    {
+      "category": "cutting",
+      "name": "切割工具系列",
+      "description": "支援多種材料的現場切割作業。",
+      "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
+      "imageAlt": "切割工具系列示意"
+    },
+    {
+      "category": "grinding",
+      "name": "研磨工具系列",
+      "description": "用於表面研磨、修整及打磨工作。",
+      "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=85",
+      "imageAlt": "研磨工具系列示意"
+    },
+    {
+      "category": "battery",
+      "name": "電池與配件系列",
+      "description": "搭配充電工具使用的電池與常用配件。",
+      "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
+      "imageAlt": "充電系統與配件系列示意"
+    }
+  ]
+}
