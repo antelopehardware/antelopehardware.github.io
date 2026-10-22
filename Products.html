@@ -161,7 +161,7 @@
                     <p id="modalDesc" class="text-gray-600 mb-6 leading-relaxed">產品介紹...</p>
                     
                     <div class="mt-8">
-                        <a id="inquiryLink" href="mailto:service@antelope-hardware.com" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition w-full text-center">
+                        <a id="inquiryLink" href="mailto:antelopehw@outlook.com,service@tunghai.tw" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition w-full text-center">
                             <i class="fas fa-paper-plane mr-2"></i> <span data-key="inquireQuote">立即詢問報價</span>
                         </a>
                     </div>
@@ -348,7 +348,7 @@
                             <span class="text-[10px] font-bold text-blue-600 uppercase tracking-tight">${p.categoryName[lang]}</span>
                         </div>
                         <h3 class="font-bold text-base line-clamp-1">
-                            <a href="https://www.antelopehw.com.tw/Products.html" class="text-gray-900 hover:text-blue-600 group-hover:text-blue-600 transition-colors">${p.name[lang]}</a>
+                            <a href="Products.html" class="text-gray-900 hover:text-blue-600 group-hover:text-blue-600 transition-colors">${p.name[lang]}</a>
                         </h3>
                     </div>
                 `;
@@ -376,7 +376,7 @@
             
             // 更新詢價連結的 mailto 屬性，帶入主旨與內容範本
             const inquiryLink = document.getElementById('inquiryLink');
-            const email = 'service@antelope-hardware.com';
+            const email = 'antelopehw@outlook.com,service@tunghai.tw';
             let subject, bodyTemplate;
             if (lang === 'zh') {
                 // 中文主旨：產品名稱詢價

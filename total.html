@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="林楊五金經銷 TOTAL 一站式工具，涵蓋手工具、電動工具與作業配件，提供多元工具選擇。">
+    <link rel="canonical" href="https://antelopehardware.github.io/total.html">
+    <title>TOTAL 一站式工具 | 林楊五金</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Microsoft JhengHei', sans-serif; }
+        .total-hero { background: linear-gradient(112deg, #111111 0%, #008b8b 58%, #20b2aa 100%); }
+        .brand-wordmark { font-family: Arial, sans-serif; letter-spacing: 0; }
+    </style>
+</head>
+<body class="bg-stone-50 text-gray-900">
+    <nav class="sticky top-0 z-50 bg-white/95 shadow-sm backdrop-blur">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+            <a href="index.html" class="flex items-center gap-3" aria-label="林楊五金首頁">
+                <img src="logo.jpg" alt="林楊五金 Logo" class="h-10 w-10 rounded-full object-cover">
+                <span class="font-bold">林楊五金 <span class="hidden sm:inline font-normal text-gray-500">Antelope Hardware</span></span>
+            </a>
+            <a href="Products.html" class="text-sm font-bold text-gray-700 hover:text-[#008b8b]">產品中心 <span aria-hidden="true">→</span></a>
+        </div>
+    </nav>
+
+    <main>
+        <header class="total-hero text-white">
+            <div class="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:py-24 md:grid-cols-[1fr_auto] md:items-end">
+                <div>
+                    <p class="mb-4 text-sm font-bold uppercase tracking-widest text-[#afeeee]">Authorized Dealer</p>
+                    <p class="brand-wordmark mb-3 text-5xl font-black sm:text-7xl">TOTAL</p>
+                    <h1 class="mb-5 text-2xl font-bold sm:text-3xl">一站式工具，對應多元作業需求</h1>
+                    <p class="max-w-2xl leading-8 text-gray-200">TOTAL 以完整工具品項為特色，從手工具、電動工具到作業配件，提供居家維修、日常保養與工作現場所需的實用選擇。</p>
+                </div>
+                <a href="contact.html" class="inline-flex items-center justify-center bg-[#00ced1] px-6 py-3 font-bold text-black transition hover:bg-[#48d1cc]">詢問 TOTAL 商品 <span class="ml-3" aria-hidden="true">↗</span></a>
+            </div>
+        </header>
+
+        <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8" aria-labelledby="total-products-title">
+            <div class="mb-8 flex flex-col gap-2 border-b border-gray-200 pb-5 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-[#008b8b]">Tool Selection</p>
+                    <h2 id="total-products-title" class="mt-1 text-2xl font-bold">TOTAL 工具系列</h2>
+                </div>
+                <p class="text-sm text-gray-500">系列分類示意，實際供應品項與規格請洽詢。</p>
+            </div>
+            <div class="mb-6 flex flex-wrap gap-2" role="group" aria-label="TOTAL 商品分類篩選">
+                <button type="button" class="category-filter rounded-full bg-[#008b8b] px-4 py-2 text-sm font-bold text-white" data-filter="all" aria-pressed="true">全部</button>
+                <button type="button" class="category-filter rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-[#afeeee]" data-filter="hand" aria-pressed="false">手工具</button>
+                <button type="button" class="category-filter rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-[#afeeee]" data-filter="power" aria-pressed="false">電動工具</button>
+                <button type="button" class="category-filter rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-[#afeeee]" data-filter="measuring" aria-pressed="false">測量工具</button>
+                <button type="button" class="category-filter rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-[#afeeee]" data-filter="automotive" aria-pressed="false">汽車維修</button>
+                <button type="button" class="category-filter rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-[#afeeee]" data-filter="garden" aria-pressed="false">園藝工具</button>
+                <button type="button" class="category-filter rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-[#afeeee]" data-filter="accessories" aria-pressed="false">工具配件</button>
+            </div>
+            <!-- TOTAL 商品編輯區：
+                 修改商品：在下方找到對應的 <article>，替換圖片 src、圖片說明 alt、分類 data-category、
+                 商品分類文字、標題 <h3> 與描述 <p>。
+                 新增商品：複製一整段 <article>...</article>，貼在此商品清單內，再修改以上欄位。
+                 data-category 必須與上方篩選按鈕的 data-filter 完全相同（hand、power、measuring、
+                 automotive、garden、accessories）；若要增加新分類，需同時新增篩選按鈕。
+                 圖片可放在網站資料夾並填相對路徑（例如 images/total/drill.jpg），或填可公開存取的圖片網址。 -->
+            <div id="total-product-grid" class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+                <!-- 商品範例：src=圖片路徑/網址；alt=圖片說明；分類文字、標題、描述請改成實際商品資訊。 -->
+                <article class="product-card overflow-hidden border border-gray-200 bg-white" data-category="hand">
+                    <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="手工具系列示意" class="aspect-square w-full object-cover" loading="lazy">
+                    <div class="p-3"><p class="mb-1 text-xs font-bold text-[#008b8b]">手工具</p><h3 class="font-bold">手工具系列</h3><p class="mt-1 text-sm leading-5 text-gray-600">適用於組裝、日常保養與維修作業。</p></div>
+                </article>
+                <article class="product-card overflow-hidden border border-gray-200 bg-white" data-category="power">
+                    <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="電動工具系列示意" class="aspect-square w-full object-cover" loading="lazy">
+                    <div class="p-3"><p class="mb-1 text-xs font-bold text-[#008b8b]">電動工具</p><h3 class="font-bold">電動工具系列</h3><p class="mt-1 text-sm leading-5 text-gray-600">涵蓋鑽孔、鎖固及切磨等作業方向。</p></div>
+                </article>
+                <article class="product-card overflow-hidden border border-gray-200 bg-white" data-category="measuring">
+                    <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="測量工具系列示意" class="aspect-square w-full object-cover" loading="lazy">
+                    <div class="p-3"><p class="mb-1 text-xs font-bold text-[#008b8b]">測量工具</p><h3 class="font-bold">測量工具系列</h3><p class="mt-1 text-sm leading-5 text-gray-600">支援施工、裝修與尺寸測量需求。</p></div>
+                </article>
+                <article class="product-card overflow-hidden border border-gray-200 bg-white" data-category="automotive">
+                    <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="汽車維修工具系列示意" class="aspect-square w-full object-cover" loading="lazy">
+                    <div class="p-3"><p class="mb-1 text-xs font-bold text-[#008b8b]">汽車維修</p><h3 class="font-bold">汽車維修系列</h3><p class="mt-1 text-sm leading-5 text-gray-600">提供車輛保養與維修常用工具選擇。</p></div>
+                </article>
+                <article class="product-card overflow-hidden border border-gray-200 bg-white" data-category="garden">
+                    <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="園藝工具系列示意" class="aspect-square w-full object-cover" loading="lazy">
+                    <div class="p-3"><p class="mb-1 text-xs font-bold text-[#008b8b]">園藝工具</p><h3 class="font-bold">園藝工具系列</h3><p class="mt-1 text-sm leading-5 text-gray-600">對應庭園整理與戶外維護工作。</p></div>
+                </article>
+                <article class="product-card overflow-hidden border border-gray-200 bg-white" data-category="accessories">
+                    <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&amp;fit=crop&amp;w=600&amp;q=85" alt="工具配件系列示意" class="aspect-square w-full object-cover" loading="lazy">
+                    <div class="p-3"><p class="mb-1 text-xs font-bold text-[#008b8b]">工具配件</p><h3 class="font-bold">工具配件系列</h3><p class="mt-1 text-sm leading-5 text-gray-600">搭配工具使用的耗材與常用配件。</p></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="border-y border-gray-200 bg-white">
+            <div class="mx-auto flex max-w-7xl flex-col gap-5 px-4 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+                <div>
+                    <h2 class="text-xl font-bold">尋找合適的 TOTAL 工具？</h2>
+                    <p class="mt-1 text-sm text-gray-600">提供品項、規格與數量，我們將協助確認供應資訊。</p>
+                </div>
+                <a href="contact.html" class="inline-flex justify-center bg-[#008b8b] px-5 py-3 text-sm font-bold text-white hover:bg-[#20b2aa]">聯絡我們詢價</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 px-4 py-8 text-center text-sm text-gray-300">
+        <p class="font-bold text-white">林楊五金 Antelope Hardware</p>
+        <p class="mt-2">臺中市清水區吳厝里和睦路三段250號1樓</p>
+        <p class="mt-4 text-xs text-gray-400">&copy; 2025 Antelope Hardware. All Rights Reserved.</p>
+        <div class="mt-4 flex justify-center space-x-4">
+            <a href="https://www.facebook.com/profile.php?id=61578766202427" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 transition-colors" title="追蹤我們 (臉書)" aria-label="Facebook">
+                <i class="fab fa-facebook-f text-lg" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/antelopehw_2025/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-pink-400 transition-colors" title="追蹤我們 (Instagram)" aria-label="Instagram">
+                <i class="fab fa-instagram text-lg" aria-hidden="true"></i>
+            </a>
+        </div>
+        <a href="Products.html" class="mt-4 inline-block text-[#48d1cc] hover:text-white">返回產品中心</a>
+    </footer>
+    <script>
+        const totalFilters = document.querySelectorAll('.category-filter');
+        const totalCards = document.querySelectorAll('#total-product-grid .product-card');
+
+        totalFilters.forEach((button) => {
+            button.addEventListener('click', () => {
+                const selectedCategory = button.dataset.filter;
+                totalFilters.forEach((filter) => {
+                    const isActive = filter === button;
+                    filter.classList.toggle('bg-[#008b8b]', isActive);
+                    filter.classList.toggle('text-white', isActive);
+                    filter.classList.toggle('bg-white', !isActive);
+                    filter.classList.toggle('text-gray-700', !isActive);
+                    filter.setAttribute('aria-pressed', String(isActive));
+                });
+                totalCards.forEach((card) => {
+                    card.hidden = selectedCategory !== 'all' && card.dataset.category !== selectedCategory;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
