@@ -73,6 +73,48 @@
       "description": "▲多種夾頭組合搭配 隨機應變\n▲大幅縮短機身長度\n▲增加輸出軸磁吸功能，防止批頭掉落",
       "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/5208-Li-12M.webp",
       "imageAlt": "電鑽 5208-Li-12M"
+    },
+    {
+      "category": "electric drill/wrench",
+      "name": "【DEVON大有】20V充電無刷電鑽 5202-Li-20",
+      "description": "▲機械雙速，高速鑽與低速緊固完美結合\n▲TURBO一鍵提速功能，轉速提升 效率提升\n▲智能堵轉保護，避免過載燒機",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/5202-Li-20.webp",
+      "imageAlt": "無刷電鑽 5202-Li-20"
+    },
+    {
+      "category": "cutting",
+      "name": "【DEVON大有】20V充電無刷修邊機 1329-Li-20",
+      "description": "▲吸塵接口作業無塵\n▲大開關設計開機便捷\n▲LED工作燈清晰照明",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/1329-Li-20.webp",
+      "imageAlt": "修邊機 1329-Li-20"
+    },
+    {
+      "category": "cutting",
+      "name": "【DEVON大有】20V充電無刷軍刀鋸 5836-Li-20",
+      "description": "◆自動抬刀，無須手動換檔\n◆輕巧機身，作業無死角\n◆掛鈎設計，存用方便",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/5836-Li-20.webp",
+      "imageAlt": "軍刀鋸 5836-Li-20"
+    },
+    {
+      "category": "cutting",
+      "name": "【DEVON大有】12V充電無刷手持鏈鋸機 4560-Li-12",
+      "description": "◆電子煞車想停就停\n◆排屑檔板不打手\n◆機巧機身，單手即可操作",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/4560-Li-12.webp",
+      "imageAlt": "鏈鋸機 4560-Li-12"
+    },
+    {
+      "category": "battery",
+      "name": "【DEVON大有】5.0Ah充電電池(供20V以上用)",
+      "description": "◆風扇冷卻系統，散熱迅速\n◆360°抗衝擊設計\n◆電壓穩定",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/5.0Ah2.0.webp",
+      "imageAlt": "充電電池(供20V以上用)"
+    },
+    {
+      "category": "battery",
+      "name": "12V 原廠鋰電電池(無刷)",
+      "description": "2.0Ah\n重量0.18kg",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/5165-Li-12-20(2).jpg",
+      "imageAlt": "5165-Li-12-20電池"
     }
   ]
 }
