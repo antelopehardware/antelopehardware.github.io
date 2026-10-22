@@ -1,26 +1,33 @@
 {
   "categories": [
-    { "id": "drilling", "name": "鑽孔鎖固" },
-    { "id": "impact", "name": "衝擊工具" },
-    { "id": "concrete", "name": "混凝土作業" },
-    { "id": "cutting", "name": "切割工具" },
-    { "id": "grinding", "name": "研磨工具" },
-    { "id": "battery", "name": "充電系統與配件" }
+    {
+      "id": "drilling",
+      "name": "鑽孔鎖固"
+    },
+    {
+      "id": "concrete",
+      "name": "混凝土作業"
+    },
+    {
+      "id": "cutting",
+      "name": "切割工具"
+    },
+    {
+      "id": "grinding",
+      "name": "研磨工具"
+    },
+    {
+      "id": "battery",
+      "name": "充電系統與配件"
+    }
   ],
   "products": [
     {
       "category": "drilling",
-      "name": "電鑽與起子系列",
-      "description": "適用於安裝、裝修及設備維護。",
-      "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=85",
+      "name": "【DEVON大有】4V充電起子機 30PCS套裝組 5617-Li-4",
+      "description": "▲自鎖夾頭穩固夾持\n▲防誤觸開關設計\n▲LED環形燈高亮照明",
+      "image": "https://image.bvshop.tw/3143/product/3143_6932739f34a75.jpg.webp",
       "imageAlt": "鑽孔與鎖固系列示意"
-    },
-    {
-      "category": "impact",
-      "name": "衝擊工具系列",
-      "description": "對應高扭力鎖固與拆卸作業。",
-      "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
-      "imageAlt": "衝擊工具系列示意"
     },
     {
       "category": "concrete",
@@ -37,18 +44,39 @@
       "imageAlt": "切割工具系列示意"
     },
     {
-      "category": "grinding",
-      "name": "研磨工具系列",
-      "description": "用於表面研磨、修整及打磨工作。",
-      "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=85",
-      "imageAlt": "研磨工具系列示意"
-    },
-    {
       "category": "battery",
       "name": "電池與配件系列",
       "description": "搭配充電工具使用的電池與常用配件。",
       "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
       "imageAlt": "充電系統與配件系列示意"
+    },
+    {
+      "category": "drilling",
+      "name": "【DEVON大有】12V充電無刷角向起子機 5771-Li-12(2.0Ah雙鋰電)",
+      "description": "主機*1+充電器*1+2.0Ah電池*2\n▲360°無影燈無懼黑暗空間作業\n▲彈簧夾頭夾持更牢固\n▲極致尺寸狹窄空間輕鬆操控",
+      "image": "https://image.bvshop.tw/3143/product/3143_68943dc0da98d.jpg.webp",
+      "imageAlt": "12V充電無刷角向起子機"
+    },
+    {
+      "category": "drilling",
+      "name": "【DEVON大有】12V充電無刷衝擊起子機 5767Q",
+      "description": "◆金屬掛鉤手提壁掛兩用\n◆大散熱片設計快速散熱\n◆燈光亮 聚光強",
+      "image": "https://image.bvshop.tw/3143/product/3143_6788a29a2b65e.jpg.webp",
+      "imageAlt": "衝擊起子機 5767Q"
+    },
+    {
+      "category": "drilling",
+      "name": "【DEVON大有】20V充電無刷起子機 5762-Li-20",
+      "description": "◆減震設計 震動小\n◆齒輪箱後殼密封好不漏油\n◆輕小機身",
+      "image": "https://image.bvshop.tw/3143/product/3143_6756950941868.jpg.webp",
+      "imageAlt": "起子機 5762-Li-20"
+    },
+    {
+      "category": "drilling",
+      "name": "【DEVON大有】20V充電無刷起子機 5768-Li-20",
+      "description": "▲環形無影燈無懼黑暗空間作業\n▲纖細機身握把\n▲短小精悍狹窄空間輕鬆操控",
+      "image": "https://image.bvshop.tw/3143/product/3143_68181a1bb3a75.jpg.webp",
+      "imageAlt": "起子機 5768-Li-20"
     }
   ]
 }
