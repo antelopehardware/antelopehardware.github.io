@@ -5,20 +5,16 @@
       "name": "鑽孔鎖固"
     },
     {
-      "id": "concrete",
-      "name": "混凝土作業"
-    },
-    {
       "id": "cutting",
       "name": "切割工具"
     },
     {
-      "id": "grinding",
-      "name": "研磨工具"
-    },
-    {
       "id": "battery",
       "name": "充電系統與配件"
+    },
+    {
+      "id": "electric drill/wrench",
+      "name": "電鑽/板手"
     }
   ],
   "products": [
@@ -28,27 +24,6 @@
       "description": "▲自鎖夾頭穩固夾持\n▲防誤觸開關設計\n▲LED環形燈高亮照明",
       "image": "https://image.bvshop.tw/3143/product/3143_6932739f34a75.jpg.webp",
       "imageAlt": "鑽孔與鎖固系列示意"
-    },
-    {
-      "category": "concrete",
-      "name": "電鎚與混凝土系列",
-      "description": "適用於鑽孔、打鑿等施工需求。",
-      "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=85",
-      "imageAlt": "混凝土作業工具系列示意"
-    },
-    {
-      "category": "cutting",
-      "name": "切割工具系列",
-      "description": "支援多種材料的現場切割作業。",
-      "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
-      "imageAlt": "切割工具系列示意"
-    },
-    {
-      "category": "battery",
-      "name": "電池與配件系列",
-      "description": "搭配充電工具使用的電池與常用配件。",
-      "image": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=85",
-      "imageAlt": "充電系統與配件系列示意"
     },
     {
       "category": "drilling",
@@ -77,6 +52,27 @@
       "description": "▲環形無影燈無懼黑暗空間作業\n▲纖細機身握把\n▲短小精悍狹窄空間輕鬆操控",
       "image": "https://image.bvshop.tw/3143/product/3143_68181a1bb3a75.jpg.webp",
       "imageAlt": "起子機 5768-Li-20"
+    },
+    {
+      "category": "electric drill/wrench",
+      "name": "【DEVON大有】20V充電無刷電動板手 5766-Li-20",
+      "description": "▲M18高強度螺栓秒擰緊",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/5766-Li-20.webp",
+      "imageAlt": "板手 5766-Li-20"
+    },
+    {
+      "category": "electric drill/wrench",
+      "name": "【DEVON大有】20V充電無刷電鑽 5219-Li-20",
+      "description": "▲優質同心度精準定位\n▲纖細機身握把\n▲LED工作燈狹窄空間高亮度照明",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/5219-Li-20.webp",
+      "imageAlt": "電鑽 5219-Li-20"
+    },
+    {
+      "category": "electric drill/wrench",
+      "name": "【DEVON大有】12V充電無刷快換夾頭電鑽 5208-Li-12M 2.0Ah雙鋰電",
+      "description": "▲多種夾頭組合搭配 隨機應變\n▲大幅縮短機身長度\n▲增加輸出軸磁吸功能，防止批頭掉落",
+      "image": "https://raw.githubusercontent.com/antelopehardware/antelopehardware.github.io/refs/heads/main/pic/5208-Li-12M.webp",
+      "imageAlt": "電鑽 5208-Li-12M"
     }
   ]
 }
