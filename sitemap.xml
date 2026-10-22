@@ -9,7 +9,17 @@
     <!-- 產品中心：五金工具、工業補給與安全用品 -->
     <url>
         <loc>https://antelopehardware.github.io/Products.html</loc>
-        <lastmod>2026-09-18</lastmod>
+        <lastmod>2026-10-22</lastmod>
+    </url>
+
+    <!-- 經銷品牌：TOTAL 與 DEVON 大有工具介紹 -->
+    <url>
+        <loc>https://antelopehardware.github.io/total.html</loc>
+        <lastmod>2026-10-22</lastmod>
+    </url>
+    <url>
+        <loc>https://antelopehardware.github.io/devon.html</loc>
+        <lastmod>2026-10-22</lastmod>
     </url>
     
     <!-- 服務項目：船舶物料、採購配送與及時補給 -->
