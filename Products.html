@@ -102,6 +102,34 @@
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+        <section class="mb-12" aria-labelledby="brand-title">
+            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-5">
+                <div>
+                    <p class="text-sm font-bold tracking-widest text-blue-700 uppercase">Authorized Brands</p>
+                    <h2 id="brand-title" class="text-2xl font-bold text-gray-900" data-key="brandSectionTitle">經銷品牌</h2>
+                </div>
+                <p class="text-sm text-gray-500" data-key="brandSectionSummary">探索 TOTAL 與 DEVON 大有工具系列</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+                <a href="total.html" class="group min-h-44 bg-white border border-gray-200 border-l-4 border-l-lime-500 p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 hover:border-lime-300 hover:shadow-md transition">
+                    <div>
+                        <p class="text-xs font-bold tracking-widest text-lime-700 uppercase mb-2">TOTAL TOOLS</p>
+                        <h3 class="text-2xl font-extrabold text-gray-900 mb-2" data-key="totalBrand">TOTAL 一站式工具</h3>
+                        <p class="text-sm text-gray-600" data-key="totalSummary">從手工具到電動工具，滿足日常維修與多元作業需求。</p>
+                    </div>
+                    <span class="text-sm font-bold text-green-700 whitespace-nowrap group-hover:translate-x-1 transition-transform" data-key="totalExplore">探索品牌 <span aria-hidden="true">→</span></span>
+                </a>
+                <a href="devon.html" class="group min-h-44 bg-white border border-gray-200 border-l-4 border-l-red-700 p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 hover:border-red-300 hover:shadow-md transition">
+                    <div>
+                        <p class="text-xs font-bold tracking-widest text-red-700 uppercase mb-2">DEVON POWER</p>
+                        <h3 class="text-2xl font-extrabold text-gray-900 mb-2" data-key="devonBrand">DEVON 大有電動工具</h3>
+                        <p class="text-sm text-gray-600" data-key="devonSummary">聚焦電動與充電工具，對應工程施工及專業維修情境。</p>
+                    </div>
+                    <span class="text-sm font-bold text-gray-900 whitespace-nowrap group-hover:text-red-700 group-hover:translate-x-1 transition-transform" data-key="devonExplore">探索品牌 <span aria-hidden="true">→</span></span>
+                </a>
+            </div>
+        </section>
         
         <!-- 分類篩選按鈕 -->
         <div class="flex flex-wrap justify-center gap-3 mb-12 fade-in" id="filter-buttons">
@@ -147,7 +175,15 @@
         <div class="max-w-7xl mx-auto px-4">
             <h4 class="font-bold text-gray-900 mb-2">林楊五金 Antelope Hardware</h4>
             <small data-key="footerAddress">臺中市清水區吳厝里和睦路三段250號1樓</small>
-            <p class="mt-4 text-xs text-gray-400">&copy; 2025 Antelope Hardware.  All Rights Reserved.</p>
+            <p class="mt-4 text-xs text-gray-400">&copy; 2025 Antelope Hardware. All Rights Reserved.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="https://www.facebook.com/profile.php?id=61578766202427" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600 transition-colors" title="追蹤我們 (臉書)" aria-label="Facebook">
+                    <i class="fab fa-facebook-f text-lg" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/antelopehw_2025/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-pink-600 transition-colors" title="追蹤我們 (Instagram)" aria-label="Instagram">
+                    <i class="fab fa-instagram text-lg" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
     </footer>
 
@@ -161,6 +197,14 @@
                 products: '產品',
                 about: '關於我們',
                 contact: '聯絡我們',
+            totalBrand: 'TOTAL 一站式工具',
+            totalSummary: '從手工具到電動工具，滿足日常維修與多元作業需求。',
+            devonBrand: 'DEVON 大有電動工具',
+            devonSummary: '聚焦電動與充電工具，對應工程施工及專業維修情境。',
+            brandSectionTitle: '經銷品牌',
+            brandSectionSummary: '探索 TOTAL 與 DEVON 大有工具系列',
+            totalExplore: '探索品牌 →',
+            devonExplore: '探索品牌 →',
             productCenterTitle: '產品中心',
             productCenterSubtitle: '為您採購最優質的五金物資與設備',
             allProducts: '全部產品',
@@ -180,6 +224,14 @@
                 products: 'Products',
                 about: 'About Us',
                 contact: 'Contact Us',
+            totalBrand: 'TOTAL One-stop Tools',
+            totalSummary: 'From hand tools to power tools for everyday repairs and varied tasks.',
+            devonBrand: 'DEVON Power Tools',
+            devonSummary: 'Power and cordless tools for construction and professional maintenance.',
+            brandSectionTitle: 'Authorized Brands',
+            brandSectionSummary: 'Explore the TOTAL and DEVON power tool ranges',
+            totalExplore: 'Explore TOTAL →',
+            devonExplore: 'Explore DEVON →',
             productCenterTitle: 'Product Center',
             productCenterSubtitle: 'Procuring high-quality hardware supplies and equipment for you',
             allProducts: 'All Products',
@@ -201,6 +253,14 @@
             'products': document.querySelector('[data-key="products"]'),
             'about': document.querySelector('[data-key="about"]'),
             'contact': document.querySelector('[data-key="contact"]'),
+            'totalBrand': document.querySelector('[data-key="totalBrand"]'),
+            'totalSummary': document.querySelector('[data-key="totalSummary"]'),
+            'devonBrand': document.querySelector('[data-key="devonBrand"]'),
+            'devonSummary': document.querySelector('[data-key="devonSummary"]'),
+            'brandSectionTitle': document.querySelector('[data-key="brandSectionTitle"]'),
+            'brandSectionSummary': document.querySelector('[data-key="brandSectionSummary"]'),
+            'totalExplore': document.querySelector('[data-key="totalExplore"]'),
+            'devonExplore': document.querySelector('[data-key="devonExplore"]'),
             'productCenterTitle': document.querySelector('[data-key="productCenterTitle"]'),
             'productCenterSubtitle': document.querySelector('[data-key="productCenterSubtitle"]'),
             'allProducts': document.querySelector('[data-key="allProducts"]'),
